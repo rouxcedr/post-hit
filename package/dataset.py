@@ -1,38 +1,63 @@
 import json
 import requests
 import urllib.request
-from . import Adaptaters
+from Adaptaters import *
 import sys
 import os.path
 
 class DataSet(object):
 	"""Creates the appropriate dataset"""
-	def __init__(self):
+	def __init__(self, dataset_path, **kwargs):
+
+		_OPTIONAL_PARAMETERS = {
+		"project": str,
+		"description": str,
+		"project_link": str,
+		"version": int,
+		"data_path": str,
+		"filename_template": str,
+		"protocole": str,
+		"file_type": str,
+		"metadata_path": str,
+		"ids": tuple,
+		"download_links":tuple,
+		"filenames":tuple
+		}
+
+		self.dataset_path = dataset_path
+
+		# Store the passed parameters.
+		for arg, val in kwargs.items():
+		    if arg not in _OPTIONAL_PARAMETERS:
+		        raise Exception("Unknown parameter {}.".format(arg))
+		    try:
+		    	setattr(self, arg, _OPTIONAL_PARAMETERS[arg](val))
+		    except TypeError:
+		    	raise TypeError("Invalid type for argument {}. Expected "
+					"a {}.".format(arg, _OPTIONAL_PARAMETERS[arg]))
+
+		self.load()
 
 		super(DataSet, self).__init__()
 
-	def get_json_skeletton(self, skeletton_path):
-		
-		self.project = ""
-		self.description = ""
+	def get_json_skeletton( self ):
 
-		self.project_link = ""
-		self.version = ""
-		self.data_path = ""
-		self.metadata_path = ""
-		self.filename_template = ""
-		self.download_link_template = ""
+		skeletton_dataset = DataSet(dataset_path = self.dataset_path,
+									project= "",
+						            description= "",
+						            project_link= "",
+						            version= 0,
+						            data_path= "",
+						            filename_template= "",
+						            protocole= "",
+						            file_type= "",
+						            ids=[],
+						            download_links=[],
+						            filenames=[],
+						            metadata_path= "")
 
-		self.protocole = ""
-		self.file_type = ""
 
-		self.ids = [""]
-		self.download_links = [""]
-		self.filenames = [""]
-
-		self.dataset_path = skeletton_path
-
-		self.create()
+		skeletton_dataset.create()
 
 	def create(self):
 
@@ -48,6 +73,16 @@ class DataSet(object):
 			return None
 
 		resources = []
+
+		if len(self.filenames) == 0:
+			resources.append(
+				{
+			        "id": self.ids,
+			        "description":"",
+			        "filename":self.filenames,
+			        "download_link":self.download_links
+			      }
+				)
 
 		for i in range(len(self.filenames)):
 			resources.append(
@@ -77,44 +112,23 @@ class DataSet(object):
 			json_file.write(json.dumps(data))
 
 
-	def load(self, user_dataset_path = None, dataset_name = None):
-		
-		if dataset_name is not None and user_dataset_path is not None :
-			if "data/datasets/{}".format(dataset_name) == user_dataset_path:
-
-				self.dataset_path = user_dataset_path
-
-			else: 
-
-				if os.path.exists(user_dataset_path):
-					self.dataset_path = "data/datasets/{}".format(dataset_name)
-					with open(user_dataset_path) as user_json:
-						dataset = json.load(user_json)
-					with open(self.dataset_path) as json_file:
-						json_file.write(json.dumps(dataset))
-				else :
-					raise ValueError("This path doesn't exist")
-
-		elif dataset_name is not None and user_dataset_path is None:
-			if os.path.exists("data/datasets/{}".format(dataset_name)):
-				self.dataset_path = "data/datasets/{}".format(dataset_name)
-
-			else :
-				raise ValueError("This DataSet name doesn't exist in our bank")
-
-		elif user_dataset_path is not None and dataset_name is None:
-
-			if os.path.exists(user_dataset_path) : 
-				dataset_name = os.path.basename(user_dataset_path)
-				self.dataset_path = "data/datasets/{}".format(dataset_name)
-				with open(user_dataset_path) as user_json:
+	def load(self):
+		if os.path.exists(self.dataset_path):
+			
+			if os.path.basename(self.dataset_path) != "":
+				dataset_name = os.path.basename(self.dataset_path)
+				with open(self.dataset_path) as user_json:
 					dataset = json.load(user_json)
-				with open(self.dataset_path) as json_file:
+				self.dataset_path = "/home/cedric/WASABI02/post_hit/data/datasets/{}".format(dataset_name)
+				with open(self.dataset_path, "w") as json_file:
 					json_file.write(json.dumps(dataset))
 			else :
-				raise ValueError("This path doesn't exist")
+				raise ValueError("This path has no filename")
+
+		elif os.path.exists("/home/cedric/WASABI02/post_hit/data/datasets/{}".format(self.dataset_path)):
+			self.dataset_path = "/home/cedric/WASABI02/post_hit/data/datasets/{}".format(self.dataset_path)
 		else:
-			raise ValueError("Please give the DataSet path or name")
+			raise ValueError("The dataset path or name given is not valid")
 
 		
 
@@ -142,13 +156,13 @@ class DataSet(object):
 		with open(self.dataset_path) as dataset_file:
 			dataset = json.load(dataset_file)
 			if dataset["dataset"]["files_type"] == "bb":
-				data = Adaptaters.BigBedAdaptater(self.dataset_path).get_region(region)
+				data = BigBedAdaptater(self.dataset_path).get_region(region)
 
 			if dataset["dataset"]["files_type"] == "bw":
-				data = Adaptaters.BigWigAdaptater(self.dataset_path).get_region(region)
+				data = BigWigAdaptater(self.dataset_path).get_region(region)
 
 			if dataset["dataset"]["files_type"] == "gtf":
-				data = Adaptaters.GTFAdaptater(self.dataset_path).get_region(region)
+				data = GTFAdaptater(self.dataset_path).get_region(region)
 
 		return data
 	

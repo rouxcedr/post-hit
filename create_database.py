@@ -4,17 +4,13 @@ from pprint import pprint
 
 def main():
 	
-	#dataset.DataSet().get_json_skeletton("data/datasets/skeletton.json")
+	dataset.DataSet(dataset_path = "data/datasets/skeletton.json").get_json_skeletton()
 
-	roadmap_epigenomic_dataset = dataset.DataSet()
-	roadmap_epigenomic_dataset.load(dataset_name = "roadmap_epigenomic_dataset_v1.json")
-	roadmap_epigenomic_dataset.download()
+	roadmap_epigenomic_dataset = dataset.DataSet(dataset_path = "roadmap_epigenomic_dataset_v1.json")
 
-	phyloP100way_dataset = dataset.DataSet()
-	phyloP100way_dataset.load(dataset_name = "phyloP100way_dataset_v1.json")
+	phyloP100way_dataset = dataset.DataSet(dataset_path = "data/datasets/phyloP100way_dataset_v1.json")
 
-	ensembl_dataset = dataset.DataSet()
-	ensembl_dataset.load(dataset_name = "ensembl_dataset_v1.json")
+	ensembl_dataset = dataset.DataSet(dataset_path ="ensembl_dataset_v1.json")
 
 	r = Region("19", 45819671, 45826235)
 

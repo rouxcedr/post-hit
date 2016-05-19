@@ -1,1 +1,1 @@
-{"dataset": {"version": "", "project_link": "", "data_path": "", "protocole": "", "resources": [{"download_link": "", "filename": "", "description": "", "id": ""}], "files_type": "", "project": "", "description": "", "metadata_path": ""}}
+{"dataset": {"data_path": "", "version": 0, "description": "", "resources": [{"id": [], "description": "", "filename": [], "download_link": []}], "protocole": "", "project": "", "metadata_path": "", "project_link": "", "files_type": ""}}

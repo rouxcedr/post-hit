@@ -1,5 +1,5 @@
 import json
-from . import tools
+from tools import *
 from gepyto.formats.wig import WiggleFile
 from gepyto.db import ensembl 
 import os
@@ -42,7 +42,7 @@ class BigBedAdaptater(Adaptater):
 		if not chrom.startswith("chr"):
 		    chrom = "chr{}".format(chrom)
 
-		big_bed_to_bed = tools.BigBedToBed()
+		big_bed_to_bed = BigBedToBed()
 		cols = ("chrom", "chromStart", "chromEnd", "name", "score", "strand",
 		        "thickStart", "thickEnd", "itemRgb")
 
@@ -85,7 +85,7 @@ class BigWigAdaptater(Adaptater):
 		data_path = self.dataset["dataset"]["data_path"]
 		for resource in self.dataset["dataset"]["resources"]:
 			filename = resource["filename"]
-			big_wig_to_wig = tools.BigWigToWig()
+			big_wig_to_wig = BigWigToWig()
 			wig = big_wig_to_wig.call(
 				os.path.join(
 				data_path,
