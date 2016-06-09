@@ -1,0 +1,27 @@
+{
+	"dataset": {
+		"version": 0,
+		"project_link": "",
+		"protocole": "",
+		"files_type": "",
+		"resources": [{
+			"filename": "",
+			"download_link": "",
+			"description": "",
+			"id": "",
+			"filename_template":[],
+			"ids":[],
+
+		}],
+		"description": "",
+		"project": "",
+		"data_path": "",
+		"metadata": [],
+		"data_representation":{"representation" : "key-list = {key:[( object, start, end )]} / vector = {chrom:start-end : (values)}",
+								"fields":[],
+								"key":""}
+
+
+
+	}
+}

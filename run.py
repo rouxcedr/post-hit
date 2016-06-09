@@ -1,6 +1,6 @@
 from eve import Eve
 import os
-from dataset import *
+from package.dataset import DataSet
 from flask import jsonify, request
 
 from gepyto.structures.region import Region
@@ -11,6 +11,8 @@ app = Eve()
 
 @app.route("/region/<string:region>/")
 def get_region(region):
+
+	def get_region(region):
 
 	return_data = []
 
@@ -31,6 +33,12 @@ def get_region(region):
 
 
 	return jsonify({"return_data":return_data})
+
+	return jsonify({"response":return_data, "sucess": 1})
+
+@app.route("/ressource/<string:dataset>/")
+def ressource(dataset):
+	pass
 
 
 

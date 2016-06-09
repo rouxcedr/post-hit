@@ -1,7 +1,7 @@
 import json
 import requests
 import urllib.request
-from Adaptaters import *
+from . import Adapters
 import sys
 import os.path
 
@@ -15,18 +15,19 @@ class DataSet(object):
 		"project_link": str,
 		"version": int,
 		"data_path": str,
-		"filename_template": str,
 		"protocole": str,
 		"file_type": str,
-		"metadata_path": str,
+		"metadata": tuple,
 		"ids": tuple,
 		"download_links":tuple,
-		"filenames":tuple
+		"filenames":tuple,
+		"data_representation":dict
 		}
 
 		self.dataset_path = dataset_path
 
 		# Store the passed parameters.
+		argument_passed = False
 		for arg, val in kwargs.items():
 		    if arg not in _OPTIONAL_PARAMETERS:
 		        raise Exception("Unknown parameter {}.".format(arg))
@@ -35,10 +36,17 @@ class DataSet(object):
 		    except TypeError:
 		    	raise TypeError("Invalid type for argument {}. Expected "
 					"a {}.".format(arg, _OPTIONAL_PARAMETERS[arg]))
+		    argument_passed = True
 
-		self.load()
+		if argument_passed:
+			self.create()
+			self.load()
+		else:
+			self.load()
+
 
 		super(DataSet, self).__init__()
+
 
 	def get_json_skeletton( self ):
 
@@ -54,7 +62,7 @@ class DataSet(object):
 						            ids=[],
 						            download_links=[],
 						            filenames=[],
-						            metadata_path= "")
+						            metadata= [])
 
 
 		skeletton_dataset.create()
@@ -102,10 +110,11 @@ class DataSet(object):
 			    "description":self.description,
 			    "project_link":self.project_link,
 			    "data_path": self.data_path,
-			    "metadata_path": self.metadata_path,
+			    "metadata": self.metadata,
 			    "files_type":self.file_type,
 			    "protocole":self.protocole,
-			    "resources":resources
+			    "resources":resources,
+			    "data_representation":self.data_representation
 			  }
 			}
 		with open(self.dataset_path, "w") as json_file:
@@ -156,13 +165,16 @@ class DataSet(object):
 		with open(self.dataset_path) as dataset_file:
 			dataset = json.load(dataset_file)
 			if dataset["dataset"]["files_type"] == "bb":
-				data = BigBedAdaptater(self.dataset_path).get_region(region)
+				data = Adapters.BigBedAdapter(self.dataset_path).get_region(region)
 
 			if dataset["dataset"]["files_type"] == "bw":
-				data = BigWigAdaptater(self.dataset_path).get_region(region)
+				data = Adapters.BigWigAdapter(self.dataset_path).get_region(region)
 
 			if dataset["dataset"]["files_type"] == "gtf":
-				data = GTFAdaptater(self.dataset_path).get_region(region)
+				data = Adapters.GTFAdapter(self.dataset_path).get_region(region)
+
+			if dataset["dataset"]["files_type"] in ("csv", "tsv"):
+				data = Adapters.XsvAdapter(self.dataset_path).get_region(region)
 
 		return data
 	

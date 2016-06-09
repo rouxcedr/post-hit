@@ -1,1 +1,790 @@
-{"dataset": {"project_link": "http://egg2.wustl.edu/roadmap/web_portal/imputed.html", "version": 1, "metadata_path": "data/roadmap_epigenomic/metadata/summary.tsv", "data_path": "/home/cedric/WASABI02/post_hit/data/roadmap_epigenomic/", "project": "Roadmap epigenomics project", "protocole": "http", "files_type": "bb", "description": "A 25 state chromatin model generated from 12 histone marks on 127 epigenomes. This is from imputed data which means that missing marks and values were guessed from other tissues and marks. A full description is available at http://egg2.wustl.edu/roadmap/web_portal/imputed.html", "resources": [{"filename": "E001_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E001_25_imputed12marks_dense.bb.2", "id": "E001"}, {"filename": "E002_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E002_25_imputed12marks_dense.bb", "id": "E002"}, {"filename": "E003_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E003_25_imputed12marks_dense.bb", "id": "E003"}, {"filename": "E004_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E004_25_imputed12marks_dense.bb", "id": "E004"}, {"filename": "E005_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E005_25_imputed12marks_dense.bb", "id": "E005"}, {"filename": "E006_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E006_25_imputed12marks_dense.bb", "id": "E006"}, {"filename": "E007_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E007_25_imputed12marks_dense.bb", "id": "E007"}, {"filename": "E008_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E008_25_imputed12marks_dense.bb", "id": "E008"}, {"filename": "E009_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E009_25_imputed12marks_dense.bb", "id": "E009"}, {"filename": "E010_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E010_25_imputed12marks_dense.bb", "id": "E010"}, {"filename": "E011_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E011_25_imputed12marks_dense.bb", "id": "E011"}, {"filename": "E012_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E012_25_imputed12marks_dense.bb", "id": "E012"}, {"filename": "E013_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E013_25_imputed12marks_dense.bb", "id": "E013"}, {"filename": "E014_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E014_25_imputed12marks_dense.bb", "id": "E014"}, {"filename": "E015_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E015_25_imputed12marks_dense.bb", "id": "E015"}, {"filename": "E016_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E016_25_imputed12marks_dense.bb", "id": "E016"}, {"filename": "E017_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E017_25_imputed12marks_dense.bb", "id": "E017"}, {"filename": "E018_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E018_25_imputed12marks_dense.bb", "id": "E018"}, {"filename": "E019_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E019_25_imputed12marks_dense.bb", "id": "E019"}, {"filename": "E020_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E020_25_imputed12marks_dense.bb", "id": "E020"}, {"filename": "E021_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E021_25_imputed12marks_dense.bb", "id": "E021"}, {"filename": "E022_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E022_25_imputed12marks_dense.bb", "id": "E022"}, {"filename": "E023_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E023_25_imputed12marks_dense.bb", "id": "E023"}, {"filename": "E024_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E024_25_imputed12marks_dense.bb", "id": "E024"}, {"filename": "E025_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E025_25_imputed12marks_dense.bb", "id": "E025"}, {"filename": "E026_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E026_25_imputed12marks_dense.bb", "id": "E026"}, {"filename": "E027_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E027_25_imputed12marks_dense.bb", "id": "E027"}, {"filename": "E028_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E028_25_imputed12marks_dense.bb", "id": "E028"}, {"filename": "E029_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E029_25_imputed12marks_dense.bb", "id": "E029"}, {"filename": "E030_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E030_25_imputed12marks_dense.bb", "id": "E030"}, {"filename": "E031_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E031_25_imputed12marks_dense.bb", "id": "E031"}, {"filename": "E032_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E032_25_imputed12marks_dense.bb", "id": "E032"}, {"filename": "E033_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E033_25_imputed12marks_dense.bb", "id": "E033"}, {"filename": "E034_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E034_25_imputed12marks_dense.bb", "id": "E034"}, {"filename": "E035_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E035_25_imputed12marks_dense.bb", "id": "E035"}, {"filename": "E036_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E036_25_imputed12marks_dense.bb", "id": "E036"}, {"filename": "E037_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E037_25_imputed12marks_dense.bb", "id": "E037"}, {"filename": "E038_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E038_25_imputed12marks_dense.bb", "id": "E038"}, {"filename": "E039_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E039_25_imputed12marks_dense.bb", "id": "E039"}, {"filename": "E040_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E040_25_imputed12marks_dense.bb", "id": "E040"}, {"filename": "E041_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E041_25_imputed12marks_dense.bb", "id": "E041"}, {"filename": "E042_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E042_25_imputed12marks_dense.bb", "id": "E042"}, {"filename": "E043_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E043_25_imputed12marks_dense.bb", "id": "E043"}, {"filename": "E044_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E044_25_imputed12marks_dense.bb", "id": "E044"}, {"filename": "E045_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E045_25_imputed12marks_dense.bb", "id": "E045"}, {"filename": "E046_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E046_25_imputed12marks_dense.bb", "id": "E046"}, {"filename": "E047_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E047_25_imputed12marks_dense.bb", "id": "E047"}, {"filename": "E048_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E048_25_imputed12marks_dense.bb", "id": "E048"}, {"filename": "E049_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E049_25_imputed12marks_dense.bb", "id": "E049"}, {"filename": "E050_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E050_25_imputed12marks_dense.bb", "id": "E050"}, {"filename": "E051_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E051_25_imputed12marks_dense.bb", "id": "E051"}, {"filename": "E052_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E052_25_imputed12marks_dense.bb", "id": "E052"}, {"filename": "E053_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E053_25_imputed12marks_dense.bb", "id": "E053"}, {"filename": "E054_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E054_25_imputed12marks_dense.bb", "id": "E054"}, {"filename": "E055_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E055_25_imputed12marks_dense.bb", "id": "E055"}, {"filename": "E056_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E056_25_imputed12marks_dense.bb", "id": "E056"}, {"filename": "E057_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E057_25_imputed12marks_dense.bb", "id": "E057"}, {"filename": "E058_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E058_25_imputed12marks_dense.bb", "id": "E058"}, {"filename": "E059_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E059_25_imputed12marks_dense.bb", "id": "E059"}, {"filename": "E060_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E060_25_imputed12marks_dense.bb", "id": "E060"}, {"filename": "E061_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E061_25_imputed12marks_dense.bb", "id": "E061"}, {"filename": "E062_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E062_25_imputed12marks_dense.bb", "id": "E062"}, {"filename": "E063_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E063_25_imputed12marks_dense.bb", "id": "E063"}, {"filename": "E064_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E064_25_imputed12marks_dense.bb", "id": "E064"}, {"filename": "E065_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E065_25_imputed12marks_dense.bb", "id": "E065"}, {"filename": "E066_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E066_25_imputed12marks_dense.bb", "id": "E066"}, {"filename": "E067_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E067_25_imputed12marks_dense.bb", "id": "E067"}, {"filename": "E068_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E068_25_imputed12marks_dense.bb", "id": "E068"}, {"filename": "E069_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E069_25_imputed12marks_dense.bb", "id": "E069"}, {"filename": "E070_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E070_25_imputed12marks_dense.bb", "id": "E070"}, {"filename": "E071_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E071_25_imputed12marks_dense.bb", "id": "E071"}, {"filename": "E072_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E072_25_imputed12marks_dense.bb", "id": "E072"}, {"filename": "E073_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E073_25_imputed12marks_dense.bb", "id": "E073"}, {"filename": "E074_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E074_25_imputed12marks_dense.bb", "id": "E074"}, {"filename": "E075_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E075_25_imputed12marks_dense.bb", "id": "E075"}, {"filename": "E076_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E076_25_imputed12marks_dense.bb", "id": "E076"}, {"filename": "E077_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E077_25_imputed12marks_dense.bb", "id": "E077"}, {"filename": "E078_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E078_25_imputed12marks_dense.bb", "id": "E078"}, {"filename": "E079_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E079_25_imputed12marks_dense.bb", "id": "E079"}, {"filename": "E080_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E080_25_imputed12marks_dense.bb", "id": "E080"}, {"filename": "E081_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E081_25_imputed12marks_dense.bb", "id": "E081"}, {"filename": "E082_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E082_25_imputed12marks_dense.bb", "id": "E082"}, {"filename": "E083_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E083_25_imputed12marks_dense.bb", "id": "E083"}, {"filename": "E084_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E084_25_imputed12marks_dense.bb", "id": "E084"}, {"filename": "E085_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E085_25_imputed12marks_dense.bb", "id": "E085"}, {"filename": "E086_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E086_25_imputed12marks_dense.bb", "id": "E086"}, {"filename": "E087_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E087_25_imputed12marks_dense.bb", "id": "E087"}, {"filename": "E088_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E088_25_imputed12marks_dense.bb", "id": "E088"}, {"filename": "E089_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E089_25_imputed12marks_dense.bb", "id": "E089"}, {"filename": "E090_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E090_25_imputed12marks_dense.bb", "id": "E090"}, {"filename": "E091_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E091_25_imputed12marks_dense.bb", "id": "E091"}, {"filename": "E092_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E092_25_imputed12marks_dense.bb", "id": "E092"}, {"filename": "E093_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E093_25_imputed12marks_dense.bb", "id": "E093"}, {"filename": "E094_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E094_25_imputed12marks_dense.bb", "id": "E094"}, {"filename": "E095_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E095_25_imputed12marks_dense.bb", "id": "E095"}, {"filename": "E096_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E096_25_imputed12marks_dense.bb", "id": "E096"}, {"filename": "E097_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E097_25_imputed12marks_dense.bb", "id": "E097"}, {"filename": "E098_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E098_25_imputed12marks_dense.bb", "id": "E098"}, {"filename": "E099_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E099_25_imputed12marks_dense.bb", "id": "E099"}, {"filename": "E100_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E100_25_imputed12marks_dense.bb", "id": "E100"}, {"filename": "E101_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E101_25_imputed12marks_dense.bb", "id": "E101"}, {"filename": "E102_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E102_25_imputed12marks_dense.bb", "id": "E102"}, {"filename": "E103_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E103_25_imputed12marks_dense.bb", "id": "E103"}, {"filename": "E104_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E104_25_imputed12marks_dense.bb", "id": "E104"}, {"filename": "E105_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E105_25_imputed12marks_dense.bb", "id": "E105"}, {"filename": "E106_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E106_25_imputed12marks_dense.bb", "id": "E106"}, {"filename": "E107_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E107_25_imputed12marks_dense.bb", "id": "E107"}, {"filename": "E108_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E108_25_imputed12marks_dense.bb", "id": "E108"}, {"filename": "E109_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E109_25_imputed12marks_dense.bb", "id": "E109"}, {"filename": "E110_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E110_25_imputed12marks_dense.bb", "id": "E110"}, {"filename": "E111_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E111_25_imputed12marks_dense.bb", "id": "E111"}, {"filename": "E112_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E112_25_imputed12marks_dense.bb", "id": "E112"}, {"filename": "E113_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E113_25_imputed12marks_dense.bb", "id": "E113"}, {"filename": "E114_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E114_25_imputed12marks_dense.bb", "id": "E114"}, {"filename": "E115_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E115_25_imputed12marks_dense.bb", "id": "E115"}, {"filename": "E116_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E116_25_imputed12marks_dense.bb", "id": "E116"}, {"filename": "E117_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E117_25_imputed12marks_dense.bb", "id": "E117"}, {"filename": "E118_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E118_25_imputed12marks_dense.bb", "id": "E118"}, {"filename": "E119_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E119_25_imputed12marks_dense.bb", "id": "E119"}, {"filename": "E120_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E120_25_imputed12marks_dense.bb", "id": "E120"}, {"filename": "E121_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E121_25_imputed12marks_dense.bb", "id": "E121"}, {"filename": "E122_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E122_25_imputed12marks_dense.bb", "id": "E122"}, {"filename": "E123_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E123_25_imputed12marks_dense.bb", "id": "E123"}, {"filename": "E124_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E124_25_imputed12marks_dense.bb", "id": "E124"}, {"filename": "E125_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E125_25_imputed12marks_dense.bb", "id": "E125"}, {"filename": "E126_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E126_25_imputed12marks_dense.bb", "id": "E126"}, {"filename": "E127_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E127_25_imputed12marks_dense.bb", "id": "E127"}, {"filename": "E128_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E128_25_imputed12marks_dense.bb", "id": "E128"}, {"filename": "E129_25_imputed12marks_dense.bb", "description": "", "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E129_25_imputed12marks_dense.bb", "id": "E129"}]}}
+{
+  "dataset": {
+    "project_link": "http://egg2.wustl.edu/roadmap/web_portal/imputed.html",
+    "version": 1,
+    "metadata": [
+      
+    ],
+    "data_path": "/home/cedric/WASABI02/post_hit/data/roadmap_epigenomic/",
+    "project": "Roadmap epigenomics project",
+    "protocole": "http",
+    "files_type": "bb",
+    "description": "A 25 state chromatin model generated from 12 histone marks on 127 epigenomes. This is from imputed data which means that missing marks and values were guessed from other tissues and marks. A full description is available at http://egg2.wustl.edu/roadmap/web_portal/imputed.html",
+    "resources": [
+      {
+        "filename": "E001_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E001_25_imputed12marks_dense.bb.2",
+        "id": "E001"
+      },
+      {
+        "filename": "E002_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E002_25_imputed12marks_dense.bb",
+        "id": "E002"
+      },
+      {
+        "filename": "E003_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E003_25_imputed12marks_dense.bb",
+        "id": "E003"
+      },
+      {
+        "filename": "E004_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E004_25_imputed12marks_dense.bb",
+        "id": "E004"
+      },
+      {
+        "filename": "E005_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E005_25_imputed12marks_dense.bb",
+        "id": "E005"
+      },
+      {
+        "filename": "E006_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E006_25_imputed12marks_dense.bb",
+        "id": "E006"
+      },
+      {
+        "filename": "E007_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E007_25_imputed12marks_dense.bb",
+        "id": "E007"
+      },
+      {
+        "filename": "E008_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E008_25_imputed12marks_dense.bb",
+        "id": "E008"
+      },
+      {
+        "filename": "E009_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E009_25_imputed12marks_dense.bb",
+        "id": "E009"
+      },
+      {
+        "filename": "E010_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E010_25_imputed12marks_dense.bb",
+        "id": "E010"
+      },
+      {
+        "filename": "E011_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E011_25_imputed12marks_dense.bb",
+        "id": "E011"
+      },
+      {
+        "filename": "E012_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E012_25_imputed12marks_dense.bb",
+        "id": "E012"
+      },
+      {
+        "filename": "E013_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E013_25_imputed12marks_dense.bb",
+        "id": "E013"
+      },
+      {
+        "filename": "E014_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E014_25_imputed12marks_dense.bb",
+        "id": "E014"
+      },
+      {
+        "filename": "E015_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E015_25_imputed12marks_dense.bb",
+        "id": "E015"
+      },
+      {
+        "filename": "E016_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E016_25_imputed12marks_dense.bb",
+        "id": "E016"
+      },
+      {
+        "filename": "E017_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E017_25_imputed12marks_dense.bb",
+        "id": "E017"
+      },
+      {
+        "filename": "E018_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E018_25_imputed12marks_dense.bb",
+        "id": "E018"
+      },
+      {
+        "filename": "E019_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E019_25_imputed12marks_dense.bb",
+        "id": "E019"
+      },
+      {
+        "filename": "E020_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E020_25_imputed12marks_dense.bb",
+        "id": "E020"
+      },
+      {
+        "filename": "E021_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E021_25_imputed12marks_dense.bb",
+        "id": "E021"
+      },
+      {
+        "filename": "E022_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E022_25_imputed12marks_dense.bb",
+        "id": "E022"
+      },
+      {
+        "filename": "E023_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E023_25_imputed12marks_dense.bb",
+        "id": "E023"
+      },
+      {
+        "filename": "E024_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E024_25_imputed12marks_dense.bb",
+        "id": "E024"
+      },
+      {
+        "filename": "E025_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E025_25_imputed12marks_dense.bb",
+        "id": "E025"
+      },
+      {
+        "filename": "E026_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E026_25_imputed12marks_dense.bb",
+        "id": "E026"
+      },
+      {
+        "filename": "E027_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E027_25_imputed12marks_dense.bb",
+        "id": "E027"
+      },
+      {
+        "filename": "E028_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E028_25_imputed12marks_dense.bb",
+        "id": "E028"
+      },
+      {
+        "filename": "E029_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E029_25_imputed12marks_dense.bb",
+        "id": "E029"
+      },
+      {
+        "filename": "E030_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E030_25_imputed12marks_dense.bb",
+        "id": "E030"
+      },
+      {
+        "filename": "E031_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E031_25_imputed12marks_dense.bb",
+        "id": "E031"
+      },
+      {
+        "filename": "E032_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E032_25_imputed12marks_dense.bb",
+        "id": "E032"
+      },
+      {
+        "filename": "E033_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E033_25_imputed12marks_dense.bb",
+        "id": "E033"
+      },
+      {
+        "filename": "E034_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E034_25_imputed12marks_dense.bb",
+        "id": "E034"
+      },
+      {
+        "filename": "E035_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E035_25_imputed12marks_dense.bb",
+        "id": "E035"
+      },
+      {
+        "filename": "E036_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E036_25_imputed12marks_dense.bb",
+        "id": "E036"
+      },
+      {
+        "filename": "E037_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E037_25_imputed12marks_dense.bb",
+        "id": "E037"
+      },
+      {
+        "filename": "E038_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E038_25_imputed12marks_dense.bb",
+        "id": "E038"
+      },
+      {
+        "filename": "E039_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E039_25_imputed12marks_dense.bb",
+        "id": "E039"
+      },
+      {
+        "filename": "E040_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E040_25_imputed12marks_dense.bb",
+        "id": "E040"
+      },
+      {
+        "filename": "E041_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E041_25_imputed12marks_dense.bb",
+        "id": "E041"
+      },
+      {
+        "filename": "E042_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E042_25_imputed12marks_dense.bb",
+        "id": "E042"
+      },
+      {
+        "filename": "E043_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E043_25_imputed12marks_dense.bb",
+        "id": "E043"
+      },
+      {
+        "filename": "E044_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E044_25_imputed12marks_dense.bb",
+        "id": "E044"
+      },
+      {
+        "filename": "E045_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E045_25_imputed12marks_dense.bb",
+        "id": "E045"
+      },
+      {
+        "filename": "E046_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E046_25_imputed12marks_dense.bb",
+        "id": "E046"
+      },
+      {
+        "filename": "E047_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E047_25_imputed12marks_dense.bb",
+        "id": "E047"
+      },
+      {
+        "filename": "E048_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E048_25_imputed12marks_dense.bb",
+        "id": "E048"
+      },
+      {
+        "filename": "E049_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E049_25_imputed12marks_dense.bb",
+        "id": "E049"
+      },
+      {
+        "filename": "E050_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E050_25_imputed12marks_dense.bb",
+        "id": "E050"
+      },
+      {
+        "filename": "E051_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E051_25_imputed12marks_dense.bb",
+        "id": "E051"
+      },
+      {
+        "filename": "E052_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E052_25_imputed12marks_dense.bb",
+        "id": "E052"
+      },
+      {
+        "filename": "E053_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E053_25_imputed12marks_dense.bb",
+        "id": "E053"
+      },
+      {
+        "filename": "E054_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E054_25_imputed12marks_dense.bb",
+        "id": "E054"
+      },
+      {
+        "filename": "E055_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E055_25_imputed12marks_dense.bb",
+        "id": "E055"
+      },
+      {
+        "filename": "E056_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E056_25_imputed12marks_dense.bb",
+        "id": "E056"
+      },
+      {
+        "filename": "E057_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E057_25_imputed12marks_dense.bb",
+        "id": "E057"
+      },
+      {
+        "filename": "E058_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E058_25_imputed12marks_dense.bb",
+        "id": "E058"
+      },
+      {
+        "filename": "E059_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E059_25_imputed12marks_dense.bb",
+        "id": "E059"
+      },
+      {
+        "filename": "E060_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E060_25_imputed12marks_dense.bb",
+        "id": "E060"
+      },
+      {
+        "filename": "E061_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E061_25_imputed12marks_dense.bb",
+        "id": "E061"
+      },
+      {
+        "filename": "E062_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E062_25_imputed12marks_dense.bb",
+        "id": "E062"
+      },
+      {
+        "filename": "E063_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E063_25_imputed12marks_dense.bb",
+        "id": "E063"
+      },
+      {
+        "filename": "E064_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E064_25_imputed12marks_dense.bb",
+        "id": "E064"
+      },
+      {
+        "filename": "E065_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E065_25_imputed12marks_dense.bb",
+        "id": "E065"
+      },
+      {
+        "filename": "E066_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E066_25_imputed12marks_dense.bb",
+        "id": "E066"
+      },
+      {
+        "filename": "E067_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E067_25_imputed12marks_dense.bb",
+        "id": "E067"
+      },
+      {
+        "filename": "E068_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E068_25_imputed12marks_dense.bb",
+        "id": "E068"
+      },
+      {
+        "filename": "E069_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E069_25_imputed12marks_dense.bb",
+        "id": "E069"
+      },
+      {
+        "filename": "E070_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E070_25_imputed12marks_dense.bb",
+        "id": "E070"
+      },
+      {
+        "filename": "E071_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E071_25_imputed12marks_dense.bb",
+        "id": "E071"
+      },
+      {
+        "filename": "E072_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E072_25_imputed12marks_dense.bb",
+        "id": "E072"
+      },
+      {
+        "filename": "E073_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E073_25_imputed12marks_dense.bb",
+        "id": "E073"
+      },
+      {
+        "filename": "E074_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E074_25_imputed12marks_dense.bb",
+        "id": "E074"
+      },
+      {
+        "filename": "E075_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E075_25_imputed12marks_dense.bb",
+        "id": "E075"
+      },
+      {
+        "filename": "E076_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E076_25_imputed12marks_dense.bb",
+        "id": "E076"
+      },
+      {
+        "filename": "E077_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E077_25_imputed12marks_dense.bb",
+        "id": "E077"
+      },
+      {
+        "filename": "E078_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E078_25_imputed12marks_dense.bb",
+        "id": "E078"
+      },
+      {
+        "filename": "E079_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E079_25_imputed12marks_dense.bb",
+        "id": "E079"
+      },
+      {
+        "filename": "E080_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E080_25_imputed12marks_dense.bb",
+        "id": "E080"
+      },
+      {
+        "filename": "E081_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E081_25_imputed12marks_dense.bb",
+        "id": "E081"
+      },
+      {
+        "filename": "E082_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E082_25_imputed12marks_dense.bb",
+        "id": "E082"
+      },
+      {
+        "filename": "E083_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E083_25_imputed12marks_dense.bb",
+        "id": "E083"
+      },
+      {
+        "filename": "E084_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E084_25_imputed12marks_dense.bb",
+        "id": "E084"
+      },
+      {
+        "filename": "E085_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E085_25_imputed12marks_dense.bb",
+        "id": "E085"
+      },
+      {
+        "filename": "E086_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E086_25_imputed12marks_dense.bb",
+        "id": "E086"
+      },
+      {
+        "filename": "E087_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E087_25_imputed12marks_dense.bb",
+        "id": "E087"
+      },
+      {
+        "filename": "E088_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E088_25_imputed12marks_dense.bb",
+        "id": "E088"
+      },
+      {
+        "filename": "E089_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E089_25_imputed12marks_dense.bb",
+        "id": "E089"
+      },
+      {
+        "filename": "E090_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E090_25_imputed12marks_dense.bb",
+        "id": "E090"
+      },
+      {
+        "filename": "E091_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E091_25_imputed12marks_dense.bb",
+        "id": "E091"
+      },
+      {
+        "filename": "E092_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E092_25_imputed12marks_dense.bb",
+        "id": "E092"
+      },
+      {
+        "filename": "E093_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E093_25_imputed12marks_dense.bb",
+        "id": "E093"
+      },
+      {
+        "filename": "E094_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E094_25_imputed12marks_dense.bb",
+        "id": "E094"
+      },
+      {
+        "filename": "E095_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E095_25_imputed12marks_dense.bb",
+        "id": "E095"
+      },
+      {
+        "filename": "E096_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E096_25_imputed12marks_dense.bb",
+        "id": "E096"
+      },
+      {
+        "filename": "E097_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E097_25_imputed12marks_dense.bb",
+        "id": "E097"
+      },
+      {
+        "filename": "E098_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E098_25_imputed12marks_dense.bb",
+        "id": "E098"
+      },
+      {
+        "filename": "E099_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E099_25_imputed12marks_dense.bb",
+        "id": "E099"
+      },
+      {
+        "filename": "E100_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E100_25_imputed12marks_dense.bb",
+        "id": "E100"
+      },
+      {
+        "filename": "E101_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E101_25_imputed12marks_dense.bb",
+        "id": "E101"
+      },
+      {
+        "filename": "E102_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E102_25_imputed12marks_dense.bb",
+        "id": "E102"
+      },
+      {
+        "filename": "E103_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E103_25_imputed12marks_dense.bb",
+        "id": "E103"
+      },
+      {
+        "filename": "E104_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E104_25_imputed12marks_dense.bb",
+        "id": "E104"
+      },
+      {
+        "filename": "E105_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E105_25_imputed12marks_dense.bb",
+        "id": "E105"
+      },
+      {
+        "filename": "E106_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E106_25_imputed12marks_dense.bb",
+        "id": "E106"
+      },
+      {
+        "filename": "E107_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E107_25_imputed12marks_dense.bb",
+        "id": "E107"
+      },
+      {
+        "filename": "E108_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E108_25_imputed12marks_dense.bb",
+        "id": "E108"
+      },
+      {
+        "filename": "E109_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E109_25_imputed12marks_dense.bb",
+        "id": "E109"
+      },
+      {
+        "filename": "E110_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E110_25_imputed12marks_dense.bb",
+        "id": "E110"
+      },
+      {
+        "filename": "E111_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E111_25_imputed12marks_dense.bb",
+        "id": "E111"
+      },
+      {
+        "filename": "E112_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E112_25_imputed12marks_dense.bb",
+        "id": "E112"
+      },
+      {
+        "filename": "E113_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E113_25_imputed12marks_dense.bb",
+        "id": "E113"
+      },
+      {
+        "filename": "E114_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E114_25_imputed12marks_dense.bb",
+        "id": "E114"
+      },
+      {
+        "filename": "E115_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E115_25_imputed12marks_dense.bb",
+        "id": "E115"
+      },
+      {
+        "filename": "E116_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E116_25_imputed12marks_dense.bb",
+        "id": "E116"
+      },
+      {
+        "filename": "E117_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E117_25_imputed12marks_dense.bb",
+        "id": "E117"
+      },
+      {
+        "filename": "E118_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E118_25_imputed12marks_dense.bb",
+        "id": "E118"
+      },
+      {
+        "filename": "E119_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E119_25_imputed12marks_dense.bb",
+        "id": "E119"
+      },
+      {
+        "filename": "E120_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E120_25_imputed12marks_dense.bb",
+        "id": "E120"
+      },
+      {
+        "filename": "E121_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E121_25_imputed12marks_dense.bb",
+        "id": "E121"
+      },
+      {
+        "filename": "E122_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E122_25_imputed12marks_dense.bb",
+        "id": "E122"
+      },
+      {
+        "filename": "E123_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E123_25_imputed12marks_dense.bb",
+        "id": "E123"
+      },
+      {
+        "filename": "E124_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E124_25_imputed12marks_dense.bb",
+        "id": "E124"
+      },
+      {
+        "filename": "E125_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E125_25_imputed12marks_dense.bb",
+        "id": "E125"
+      },
+      {
+        "filename": "E126_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E126_25_imputed12marks_dense.bb",
+        "id": "E126"
+      },
+      {
+        "filename": "E127_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E127_25_imputed12marks_dense.bb",
+        "id": "E127"
+      },
+      {
+        "filename": "E128_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E128_25_imputed12marks_dense.bb",
+        "id": "E128"
+      },
+      {
+        "filename": "E129_25_imputed12marks_dense.bb",
+        "description": "",
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E129_25_imputed12marks_dense.bb",
+        "id": "E129"
+      }
+    ]
+  }
+}
