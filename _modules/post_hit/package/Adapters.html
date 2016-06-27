@@ -1,0 +1,599 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>post_hit.package.Adapters &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dataset.html">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>post_hit.package.Adapters</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for post_hit.package.Adapters</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">tools</span>
+<span class="kn">from</span> <span class="nn">gepyto.formats.wig</span> <span class="kn">import</span> <span class="n">WiggleFile</span>
+<span class="kn">from</span> <span class="nn">gepyto.db</span> <span class="kn">import</span> <span class="n">ensembl</span> 
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">gepyto.db</span> <span class="kn">import</span> <span class="n">index</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1">#POST_HIT_PATH = &quot;/shares/home/users/rouxcedr/post_hit/post_hit/&quot;</span>
+<span class="n">POST_HIT_PATH</span> <span class="o">=</span> <span class="s2">&quot;/home/cedric/WASABI02/post_hit/post_hit/&quot;</span>
+
+<div class="viewcode-block" id="Adapter"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.Adapter">[docs]</a><span class="k">class</span> <span class="nc">Adapter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an adapter to the file type to be able to extract the data from the files.</span>
+
+<span class="sd">        :param dataset_path: The path to the local JSON dataset file.</span>
+<span class="sd">        :type dataset_path: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="n">dataset_path</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">Adapter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Adapter.get_region"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.Adapter.get_region">[docs]</a>    <span class="k">def</span>  <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the data for a given region.</span>
+
+<span class="sd">            :param region: The region where the data is to be extracted.</span>
+<span class="sd">            :type region: gepyto.structures.region.Region</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Adapter.get_values"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.Adapter.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Extracts and formats the data depending how the different adapters extract the region from the file.</span>
+
+<span class="sd">            There is 2 formats in wich the data is extracted : </span>
+
+<span class="sd">                - &quot;key-list&quot; : {key1 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ),</span>
+<span class="sd">                                key2 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ), ...}</span>
+
+<span class="sd">                - &quot;vector&quot; : {key1 : (position, position, position, position, position),</span>
+<span class="sd">                              key2 : (position, position, position, position, position)}</span>
+
+<span class="sd">            :return result: The formated data as described.</span>
+<span class="sd">            :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div></div>
+     
+
+<div class="viewcode-block" id="BigBedAdapter"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.BigBedAdapter">[docs]</a><span class="k">class</span> <span class="nc">BigBedAdapter</span><span class="p">(</span><span class="n">Adapter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adapter for BigBed (.bb) files&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">BigBedAdapter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="n">chrom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">chrom</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;chr&quot;</span><span class="p">):</span>
+            <span class="n">chrom</span> <span class="o">=</span> <span class="s2">&quot;chr{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chrom</span><span class="p">)</span>
+
+        <span class="n">big_bed_to_bed</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">BigBedToBed</span><span class="p">()</span>
+        
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">data_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">]])</span>
+
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span>
+            <span class="n">bed</span> <span class="o">=</span> <span class="n">big_bed_to_bed</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">data_path</span><span class="p">,</span>
+                <span class="n">filename</span>
+                <span class="p">),</span><span class="n">chrom</span><span class="o">=</span><span class="n">chrom</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span>
+            <span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;resource&quot;</span><span class="p">:</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">bed</span><span class="p">,</span> <span class="n">resource</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">bed</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">data</span>
+
+<div class="viewcode-block" id="BigBedAdapter.get_values"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.BigBedAdapter.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bed</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            :param bed: Open file with pointer on the starting position of the region.</span>
+<span class="sd">            :type: post_hit.package.tools.ResultsIterator</span>
+
+<span class="sd">            :param key: key or column where the key can be find.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;chrom&quot;</span><span class="p">,</span> <span class="s2">&quot;chromStart&quot;</span><span class="p">,</span> <span class="s2">&quot;chromEnd&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="s2">&quot;strand&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;thickStart&quot;</span><span class="p">,</span> <span class="s2">&quot;thickEnd&quot;</span><span class="p">,</span> <span class="s2">&quot;itemRgb&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">bed</span><span class="p">:</span>
+
+            <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+            <span class="n">value</span> <span class="o">=</span> <span class="p">{</span><span class="n">field</span><span class="p">:</span><span class="n">line</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]}</span>   
+            <span class="n">key</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="n">key</span>
+
+            <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="s2">&quot;chromStart&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                                         <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="s2">&quot;chromEnd&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+<div class="viewcode-block" id="BigWigAdapter"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.BigWigAdapter">[docs]</a><span class="k">class</span> <span class="nc">BigWigAdapter</span><span class="p">(</span><span class="n">Adapter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adapter for BigWig (.bw) files&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span> <span class="n">BigWigAdapter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">region</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">data_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">]])</span>
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]</span>
+            <span class="n">big_wig_to_wig</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">BigWigToWig</span><span class="p">()</span>
+            <span class="n">wig</span> <span class="o">=</span> <span class="n">big_wig_to_wig</span><span class="o">.</span><span class="n">call</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">data_path</span><span class="p">,</span>
+                <span class="n">filename</span>
+                <span class="p">),</span> 
+                <span class="n">chrom</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;chr&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span><span class="p">),</span>
+                <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> 
+                <span class="n">end</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span>
+            <span class="p">)</span>
+            <span class="k">with</span> <span class="n">WiggleFile</span><span class="p">(</span><span class="n">wig</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">as_dataframe</span><span class="p">()</span>
+
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">data</span>
+
+<div class="viewcode-block" id="BigWigAdapter.get_values"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.BigWigAdapter.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            :param df: Dataframe containing the region&#39;s data.</span>
+<span class="sd">            :type: pandas.core.frame.DataFrame</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;representation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;key-list&quot;</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+                <span class="n">value</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+                <span class="n">key_loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">key_loc</span><span class="p">]</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">{</span><span class="n">field</span> <span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]}</span>
+
+                <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]]))</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;representation&quot;</span><span class="p">]</span>  <span class="o">==</span> <span class="s2">&quot;vector&quot;</span><span class="p">:</span>
+    
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;chr{}:{}-{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+                <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="k">else</span> <span class="p">:</span> 
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t have more than one value field for a vector representation&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data representation not recognised&quot;</span><span class="p">)</span> 
+
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+        
+
+
+
+<div class="viewcode-block" id="GTFAdapter"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.GTFAdapter">[docs]</a><span class="k">class</span> <span class="nc">GTFAdapter</span><span class="p">(</span><span class="n">Adapter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adapter for GTF compressed (.gtf.gz) files&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">GTFAdapter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">gtf_col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;seqname&#39;</span><span class="p">,</span> <span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;feature&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">,</span> <span class="s1">&#39;strand&#39;</span><span class="p">,</span> <span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="s1">&#39;attribute&#39;</span><span class="p">]</span>
+
+        <span class="n">dtypes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;seqname&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;source&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;feature&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> 
+                <span class="s1">&#39;end&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;strand&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;frame&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span><span class="s1">&#39;attribute&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">],</span>
+                        <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]]),</span>  <span class="n">index_col</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">b</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+                        <span class="n">names</span><span class="o">=</span><span class="n">gtf_col_names</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">b</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;gzip&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="p">)</span>
+
+            <span class="n">start_inside</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">start</span> <span class="o">&gt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+            <span class="n">end_inside</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">end</span> <span class="o">&gt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">end</span> <span class="o">&lt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+            <span class="n">gene_inside</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">end</span> <span class="o">&gt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;=</span> <span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+            <span class="n">good_chrom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">seqname</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span>
+
+            
+            <span class="n">result_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">good_chrom</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">start_inside</span> <span class="o">|</span> <span class="n">end_inside</span> <span class="o">|</span> <span class="n">gene_inside</span><span class="p">)]</span>
+
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">result_df</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+<div class="viewcode-block" id="GTFAdapter.get_values"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.GTFAdapter.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+
+        
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            :param df: Dataframe containing the region&#39;s data.</span>
+<span class="sd">            :type: pandas.core.frame.DataFrame</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;representation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;key-list&quot;</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+                    <span class="n">key_loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span>
+
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_loc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+                        <span class="n">key</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">key_loc</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+
+                        <span class="n">key</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">key_loc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.?</span><span class="se">\&quot;</span><span class="s2">(.+?)</span><span class="se">\&quot;</span><span class="s2">;&quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="n">key_loc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">value</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">value</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">(.+?)</span><span class="se">\&quot;</span><span class="s2">;&quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;end&quot;</span><span class="p">]</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;end&quot;</span>
+
+                    <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="n">start</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="n">end</span><span class="p">]]))</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;representation&quot;</span><span class="p">]</span>  <span class="o">==</span> <span class="s2">&quot;vector&quot;</span><span class="p">:</span>
+    
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;chr{}:{}-{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+                <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="k">else</span> <span class="p">:</span> 
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t have more than one value field for a vector representation&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Data representation not recognised&quot;</span><span class="p">)</span> 
+
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+<div class="viewcode-block" id="XsvAdapter"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.XsvAdapter">[docs]</a><span class="k">class</span> <span class="nc">XsvAdapter</span><span class="p">(</span><span class="n">Adapter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adapter for X Separated Values files where X is a seperator.</span>
+<span class="sd">        example : Coma Separated Values files (.csv) or Tab Separated Values files (.tsv)</span>
+<span class="sd">        </span>
+<span class="sd">        :param sep: The separator of the values in the file.</span>
+<span class="sd">        :type: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">sep</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">XsvAdapter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index_files</span><span class="p">()</span>
+
+       
+
+    <span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="n">data_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+
+            <span class="n">index_var</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]]))</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]]))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">cols</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+                <span class="n">index</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">index_var</span><span class="p">,</span> <span class="n">region</span><span class="o">.</span><span class="n">chrom</span><span class="p">,</span> <span class="n">region</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;resource&quot;</span><span class="p">:</span>      
+                    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">resource</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]])</span>
+                    <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">:</span>
+                        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                <span class="k">else</span> <span class="p">:</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">:</span>
+                        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+<div class="viewcode-block" id="XsvAdapter.get_values"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.XsvAdapter.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            :param f: Open file with pointer on the starting position of the region.</span>
+<span class="sd">            :type: io.TextIOWrapper</span>
+
+<span class="sd">            :param key: key or column where the key can be find.</span>
+<span class="sd">            :type: str</span>
+
+<span class="sd">            :param cols: List of the columns name (Header)</span>
+<span class="sd">            :type: list</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">chrom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;chrom&quot;</span><span class="p">]</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;start&quot;</span><span class="p">]</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;end&quot;</span><span class="p">]</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">chrom</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">chrom</span><span class="p">)</span> <span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">start</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">end</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+                <span class="k">break</span>
+                  
+            <span class="n">value</span> <span class="o">=</span> <span class="p">{</span><span class="n">field</span><span class="p">:</span><span class="n">line</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;fields&quot;</span><span class="p">]}</span>   
+            <span class="n">key</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="n">key</span>
+
+            <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">start</span><span class="p">]),</span>
+                                         <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">end</span><span class="p">])]))</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+<div class="viewcode-block" id="XsvAdapter.index_files"><a class="viewcode-back" href="../../../adapters.html#post_hit.package.Adapters.XsvAdapter.index_files">[docs]</a>    <span class="k">def</span> <span class="nf">index_files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Indexes the files for faster data queries.</span>
+
+<span class="sd">            Uses gepyto.db.index module to index the files and subprocess package to sort the files to be indexed. </span>
+
+<span class="sd">            (ONLY COMPATIBLE WITH UNIX BASED SYSTEMS)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">],</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]])</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">index_file</span> <span class="o">=</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;index_file&quot;</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>                     
+
+                <span class="n">chrom_col</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> \
+                            <span class="o">.</span><span class="n">readline</span><span class="p">()</span> \
+                            <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> \
+                            <span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;chrom&quot;</span><span class="p">])</span>
+                <span class="n">pos_col</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> \
+                                <span class="o">.</span><span class="n">readline</span><span class="p">()</span> \
+                                <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span> \
+                                <span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_representation&quot;</span><span class="p">][</span><span class="s2">&quot;start&quot;</span><span class="p">])</span> 
+
+                <span class="n">header</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="s2">&quot;tmp/temp.txt&quot;</span><span class="p">]),</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+                <span class="n">removing_header_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tail&quot;</span><span class="p">,</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;+2&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">]</span>
+                <span class="n">sorting_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sort&quot;</span><span class="p">,</span> <span class="s2">&quot;-t</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;-k&quot;</span><span class="p">,</span> <span class="s2">&quot;{},{}n&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chrom_col</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">chrom_col</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;-k&quot;</span><span class="p">,</span> <span class="s2">&quot;{},{}n&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_col</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">pos_col</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+            
+                <span class="n">rm_header</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">removing_header_args</span><span class="p">,</span> <span class="n">stdout</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">sorting_args</span><span class="p">,</span> <span class="n">stdin</span> <span class="o">=</span> <span class="n">rm_header</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">stdout</span> <span class="o">=</span> <span class="n">output</span> <span class="p">)</span>
+                
+                <span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;mv&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="s2">&quot;tmp/temp.txt&quot;</span><span class="p">]),</span> <span class="n">path</span><span class="p">])</span>
+                <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;index_file&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">build_index</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> 
+                                                        <span class="n">chrom_col</span><span class="p">,</span> <span class="n">pos_col</span><span class="p">,</span> 
+                                                        <span class="n">delimiter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> 
+                                                        <span class="n">skip_lines</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> 
+                                                        <span class="n">ignore_startswith</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span><span class="p">)</span>
+
+                <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+                   <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span> <span class="n">json_file</span><span class="p">)</span></div></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

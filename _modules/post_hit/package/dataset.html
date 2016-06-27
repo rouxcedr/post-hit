@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>post_hit.package.dataset &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dataset.html">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>post_hit.package.dataset</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for post_hit.package.dataset</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Adapters</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">from</span> <span class="nn">gepyto.db</span> <span class="kn">import</span> <span class="n">index</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">POST_HIT_PATH</span> <span class="o">=</span> <span class="s2">&quot;/shares/home/users/rouxcedr/post_hit/post_hit/&quot;</span>
+<span class="n">POST_HIT_PATH</span> <span class="o">=</span> <span class="s2">&quot;/home/cedric/WASABI02/post_hit/post_hit/&quot;</span>
+
+<div class="viewcode-block" id="DataSet"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet">[docs]</a><span class="k">class</span> <span class="nc">DataSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;Manages the JSON datasets provided by the user.</span>
+<span class="sd">    </span>
+<span class="sd">        :param dataset_path: The path to the dataset, can be the filename </span>
+<span class="sd">                             if the dataset is already locally stored.</span>
+<span class="sd">        :type dataset_path: str</span>
+
+<span class="sd">        OPTIONAL PARAMETERS (All the information needed to create a JSON Dataset file)</span>
+
+<span class="sd">        :param project: The project&#39;s name.</span>
+<span class="sd">        :type project: str</span>
+
+<span class="sd">        :param description: The project&#39;s description.</span>
+<span class="sd">        :type description: str</span>
+
+<span class="sd">        :param version: The version of the dataset.</span>
+<span class="sd">        :type version: int</span>
+
+<span class="sd">        :param data_path: The path to the data files.</span>
+<span class="sd">        :type data_path: str</span>
+
+<span class="sd">        :param protocole: The protocole to download the files (http or ftp)</span>
+<span class="sd">        :type protocole: str</span>
+
+<span class="sd">        :param file_type: The type of the data files</span>
+<span class="sd">        :type file_type: str</span>
+
+<span class="sd">        :param metadata: A dictionnary in wich the metadas are described (JSON/JSON-LD).</span>
+<span class="sd">        :type metadata: dict</span>
+
+<span class="sd">        :param ids: The list of the IDS for each files. (The filename without the extension for example)</span>
+<span class="sd">                    (Must be in the same order than the download links and filenames)</span>
+<span class="sd">        :type ids: tuple</span>
+
+<span class="sd">        :param download_links: List of the download links for the files </span>
+<span class="sd">                                (Must be in the same order than the ids and filenames)</span>
+<span class="sd">        :type download_links: tuple</span>
+
+<span class="sd">        :param filenames: List of the filenames.</span>
+<span class="sd">                          (Must be in the same order than the ids and download links)</span>
+<span class="sd">        :type filenames: tuple</span>
+
+<span class="sd">        :param data_representation: A dictionnary in wich the data representation wanted is described (JSON/JSON-LD).</span>
+<span class="sd">        :type data_representation: dict</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="n">_OPTIONAL_PARAMETERS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;project&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;project_link&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="s2">&quot;data_path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;protocole&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;file_type&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span>
+        <span class="s2">&quot;ids&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span>
+        <span class="s2">&quot;download_links&quot;</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span>
+        <span class="s2">&quot;filenames&quot;</span><span class="p">:</span><span class="nb">tuple</span><span class="p">,</span>
+        <span class="s2">&quot;data_representation&quot;</span><span class="p">:</span><span class="nb">dict</span>
+        <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="n">dataset_path</span>
+
+        <span class="c1"># Store the passed parameters.</span>
+        <span class="n">argument_passed</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">arg</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unknown parameter {}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">[</span><span class="n">arg</span><span class="p">](</span><span class="n">val</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid type for argument {}. Expected &quot;</span>
+                    <span class="s2">&quot;a {}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">[</span><span class="n">arg</span><span class="p">]))</span>
+            <span class="n">argument_passed</span> <span class="o">=</span> <span class="bp">True</span>
+
+        <span class="k">if</span> <span class="n">argument_passed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">DataSet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="DataSet.get_json_skeletton"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet.get_json_skeletton">[docs]</a>    <span class="k">def</span> <span class="nf">get_json_skeletton</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Create a skelleton for the JSON dataset description file</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">skeletton_dataset</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span>
+                                    <span class="n">project</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">description</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">project_link</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">version</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                                    <span class="n">data_path</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">filename_template</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">protocole</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">file_type</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                    <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                                    <span class="n">download_links</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;download link&quot;</span><span class="p">],</span>
+                                    <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">],</span>
+                                    <span class="n">metadata</span><span class="o">=</span> <span class="p">[])</span>
+
+
+        <span class="n">skeletton_dataset</span><span class="o">.</span><span class="n">create</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="DataSet.create"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Creates a JSON dataset file with the information available. The class optionnal parameters needs to be passed as arguments when creating the dataset class.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filenames</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_links</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Must have the same amount off file names than download links&quot;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="n">resources</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1">#Creating the resource dict</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filenames</span><span class="p">)):</span>
+            <span class="n">resources</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;filename&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">filenames</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                    <span class="s2">&quot;download_link&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">download_links</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                  <span class="p">}</span>
+                <span class="p">)</span>
+
+
+        <span class="c1">#The JSON</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="s2">&quot;dataset&quot;</span><span class="p">:{</span>
+                <span class="s2">&quot;project&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="p">,</span>
+                <span class="s2">&quot;version&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+                <span class="s2">&quot;project_link&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">project_link</span><span class="p">,</span>
+                <span class="s2">&quot;data_path&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span>
+                <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+                <span class="s2">&quot;files_type&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">file_type</span><span class="p">,</span>
+                <span class="s2">&quot;protocole&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">protocole</span><span class="p">,</span>
+                <span class="s2">&quot;resources&quot;</span><span class="p">:</span><span class="n">resources</span><span class="p">,</span>
+                <span class="s2">&quot;data_representation&quot;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">data_representation</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="n">json_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="DataSet.load"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Loads the dataset : </span>
+
+<span class="sd">                - If the JSON file does not not exist locally it creates a local copy of the JSON file. And then sets the dataset_path to the local copy of the JSON dataset.</span>
+<span class="sd">                </span>
+<span class="sd">                - Sets the dataset_path to the absolute path if only the name of an already existing JSON file is passed as the argument</span>
+
+<span class="sd">                - And finaly calls the proper adapter depending on the file type described in the JSON file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">):</span>
+
+            <span class="n">dataset_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">user_json</span><span class="p">:</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">user_json</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="n">dataset_name</span><span class="p">])</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+                <span class="n">json_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
+
+        <span class="c1">#If only the JSON filename is given we check if this filename exist in our database</span>
+
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="s2">&quot;data/datasets/&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">])):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="s2">&quot;data/datasets/&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The dataset path or name given is not valid&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Call the proper adapter</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">dataset_file</span><span class="p">:</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">],</span>
+                                                    <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]])):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;files_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bb&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">Adapters</span><span class="o">.</span><span class="n">BigBedAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;files_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;bw&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">Adapters</span><span class="o">.</span><span class="n">BigWigAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;files_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;gtf&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">Adapters</span><span class="o">.</span><span class="n">GTFAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;files_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">Adapters</span><span class="o">.</span><span class="n">XsvAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;files_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;tsv&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">Adapters</span><span class="o">.</span><span class="n">XsvAdapter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+        
+
+
+<div class="viewcode-block" id="DataSet.download"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet.download">[docs]</a>    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="sd">        Download the files from the dataset and, if needed, extract them from a .tar compressed archive.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">dataset_file</span><span class="p">:</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">)</span>
+
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">POST_HIT_PATH</span><span class="p">,</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;data_path&quot;</span><span class="p">]])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+            <span class="n">protocole</span> <span class="o">=</span>  <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;protocole&quot;</span><span class="p">]</span>
+
+            <span class="n">download_links</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;resources&quot;</span><span class="p">]:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">path</span><span class="p">,</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]])</span>
+
+                <span class="c1">#Check if the the download link has not been used before (One download link for all)</span>
+                <span class="k">if</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;download_link&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">download_links</span><span class="p">:</span>
+                    
+                    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;DOWNLOADING : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))</span>
+                    <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;download_link&quot;</span><span class="p">])</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">donwload_file</span><span class="p">:</span>
+                        <span class="n">donwload_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+                    <span class="n">download_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;download_link&quot;</span><span class="p">])</span>
+
+                            
+                    <span class="c1">#Extract all files from the tar archives if necessary</span>
+                    <span class="k">if</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">is_tarfile</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+                        <span class="n">tf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                        <span class="n">tf</span><span class="o">.</span><span class="n">exractall</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="DataSet.get_region"><a class="viewcode-back" href="../../../dataset.html#post_hit.package.dataset.DataSet.get_region">[docs]</a>    <span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Calls the get_region function of the adapter.</span>
+
+<span class="sd">            :param region: The region where the data is to be extracted.</span>
+<span class="sd">            :type region: gepyto.structures.region.Region</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapter</span><span class="o">.</span><span class="n">get_region</span><span class="p">(</span><span class="n">region</span><span class="p">)</span></div></div>
+
+       
+
+
+
+
+        <span class="c1">#file_compression = &quot;&quot;</span>
+                    <span class="c1"># magic_dict = {</span>
+                    <span class="c1"># b&quot;\x1f\x8b\x08&quot;: &quot;gz&quot;,</span>
+                    <span class="c1"># b&quot;\x42\x5a\x68&quot;: &quot;bz2&quot;,</span>
+                    <span class="c1"># b&quot;\x50\x4b\x03\x04&quot;: &quot;zip&quot;</span>
+                    <span class="c1"># }</span>
+                    <span class="c1"># </span>
+
+                    <span class="c1"># max_len = max(len(x) for x in magic_dict)</span>
+                    <span class="c1"># with open(file_path, &quot;rb&quot;) as f:</span>
+                    <span class="c1">#     file_start = f.read(max_len)</span>
+                    <span class="c1"># for magic, filetype in magic_dict.items():</span>
+                    <span class="c1">#     if file_start.startswith(magic):</span>
+                    <span class="c1">#         file_compression = filetype</span>
+                    <span class="c1"># split_ext = file_path.split(&quot;.&quot;)</span>
+                    <span class="c1"># extension = split_ext[len(split_ext) -1]</span>
+                    <span class="c1"># if(file_compression == &quot;zip&quot;):</span>
+                    <span class="c1">#     if extension != &quot;zip&quot;:</span>
+                    <span class="c1">#         subprocess.call(&quot;mv {} {}.zip&quot;.format(file_path, file_path).split())</span>
+                    <span class="c1">#     subprocess.call(&quot;unzip {} -d .&quot;.format(file_path).split())</span>
+                    <span class="c1"># if(file_compression == &quot;bz2&quot;):</span>
+                    <span class="c1">#     if extension != &quot;bz2&quot;:</span>
+                    <span class="c1">#         subprocess.call(&quot;mv {} {}.bz2&quot;.format(file_path,file_path).split())</span>
+                    <span class="c1">#     subprocess.call(&quot;bzip2 -df {}&quot;.format(file_path).split())</span>
+                    <span class="c1"># if(file_compression == &quot;gz&quot;):</span>
+                    <span class="c1">#     if extension != &quot;gz&quot;:</span>
+                    <span class="c1">#         subprocess.call(&quot;mv {} {}.gz&quot;.format(file_path,file_path).split())</span>
+                    <span class="c1">#     subprocess.call(&quot;gzip -df {}&quot;.format(file_path).split())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

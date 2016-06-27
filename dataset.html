@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dataset object (DataSet) &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dataset.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dataset-object-dataset">
+<h1>Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)<a class="headerlink" href="#dataset-object-dataset" title="Permalink to this headline">¶</a></h1>
+<p>The Dataset object provides an easy way to create and load datasets into Post-Hit.</p>
+<span class="target" id="module-post_hit.package.dataset"></span><dl class="class">
+<dt id="post_hit.package.dataset.DataSet">
+<em class="property">class </em><code class="descclassname">post_hit.package.dataset.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>dataset_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manages the JSON datasets provided by the user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataset_path</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The path to the dataset, can be the filename 
+if the dataset is already locally stored.</td>
+</tr>
+</tbody>
+</table>
+<p>OPTIONAL PARAMETERS (All the information needed to create a JSON Dataset file)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>project</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The project&#8217;s name.</li>
+<li><strong>description</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The project&#8217;s description.</li>
+<li><strong>version</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The version of the dataset.</li>
+<li><strong>data_path</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The path to the data files.</li>
+<li><strong>protocole</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The protocole to download the files (http or ftp)</li>
+<li><strong>file_type</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The type of the data files</li>
+<li><strong>metadata</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A dictionnary in wich the metadas are described (JSON/JSON-LD).</li>
+<li><strong>ids</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#tuple" title="(in Python v2.7)"><em>tuple</em></a>) &#8211; The list of the IDS for each files. (The filename without the extension for example)
+(Must be in the same order than the download links and filenames)</li>
+<li><strong>download_links</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#tuple" title="(in Python v2.7)"><em>tuple</em></a>) &#8211; List of the download links for the files 
+(Must be in the same order than the ids and filenames)</li>
+<li><strong>filenames</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#tuple" title="(in Python v2.7)"><em>tuple</em></a>) &#8211; List of the filenames.
+(Must be in the same order than the ids and download links)</li>
+<li><strong>data_representation</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A dictionnary in wich the data representation wanted is described (JSON/JSON-LD).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="post_hit.package.dataset.DataSet.create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a JSON dataset file with the information available. The class optionnal parameters needs to be passed as arguments when creating the dataset class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.dataset.DataSet.download">
+<code class="descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the files from the dataset and, if needed, extract them from a .tar compressed archive.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.dataset.DataSet.get_json_skeletton">
+<code class="descname">get_json_skeletton</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.get_json_skeletton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.get_json_skeletton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a skelleton for the JSON dataset description file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.dataset.DataSet.get_region">
+<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.get_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the get_region function of the adapter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>gepyto.structures.region.Region</em>) &#8211; The region where the data is to be extracted.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.dataset.DataSet.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the dataset :</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the JSON file does not not exist locally it creates a local copy of the JSON file. And then sets the dataset_path to the local copy of the JSON dataset.</li>
+<li>Sets the dataset_path to the absolute path if only the name of an already existing JSON file is passed as the argument</li>
+<li>And finaly calls the proper adapter depending on the file type described in the JSON file.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
