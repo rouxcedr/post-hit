@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adapters &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Adapters</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/adapters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adapters">
+<h1>Adapters<a class="headerlink" href="#adapters" title="Permalink to this headline">¶</a></h1>
+<p>The Adapter object provides a way to extract data from different types of files.</p>
+<span class="target" id="module-post_hit.package.Adapters"></span><dl class="class">
+<dt id="post_hit.package.Adapters.Adapter">
+<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">Adapter</code><span class="sig-paren">(</span><em>dataset_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an adapter to the file type to be able to extract the data from the files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataset_path</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The path to the local JSON dataset file.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="post_hit.package.Adapters.Adapter.get_region">
+<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter.get_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the data for a given region.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>gepyto.structures.region.Region</em>) &#8211; The region where the data is to be extracted.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.Adapters.Adapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts and formats the data depending how the different adapters extract the region from the file.</p>
+<p>There is 2 formats in wich the data is extracted :</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>&#8220;key-list&#8221;</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">{key1</span> <span class="classifier-delimiter">:</span> <span class="classifier">( ({field1</span> <span class="classifier-delimiter">:</span> <span class="classifier">data1, field2</span> <span class="classifier-delimiter">:</span> <span class="classifier">data2}, start, end), ({field1</span> <span class="classifier-delimiter">:</span> <span class="classifier">data1, field2</span> <span class="classifier-delimiter">:</span> <span class="classifier">data2}, start, end) ),</span><dd><p class="first last">key2 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ), ...}</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8220;vector&#8221;</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">{key1</span> <span class="classifier-delimiter">:</span> <span class="classifier">(position, position, position, position, position),</span><dd><p class="first last">key2 : (position, position, position, position, position)}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return result:</th><td class="field-body">The formated data as described.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="post_hit.package.Adapters.BigBedAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">BigBedAdapter</code><span class="sig-paren">(</span><em>dataset_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigBedAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigBedAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter for BigBed (.bb) files</p>
+<dl class="method">
+<dt id="post_hit.package.Adapters.BigBedAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>bed</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigBedAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigBedAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bed</strong> &#8211; Open file with pointer on the starting position of the region.</li>
+<li><strong>key</strong> &#8211; key or column where the key can be find.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first last">post_hit.package.tools.ResultsIterator</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="post_hit.package.Adapters.BigWigAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">BigWigAdapter</code><span class="sig-paren">(</span><em>dataset_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigWigAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigWigAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter for BigWig (.bw) files</p>
+<dl class="method">
+<dt id="post_hit.package.Adapters.BigWigAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigWigAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigWigAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>df</strong> &#8211; Dataframe containing the region&#8217;s data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">pandas.core.frame.DataFrame</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="post_hit.package.Adapters.GTFAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">GTFAdapter</code><span class="sig-paren">(</span><em>dataset_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#GTFAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.GTFAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter for GTF compressed (.gtf.gz) files</p>
+<dl class="method">
+<dt id="post_hit.package.Adapters.GTFAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#GTFAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.GTFAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>df</strong> &#8211; Dataframe containing the region&#8217;s data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">pandas.core.frame.DataFrame</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="post_hit.package.Adapters.XsvAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">XsvAdapter</code><span class="sig-paren">(</span><em>dataset_path</em>, <em>sep</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapter for X Separated Values files where X is a seperator.
+example : Coma Separated Values files (.csv) or Tab Separated Values files (.tsv)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sep</strong> &#8211; The separator of the values in the file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="post_hit.package.Adapters.XsvAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>f</em>, <em>cols</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>f</strong> &#8211; Open file with pointer on the starting position of the region.</li>
+<li><strong>key</strong> &#8211; key or column where the key can be find.</li>
+<li><strong>cols</strong> &#8211; List of the columns name (Header)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first">io.TextIOWrapper</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><p class="first">str</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="post_hit.package.Adapters.XsvAdapter.index_files">
+<code class="descname">index_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter.index_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter.index_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indexes the files for faster data queries.</p>
+<p>Uses gepyto.db.index module to index the files and subprocess package to sort the files to be indexed.</p>
+<p>(ONLY COMPATIBLE WITH UNIX BASED SYSTEMS)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

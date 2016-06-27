@@ -1,0 +1,29 @@
+{
+  "dataset": {
+    "project": "Ensembl",
+    "resources": [
+      {
+        "download_link": "ftp://ftp.ensembl.org/pub/release-75//gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz",
+        "id": "Homo_sapiens.GRCh37.75",
+        "filename": "Homo_sapiens.GRCh37.75.gtf.gz",
+        "description": ""
+      }
+    ],
+    "version": 1,
+    "project_link": "http://grch37.ensembl.org/Homo_sapiens/Info/Index",
+    "description": "",
+    "data_representation": {
+      "key": "attribute/gene_name",
+      "representation": "key-list",
+      "fields": [
+        "feature"
+      ]
+    },
+    "data_path": "data/ensembl/",
+    "files_type": "gtf",
+    "metadata": [
+      
+    ],
+    "protocole": "ftp"
+  }
+}

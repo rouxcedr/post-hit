@@ -1,0 +1,335 @@
+{
+  "dataset": {
+    "project": "The Genotype-Tissue Expression project",
+    "files_type": "tsv",
+    "data_path": "data/gtex/",
+    "project_link": "http://grch37.ensembl.org/Homo_sapiens/Info/Index",
+    "data_representation": {
+      "key": "resource/id",
+      "representation": "key-list",
+      "chrom": "snp_chrom",
+      "start": "snp_pos",
+      "end": "snp_pos",
+      "fields": [
+        "rs_id_dbSNP142_GRCh37p13",
+        "gene_name"
+      ]
+    },
+    "protocole": "http",
+    "description": "",
+    "version": 1,
+    "resources": [
+      {
+        "filename": "Adipose_Subcutaneous_Analysis.snpgenes",
+        "id": "Adipose_Subcutaneous_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportaln.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Adipose_Subcutaneous_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Adipose_Visceral_Omentum_Analysis.snpgenes",
+        "id": "Adipose_Visceral_Omentum_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Adipose_Visceral_Omentum_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Adrenal_Gland_Analysis.snpgenes",
+        "id": "Adrenal_Gland_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Adrenal_Gland_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Artery_Aorta_Analysis.snpgenes",
+        "id": "Artery_Aorta_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Artery_Aorta_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Artery_Coronary_Analysis.snpgenes",
+        "id": "Artery_Coronary_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Artery_Coronary_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Artery_Tibial_Analysis.snpgenes",
+        "id": "Artery_Tibial_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Artery_Tibial_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Anterior_cingulate_cortex_BA24_Analysis.snpgenes",
+        "id": "Brain_Anterior_cingulate_cortex_BA24_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Anterior_cingulate_cortex_BA24_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Caudate_basal_ganglia_Analysis.snpgenes",
+        "id": "Brain_Caudate_basal_ganglia_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Caudate_basal_ganglia_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Cerebellar_Hemisphere_Analysis.snpgenes",
+        "id": "Brain_Cerebellar_Hemisphere_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Cerebellar_Hemisphere_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Cerebellum_Analysis.snpgenes",
+        "id": "Brain_Cerebellum_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Cerebellum_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Cortex_Analysis.snpgenes",
+        "id": "Brain_Cortex_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Cortex_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Frontal_Cortex_BA9_Analysis.snpgenes",
+        "id": "Brain_Frontal_Cortex_BA9_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Frontal_Cortex_BA9_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Hippocampus_Analysis.snpgenes",
+        "id": "Brain_Hippocampus_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Hippocampus_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Hypothalamus_Analysis.snpgenes",
+        "id": "Brain_Hypothalamus_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Hypothalamus_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Nucleus_accumbens_basal_ganglia_Analysis.snpgenes",
+        "id": "Brain_Nucleus_accumbens_basal_ganglia_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Nucleus_accumbens_basal_ganglia_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Brain_Putamen_basal_ganglia_Analysis.snpgenes",
+        "id": "Brain_Putamen_basal_ganglia_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Brain_Putamen_basal_ganglia_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Breast_Mammary_Tissue_Analysis.snpgenes",
+        "id": "Breast_Mammary_Tissue_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Breast_Mammary_Tissue_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Cells_EBV-transformed_lymphocytes_Analysis.snpgenes",
+        "id": "Cells_EBV-transformed_lymphocytes_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Cells_EBV-transformed_lymphocytes_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Cells_Transformed_fibroblasts_Analysis.snpgenes",
+        "id": "Cells_Transformed_fibroblasts_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Cells_Transformed_fibroblasts_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Colon_Sigmoid_Analysis.snpgenes",
+        "id": "Colon_Sigmoid_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Colon_Sigmoid_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Colon_Transverse_Analysis.snpgenes",
+        "id": "Colon_Transverse_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Colon_Transverse_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Esophagus_Gastroesophageal_Junction_Analysis.snpgenes",
+        "id": "Esophagus_Gastroesophageal_Junction_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Esophagus_Gastroesophageal_Junction_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Esophagus_Mucosa_Analysis.snpgenes",
+        "id": "Esophagus_Mucosa_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Esophagus_Mucosa_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Esophagus_Muscularis_Analysis.snpgenes",
+        "id": "Esophagus_Muscularis_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Esophagus_Muscularis_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Heart_Atrial_Appendage_Analysis.snpgenes",
+        "id": "Heart_Atrial_Appendage_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Heart_Atrial_Appendage_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Heart_Left_Ventricle_Analysis.snpgenes",
+        "id": "Heart_Left_Ventricle_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Heart_Left_Ventricle_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Liver_Analysis.snpgenes",
+        "id": "Liver_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Liver_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Lung_Analysis.snpgenes",
+        "id": "Lung_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Lung_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Muscle_Skeletal_Analysis.snpgenes",
+        "id": "Muscle_Skeletal_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Muscle_Skeletal_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Nerve_Tibial_Analysis.snpgenes",
+        "id": "Nerve_Tibial_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Nerve_Tibial_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Ovary_Analysis.snpgenes",
+        "id": "Ovary_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Ovary_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Pancreas_Analysis.snpgenes",
+        "id": "Pancreas_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Pancreas_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Pituitary_Analysis.snpgenes",
+        "id": "Pituitary_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Pituitary_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Prostate_Analysis.snpgenes",
+        "id": "Prostate_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Prostate_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Skin_Not_Sun_Exposed_Suprapubic_Analysis.snpgenes",
+        "id": "Skin_Not_Sun_Exposed_Suprapubic_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Skin_Not_Sun_Exposed_Suprapubic_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Skin_Sun_Exposed_Lower_leg_Analysis.snpgenes",
+        "id": "Skin_Sun_Exposed_Lower_leg_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Skin_Sun_Exposed_Lower_leg_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Small_Intestine_Terminal_Ileum_Analysis.snpgenes",
+        "id": "Small_Intestine_Terminal_Ileum_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Small_Intestine_Terminal_Ileum_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Spleen_Analysis.snpgenes",
+        "id": "Spleen_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Spleen_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Stomach_Analysis.snpgenes",
+        "id": "Stomach_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Stomach_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Testis_Analysis.snpgenes",
+        "id": "Testis_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Testis_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Thyroid_Analysis.snpgenes",
+        "id": "Thyroid_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Thyroid_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Uterus_Analysis.snpgenes",
+        "id": "Uterus_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Uterus_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Vagina_Analysis.snpgenes",
+        "id": "Vagina_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Vagina_Analysis.snpgenes.gtidx"
+      },
+      {
+        "filename": "Whole_Blood_Analysis.snpgenes",
+        "id": "Whole_Blood_Analysis",
+        "description": "",
+        "download_link": "http://www.gtexportal.org/static/datasets/gtex_analysis_v6/single_tissue_eqtl_data/GTEx_Analysis_V6_eQTLs.tar.gz",
+        "index_file": "/shares/home/users/rouxcedr/post_hit/data/gtex/Whole_Blood_Analysis.snpgenes.gtidx"
+      }
+    ],
+    "metadata": [
+      
+    ]
+  }
+}

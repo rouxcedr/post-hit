@@ -1,0 +1,41 @@
+Dataset object (``DataSet``)
+==========================
+
+The dataset object provides a easy way to create and load datasets into Post-Hit.
+
+Init
+---------
+
+The DataSet object is created with the file path to the JSON dataset. It will then proceed to load that JSON dataset. If the JSON dataset isn't already created the information that should be stored in this dataset can be passed through as optional arguments. If the dataset needs to be created it will do so automatically and then load it.
+
+.. automodule:: post_hit.package.dataset.init
+
+Create
+--------
+
+In order to create a new dataset the object already contains the proper information, this
+
+.. automodule:: post_hit.package.dataset.create
+    :members:
+
+Load
+---------
+
+Loading the JSON dataset involves making sure it is in the right location and if not already in the local dataset's folder, moving the users dataset there so it can be used. Then the files will be downloaded if they are not already in the proper folder. Finaly the good adapter will be called to be able to extract data from the files.
+
+.. automodule:: post_hit.package.dataset.load
+    :members:
+
+Download
+---------
+
+Download the files from the dataset and, if needed, extract them from a .tar compressed archive.
+
+.. automodule:: post_hit.package.dataset.download
+    :members:
+
+Get_Region
+---------
+
+.. automodule:: post_hit.package.dataset.get_region
+    :members:

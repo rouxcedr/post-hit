@@ -1,0 +1,1812 @@
+{
+  "dataset": {
+    "project": "Roadmap epigenomics project",
+    "resources": [
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E001_25_imputed12marks_dense.bb.2",
+        "id": "E001",
+        "filename": "E001_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E002_25_imputed12marks_dense.bb",
+        "id": "E002",
+        "filename": "E002_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E003_25_imputed12marks_dense.bb",
+        "id": "E003",
+        "filename": "E003_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E004_25_imputed12marks_dense.bb",
+        "id": "E004",
+        "filename": "E004_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E005_25_imputed12marks_dense.bb",
+        "id": "E005",
+        "filename": "E005_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E006_25_imputed12marks_dense.bb",
+        "id": "E006",
+        "filename": "E006_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E007_25_imputed12marks_dense.bb",
+        "id": "E007",
+        "filename": "E007_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E008_25_imputed12marks_dense.bb",
+        "id": "E008",
+        "filename": "E008_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E009_25_imputed12marks_dense.bb",
+        "id": "E009",
+        "filename": "E009_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E010_25_imputed12marks_dense.bb",
+        "id": "E010",
+        "filename": "E010_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E011_25_imputed12marks_dense.bb",
+        "id": "E011",
+        "filename": "E011_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E012_25_imputed12marks_dense.bb",
+        "id": "E012",
+        "filename": "E012_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E013_25_imputed12marks_dense.bb",
+        "id": "E013",
+        "filename": "E013_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E014_25_imputed12marks_dense.bb",
+        "id": "E014",
+        "filename": "E014_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E015_25_imputed12marks_dense.bb",
+        "id": "E015",
+        "filename": "E015_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E016_25_imputed12marks_dense.bb",
+        "id": "E016",
+        "filename": "E016_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E017_25_imputed12marks_dense.bb",
+        "id": "E017",
+        "filename": "E017_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E018_25_imputed12marks_dense.bb",
+        "id": "E018",
+        "filename": "E018_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E019_25_imputed12marks_dense.bb",
+        "id": "E019",
+        "filename": "E019_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E020_25_imputed12marks_dense.bb",
+        "id": "E020",
+        "filename": "E020_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E021_25_imputed12marks_dense.bb",
+        "id": "E021",
+        "filename": "E021_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E022_25_imputed12marks_dense.bb",
+        "id": "E022",
+        "filename": "E022_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E023_25_imputed12marks_dense.bb",
+        "id": "E023",
+        "filename": "E023_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E024_25_imputed12marks_dense.bb",
+        "id": "E024",
+        "filename": "E024_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E025_25_imputed12marks_dense.bb",
+        "id": "E025",
+        "filename": "E025_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E026_25_imputed12marks_dense.bb",
+        "id": "E026",
+        "filename": "E026_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E027_25_imputed12marks_dense.bb",
+        "id": "E027",
+        "filename": "E027_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E028_25_imputed12marks_dense.bb",
+        "id": "E028",
+        "filename": "E028_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E029_25_imputed12marks_dense.bb",
+        "id": "E029",
+        "filename": "E029_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E030_25_imputed12marks_dense.bb",
+        "id": "E030",
+        "filename": "E030_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E031_25_imputed12marks_dense.bb",
+        "id": "E031",
+        "filename": "E031_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E032_25_imputed12marks_dense.bb",
+        "id": "E032",
+        "filename": "E032_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E033_25_imputed12marks_dense.bb",
+        "id": "E033",
+        "filename": "E033_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E034_25_imputed12marks_dense.bb",
+        "id": "E034",
+        "filename": "E034_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E035_25_imputed12marks_dense.bb",
+        "id": "E035",
+        "filename": "E035_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E036_25_imputed12marks_dense.bb",
+        "id": "E036",
+        "filename": "E036_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E037_25_imputed12marks_dense.bb",
+        "id": "E037",
+        "filename": "E037_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E038_25_imputed12marks_dense.bb",
+        "id": "E038",
+        "filename": "E038_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E039_25_imputed12marks_dense.bb",
+        "id": "E039",
+        "filename": "E039_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E040_25_imputed12marks_dense.bb",
+        "id": "E040",
+        "filename": "E040_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E041_25_imputed12marks_dense.bb",
+        "id": "E041",
+        "filename": "E041_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E042_25_imputed12marks_dense.bb",
+        "id": "E042",
+        "filename": "E042_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E043_25_imputed12marks_dense.bb",
+        "id": "E043",
+        "filename": "E043_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E044_25_imputed12marks_dense.bb",
+        "id": "E044",
+        "filename": "E044_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E045_25_imputed12marks_dense.bb",
+        "id": "E045",
+        "filename": "E045_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E046_25_imputed12marks_dense.bb",
+        "id": "E046",
+        "filename": "E046_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E047_25_imputed12marks_dense.bb",
+        "id": "E047",
+        "filename": "E047_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E048_25_imputed12marks_dense.bb",
+        "id": "E048",
+        "filename": "E048_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E049_25_imputed12marks_dense.bb",
+        "id": "E049",
+        "filename": "E049_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E050_25_imputed12marks_dense.bb",
+        "id": "E050",
+        "filename": "E050_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E051_25_imputed12marks_dense.bb",
+        "id": "E051",
+        "filename": "E051_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E052_25_imputed12marks_dense.bb",
+        "id": "E052",
+        "filename": "E052_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E053_25_imputed12marks_dense.bb",
+        "id": "E053",
+        "filename": "E053_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E054_25_imputed12marks_dense.bb",
+        "id": "E054",
+        "filename": "E054_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E055_25_imputed12marks_dense.bb",
+        "id": "E055",
+        "filename": "E055_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E056_25_imputed12marks_dense.bb",
+        "id": "E056",
+        "filename": "E056_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E057_25_imputed12marks_dense.bb",
+        "id": "E057",
+        "filename": "E057_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E058_25_imputed12marks_dense.bb",
+        "id": "E058",
+        "filename": "E058_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E059_25_imputed12marks_dense.bb",
+        "id": "E059",
+        "filename": "E059_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E060_25_imputed12marks_dense.bb",
+        "id": "E060",
+        "filename": "E060_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E061_25_imputed12marks_dense.bb",
+        "id": "E061",
+        "filename": "E061_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E062_25_imputed12marks_dense.bb",
+        "id": "E062",
+        "filename": "E062_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E063_25_imputed12marks_dense.bb",
+        "id": "E063",
+        "filename": "E063_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E064_25_imputed12marks_dense.bb",
+        "id": "E064",
+        "filename": "E064_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E065_25_imputed12marks_dense.bb",
+        "id": "E065",
+        "filename": "E065_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E066_25_imputed12marks_dense.bb",
+        "id": "E066",
+        "filename": "E066_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E067_25_imputed12marks_dense.bb",
+        "id": "E067",
+        "filename": "E067_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E068_25_imputed12marks_dense.bb",
+        "id": "E068",
+        "filename": "E068_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E069_25_imputed12marks_dense.bb",
+        "id": "E069",
+        "filename": "E069_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E070_25_imputed12marks_dense.bb",
+        "id": "E070",
+        "filename": "E070_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E071_25_imputed12marks_dense.bb",
+        "id": "E071",
+        "filename": "E071_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E072_25_imputed12marks_dense.bb",
+        "id": "E072",
+        "filename": "E072_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E073_25_imputed12marks_dense.bb",
+        "id": "E073",
+        "filename": "E073_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E074_25_imputed12marks_dense.bb",
+        "id": "E074",
+        "filename": "E074_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E075_25_imputed12marks_dense.bb",
+        "id": "E075",
+        "filename": "E075_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E076_25_imputed12marks_dense.bb",
+        "id": "E076",
+        "filename": "E076_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E077_25_imputed12marks_dense.bb",
+        "id": "E077",
+        "filename": "E077_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E078_25_imputed12marks_dense.bb",
+        "id": "E078",
+        "filename": "E078_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E079_25_imputed12marks_dense.bb",
+        "id": "E079",
+        "filename": "E079_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E080_25_imputed12marks_dense.bb",
+        "id": "E080",
+        "filename": "E080_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E081_25_imputed12marks_dense.bb",
+        "id": "E081",
+        "filename": "E081_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E082_25_imputed12marks_dense.bb",
+        "id": "E082",
+        "filename": "E082_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E083_25_imputed12marks_dense.bb",
+        "id": "E083",
+        "filename": "E083_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E084_25_imputed12marks_dense.bb",
+        "id": "E084",
+        "filename": "E084_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E085_25_imputed12marks_dense.bb",
+        "id": "E085",
+        "filename": "E085_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E086_25_imputed12marks_dense.bb",
+        "id": "E086",
+        "filename": "E086_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E087_25_imputed12marks_dense.bb",
+        "id": "E087",
+        "filename": "E087_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E088_25_imputed12marks_dense.bb",
+        "id": "E088",
+        "filename": "E088_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E089_25_imputed12marks_dense.bb",
+        "id": "E089",
+        "filename": "E089_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E090_25_imputed12marks_dense.bb",
+        "id": "E090",
+        "filename": "E090_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E091_25_imputed12marks_dense.bb",
+        "id": "E091",
+        "filename": "E091_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E092_25_imputed12marks_dense.bb",
+        "id": "E092",
+        "filename": "E092_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E093_25_imputed12marks_dense.bb",
+        "id": "E093",
+        "filename": "E093_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E094_25_imputed12marks_dense.bb",
+        "id": "E094",
+        "filename": "E094_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E095_25_imputed12marks_dense.bb",
+        "id": "E095",
+        "filename": "E095_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E096_25_imputed12marks_dense.bb",
+        "id": "E096",
+        "filename": "E096_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E097_25_imputed12marks_dense.bb",
+        "id": "E097",
+        "filename": "E097_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E098_25_imputed12marks_dense.bb",
+        "id": "E098",
+        "filename": "E098_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E099_25_imputed12marks_dense.bb",
+        "id": "E099",
+        "filename": "E099_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E100_25_imputed12marks_dense.bb",
+        "id": "E100",
+        "filename": "E100_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E101_25_imputed12marks_dense.bb",
+        "id": "E101",
+        "filename": "E101_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E102_25_imputed12marks_dense.bb",
+        "id": "E102",
+        "filename": "E102_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E103_25_imputed12marks_dense.bb",
+        "id": "E103",
+        "filename": "E103_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E104_25_imputed12marks_dense.bb",
+        "id": "E104",
+        "filename": "E104_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E105_25_imputed12marks_dense.bb",
+        "id": "E105",
+        "filename": "E105_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E106_25_imputed12marks_dense.bb",
+        "id": "E106",
+        "filename": "E106_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E107_25_imputed12marks_dense.bb",
+        "id": "E107",
+        "filename": "E107_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E108_25_imputed12marks_dense.bb",
+        "id": "E108",
+        "filename": "E108_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E109_25_imputed12marks_dense.bb",
+        "id": "E109",
+        "filename": "E109_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E110_25_imputed12marks_dense.bb",
+        "id": "E110",
+        "filename": "E110_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E111_25_imputed12marks_dense.bb",
+        "id": "E111",
+        "filename": "E111_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E112_25_imputed12marks_dense.bb",
+        "id": "E112",
+        "filename": "E112_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E113_25_imputed12marks_dense.bb",
+        "id": "E113",
+        "filename": "E113_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E114_25_imputed12marks_dense.bb",
+        "id": "E114",
+        "filename": "E114_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E115_25_imputed12marks_dense.bb",
+        "id": "E115",
+        "filename": "E115_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E116_25_imputed12marks_dense.bb",
+        "id": "E116",
+        "filename": "E116_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E117_25_imputed12marks_dense.bb",
+        "id": "E117",
+        "filename": "E117_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E118_25_imputed12marks_dense.bb",
+        "id": "E118",
+        "filename": "E118_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E119_25_imputed12marks_dense.bb",
+        "id": "E119",
+        "filename": "E119_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E120_25_imputed12marks_dense.bb",
+        "id": "E120",
+        "filename": "E120_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E121_25_imputed12marks_dense.bb",
+        "id": "E121",
+        "filename": "E121_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E122_25_imputed12marks_dense.bb",
+        "id": "E122",
+        "filename": "E122_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E123_25_imputed12marks_dense.bb",
+        "id": "E123",
+        "filename": "E123_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E124_25_imputed12marks_dense.bb",
+        "id": "E124",
+        "filename": "E124_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E125_25_imputed12marks_dense.bb",
+        "id": "E125",
+        "filename": "E125_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E126_25_imputed12marks_dense.bb",
+        "id": "E126",
+        "filename": "E126_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E127_25_imputed12marks_dense.bb",
+        "id": "E127",
+        "filename": "E127_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E128_25_imputed12marks_dense.bb",
+        "id": "E128",
+        "filename": "E128_25_imputed12marks_dense.bb",
+        "description": ""
+      },
+      {
+        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E129_25_imputed12marks_dense.bb",
+        "id": "E129",
+        "filename": "E129_25_imputed12marks_dense.bb",
+        "description": ""
+      }
+    ],
+    "version": 1,
+    "project_link": "http://egg2.wustl.edu/roadmap/web_portal/imputed.html",
+    "description": "A 25 state chromatin model generated from 12 histone marks on 127 epigenomes. This is from imputed data which means that missing marks and values were guessed from other tissues and marks. A full description is available at http://egg2.wustl.edu/roadmap/web_portal/imputed.html",
+    "data_representation": {
+      "key": "resource/id",
+      "representation": "key-list",
+      "fields": [
+        "name"
+      ]
+    },
+    "data_path": "data/roadmap_epigenomic/",
+    "files_type": "bb",
+    "metadata": [
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "IMR90 fetal lung fibroblasts Cell Line",
+    "gender": "Female",
+    "color": "#E41A1C",
+    "type": "IMR90",
+    "id": "E017"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "ES-WA7 Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E002"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H9 Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E008"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "ES-I3 Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E001"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "HUES6 Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E015"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "HUES48 Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E014"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "HUES64 Cells",
+    "gender": "Male",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E016"
+  },
+  {
+    "ethnicity": "Male",
+    "epigenome_name": "H1 Cells",
+    "gender": "UCSF-UBC",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E003"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "ES-UCSF4  Cells",
+    "gender": "Female",
+    "color": "#924965",
+    "type": "ESC",
+    "id": "E024"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "iPS-20b Cells",
+    "gender": "Male",
+    "color": "#69608A",
+    "type": "iPSC",
+    "id": "E020"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "iPS-18 Cells",
+    "gender": "Female",
+    "color": "#69608A",
+    "type": "iPSC",
+    "id": "E019"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "iPS-15b Cells",
+    "gender": "Female",
+    "color": "#69608A",
+    "type": "iPSC",
+    "id": "E018"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "iPS DF 6.9 Cells",
+    "gender": "Male",
+    "color": "#69608A",
+    "type": "iPSC",
+    "id": "E021"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "iPS DF 19.11 Cells",
+    "gender": "Male",
+    "color": "#69608A",
+    "type": "iPSC",
+    "id": "E022"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H1 Derived Neuronal Progenitor Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E007"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H9 Derived Neuronal Progenitor Cultured Cells",
+    "gender": "Female",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E009"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H9 Derived Neuron Cultured Cells",
+    "gender": "Female",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E010"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "hESC Derived CD56+ Mesoderm Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E013"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "hESC Derived CD56+ Ectoderm Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E012"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "hESC Derived CD184+ Endoderm Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E011"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H1 BMP4 Derived Mesendoderm Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E004"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H1 BMP4 Derived Trophoblast Cultured Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E005"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "H1 Derived Mesenchymal Stem Cells",
+    "gender": "Male",
+    "color": "#4178AE",
+    "type": "ES-deriv",
+    "id": "E006"
+  },
+  {
+    "ethnicity": "Caucasian, Indian/Arabian",
+    "epigenome_name": "Primary mononuclear cells from\u00a0peripheral\u00a0blood",
+    "gender": "Male",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E062"
+  },
+  {
+    "ethnicity": "Caucasian, Hispanic",
+    "epigenome_name": "Primary T cells from\u00a0peripheral\u00a0blood",
+    "gender": "Male",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E034"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T cells effector/memory enriched from peripheral blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E045"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T cells from cord blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E033"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T regulatory cells from\u00a0peripheral\u00a0blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E044"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper cells from\u00a0peripheral\u00a0blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E043"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper naive cells from\u00a0peripheral\u00a0blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E039"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper cells PMA-I stimulated",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E041"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper 17 cells PMA-I stimulated",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E042"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper memory cells from peripheral blood 1",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E040"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T helper memory cells from peripheral blood 2",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E037"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary T CD8+ memory cells from peripheral blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E048"
+  },
+  {
+    "ethnicity": "LIQUID",
+    "epigenome_name": "Primary T helper naive cells from peripheral blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E038"
+  },
+  {
+    "ethnicity": "LIQUID",
+    "epigenome_name": "Primary T CD8+ naive cells from peripheral blood",
+    "gender": "Unknown",
+    "color": "#55A354",
+    "type": "Blood & T-cell",
+    "id": "E047"
+  },
+  {
+    "ethnicity": "Hispanic, Unknown",
+    "epigenome_name": "Primary monocytes from\u00a0peripheral\u00a0blood",
+    "gender": "Male",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E029"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary B cells from cord blood",
+    "gender": "Mixed",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E031"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary hematopoietic stem cells",
+    "gender": "Unknown",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E035"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Primary hematopoietic stem cells G-CSF-mobilized Male",
+    "gender": "Male",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E051"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary hematopoietic stem cells G-CSF-mobilized Female",
+    "gender": "Mixed",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E050"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary hematopoietic stem cells short term culture",
+    "gender": "Unknown",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E036"
+  },
+  {
+    "ethnicity": "Caucasian, Hispanic",
+    "epigenome_name": "Primary B cells from peripheral blood",
+    "gender": "Male",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E032"
+  },
+  {
+    "ethnicity": "Caucasian, Hispanic",
+    "epigenome_name": "Primary Natural Killer cells from\u00a0peripheral\u00a0blood",
+    "gender": "Male",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E046"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Primary neutrophils from\u00a0peripheral\u00a0blood",
+    "gender": "Male",
+    "color": "#678C69",
+    "type": "HSC & B-cell",
+    "id": "E030"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Bone Marrow Derived Cultured Mesenchymal Stem Cells",
+    "gender": "Unknown",
+    "color": "#B65C73",
+    "type": "Mesench",
+    "id": "E026"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Mesenchymal Stem Cell Derived Chondrocyte Cultured Cells",
+    "gender": "Unknown",
+    "color": "#B65C73",
+    "type": "Mesench",
+    "id": "E049"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Adipose Derived Mesenchymal Stem Cell Cultured Cells",
+    "gender": "Female",
+    "color": "#B65C73",
+    "type": "Mesench",
+    "id": "E025"
+  },
+  {
+    "ethnicity": "NA",
+    "epigenome_name": "Mesenchymal Stem Cell Derived Adipocyte Cultured Cells",
+    "gender": "Female",
+    "color": "#B65C73",
+    "type": "Mesench",
+    "id": "E023"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Muscle Satellite Cultured Cells",
+    "gender": "Unknown",
+    "color": "#E67326",
+    "type": "Myosat",
+    "id": "E052"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Fibroblast Primary Cells skin01",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E055"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Fibroblast Primary Cells skin02",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E056"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Melanocyte Primary Cells skin01",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E059"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Melanocyte Primary Cells skin03",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E061"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Keratinocyte Primary Cells skin02",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E057"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Foreskin Keratinocyte Primary Cells skin03",
+    "gender": "Male",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E058"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Breast variant Human Mammary Epithelial Cells (vHMEC)",
+    "gender": "Female",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E028"
+  },
+  {
+    "ethnicity": "African-American, African-American",
+    "epigenome_name": "Breast Myoepithelial Primary Cells",
+    "gender": "Female",
+    "color": "#FF9D0C",
+    "type": "Epithelial",
+    "id": "E027"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Ganglion Eminence derived primary cultured neurospheres",
+    "gender": "Female",
+    "color": "#FFD924",
+    "type": "Neurosph",
+    "id": "E054"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Cortex derived primary cultured neurospheres",
+    "gender": "Female",
+    "color": "#FFD924",
+    "type": "Neurosph",
+    "id": "E053"
+  },
+  {
+    "ethnicity": "Caucasian/African American",
+    "epigenome_name": "Thymus",
+    "gender": "Male",
+    "color": "#DAB92E",
+    "type": "Thymus",
+    "id": "E112"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Thymus",
+    "gender": "Female",
+    "color": "#DAB92E",
+    "type": "Thymus",
+    "id": "E093"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Hippocampus Middle",
+    "gender": "Male",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E071"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Substantia Nigra",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E074"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Anterior Caudate",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E068"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Cingulate Gyrus",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E069"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Inferior Temporal Lobe",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E072"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Angular Gyrus",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E067"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain_Dorsolateral_Prefrontal_Cortex",
+    "gender": "Mixed",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E073"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Brain Germinal Matrix",
+    "gender": "Male",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E070"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Brain Female",
+    "gender": "Female",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E082"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Brain Male",
+    "gender": "Male/Unknown",
+    "color": "#C5912B",
+    "type": "Brain",
+    "id": "E081"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Adipose Nuclei",
+    "gender": "Female",
+    "color": "#AF5B39",
+    "type": "Adipose",
+    "id": "E063"
+  },
+  {
+    "ethnicity": "Caucasian/African American, Caucasian",
+    "epigenome_name": "Psoas Muscle",
+    "gender": "Male",
+    "color": "#C2655D",
+    "type": "Muscle",
+    "id": "E100"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Skeletal Muscle Female",
+    "gender": "Female",
+    "color": "#C2655D",
+    "type": "Muscle",
+    "id": "E108"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Skeletal Muscle Male",
+    "gender": "Male",
+    "color": "#C2655D",
+    "type": "Muscle",
+    "id": "E107"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Muscle Trunk",
+    "gender": "Female",
+    "color": "#C2655D",
+    "type": "Muscle",
+    "id": "E089"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Muscle Leg",
+    "gender": "Female",
+    "color": "#C2655D",
+    "type": "Muscle",
+    "id": "E090"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Heart",
+    "gender": "Mixed",
+    "color": "#D56F80",
+    "type": "Heart",
+    "id": "E083"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Right Atrium",
+    "gender": "Male",
+    "color": "#D56F80",
+    "type": "Heart",
+    "id": "E104"
+  },
+  {
+    "ethnicity": "Caucasian/African American, Caucasian",
+    "epigenome_name": "Left Ventricle",
+    "gender": "Male",
+    "color": "#D56F80",
+    "type": "Heart",
+    "id": "E095"
+  },
+  {
+    "ethnicity": "Caucasian/African American, Caucasian",
+    "epigenome_name": "Right Ventricle",
+    "gender": "Male",
+    "color": "#D56F80",
+    "type": "Heart",
+    "id": "E105"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Aorta",
+    "gender": "Male",
+    "color": "#D56F80",
+    "type": "Heart",
+    "id": "E065"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Duodenum Smooth Muscle",
+    "gender": "Male",
+    "color": "#F182BC",
+    "type": "Sm. Muscle",
+    "id": "E078"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Colon Smooth Muscle",
+    "gender": "Female",
+    "color": "#F182BC",
+    "type": "Sm. Muscle",
+    "id": "E076"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Rectal Smooth Muscle",
+    "gender": "Female",
+    "color": "#F182BC",
+    "type": "Sm. Muscle",
+    "id": "E103"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Stomach Smooth Muscle",
+    "gender": "Female",
+    "color": "#F182BC",
+    "type": "Sm. Muscle",
+    "id": "E111"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "Fetal Stomach",
+    "gender": "Female",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E092"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Intestine Small",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E085"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Intestine Large",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E084"
+  },
+  {
+    "ethnicity": "Caucasian/African American, Caucasian",
+    "epigenome_name": "Small Intestine",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E109"
+  },
+  {
+    "ethnicity": "Caucasian/African American, Caucasian",
+    "epigenome_name": "Sigmoid Colon",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E106"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Colonic Mucosa",
+    "gender": "Female",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E075"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Rectal Mucosa Donor 29",
+    "gender": "Female",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E101"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Rectal Mucosa Donor 31",
+    "gender": "Female",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E102"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Stomach Mucosa",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E110"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Duodenum Mucosa",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E077"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Esophagus",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E079"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Gastric",
+    "gender": "Male",
+    "color": "#C58DAA",
+    "type": "Digestive",
+    "id": "E094"
+  },
+  {
+    "ethnicity": "African American",
+    "epigenome_name": "Placenta Amnion",
+    "gender": "Male",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E099"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Kidney",
+    "gender": "Unknown",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E086"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "Fetal Lung",
+    "gender": "Female/Unknown",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E088"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Ovary",
+    "gender": "Female",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E097"
+  },
+  {
+    "ethnicity": "SOLID",
+    "epigenome_name": "Pancreatic Islets",
+    "gender": "Unknown, Unknown, 45Y",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E087"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Fetal Adrenal Gland",
+    "gender": "Male",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E080"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Placenta",
+    "gender": "Female",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E091"
+  },
+  {
+    "ethnicity": "Unknown",
+    "epigenome_name": "Liver",
+    "gender": "Mixed",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E066"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Pancreas",
+    "gender": "Male",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E098"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Lung",
+    "gender": "Female",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E096"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "Spleen",
+    "gender": "Male",
+    "color": "#999999",
+    "type": "Other",
+    "id": "E113"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "A549 EtOH 0.02pct Lung Carcinoma Cell Line",
+    "gender": "Male",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E114"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "Dnd41 TCell Leukemia Cell Line",
+    "gender": "Male",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E115"
+  },
+  {
+    "ethnicity": "Caucasian",
+    "epigenome_name": "GM12878 Lymphoblastoid Cells",
+    "gender": "Female",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E116"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HeLa-S3 Cervical Carcinoma Cell Line",
+    "gender": "Female",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E117"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HepG2 Hepatocellular Carcinoma Cell Line",
+    "gender": "Male",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E118"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HMEC Mammary Epithelial Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E119"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HSMM Skeletal Muscle Myoblasts Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E120"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HSMM cell derived Skeletal Muscle Myotubes Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E121"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "HUVEC Umbilical Vein Endothelial Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E122"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "K562 Leukemia Cells",
+    "gender": "Female",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E123"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "Monocytes-CD14+ RO01746 Primary Cells",
+    "gender": "Female",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E124"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "NH-A Astrocytes Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E125"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "NHDF-Ad Adult Dermal Fibroblast Primary Cells",
+    "gender": "Female",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E126"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "NHEK-Epidermal Keratinocyte Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E127"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "NHLF Lung Fibroblast Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E128"
+  },
+  {
+    "ethnicity": "",
+    "epigenome_name": "Osteoblast Primary Cells",
+    "gender": "Unknown",
+    "color": "#000000",
+    "type": "ENCODE2012",
+    "id": "E129"
+  }
+    ],
+    "protocole": "http"
+  }
+}
