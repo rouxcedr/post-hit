@@ -1,0 +1,99 @@
+Getting Started
+================
+
+Installation
+-------------
+
+`Installation <http://rouxcedr.github.io/post-hit/installation.html>`_
+
+Running Post-Hit on a server
+-----------------------------
+
+In order to run Post-Hit locally or on a server you need to run *run.py* with python :
+
+.. code-block:: sh
+
+    python run.py
+
+This should appear in the console : 
+
+.. code-block:: sh
+    
+     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+Where 127.0.0.1:5000 is your server IP (Should be different if not running locally)
+
+Post-Hit is now running on your server!.
+
+Query a region
+---------------
+
+In order to query the information of a region you need to use the `REST API <http://rouxcedr.github.io/post-hit/rest_api.html>`_.
+
+The endpoint to be used is */region/<region>* where <region> is the region you want under the format **Chrom:Start-End**.
+
+You then need to add the dataset you want to use for the query as so :
+
+        url/region/<region> **?dataset=dataset1&dataset=dataset2&....**
+
+Example : 
+    
+     - Request : http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&dataset=gtex.json
+
+    - Response : 
+    .. code-block:: json
+
+        {
+            "response": [
+                {"ensembl": [
+                    {"CKM": [
+                        [{"feature": "gene"},
+                            45809672,
+                            45826235
+                        ],
+                        [{"feature": "transcript"},
+                            45809672,
+                            45826235
+                        ],
+                        [{"feature": "exon"},
+                            45826079,
+                            45826235
+                        ],
+                        [{"feature": "UTR"},
+                            45826079,
+                            45826235
+                        ]
+                    ]}
+                ]},
+                {"gtex": [
+                    {"Muscle_Skeletal_Analysis": [
+                        [{"gene_name": "MARK4",
+                        "rs_id_dbSNP142_GRCh37p13": "rs344819"},
+                            45823174,
+                            45823174
+                        ],
+                        [{"gene_name": "MARK4",
+                        "rs_id_dbSNP142_GRCh37p13": "rs344818"},
+                            45823663,
+                            45823663
+                        ],
+                        [{"gene_name": "MARK4",
+                        "rs_id_dbSNP142_GRCh37p13": "rs6509208"},
+                            45824218,
+                            45824218
+                        ],
+                        [{"gene_name": "MARK4",
+                          "rs_id_dbSNP142_GRCh37p13": "rs10410448"},
+                            45825480,
+                            45825480
+                        ],
+                        [{"gene_name": "MARK4",
+                        "rs_id_dbSNP142_GRCh37p13": "rs344816"},
+                            45825626,
+                            45825626
+                        ]
+                    ]}
+                ]}
+            ],
+            "sucess": 1
+        }

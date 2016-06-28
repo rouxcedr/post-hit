@@ -1,0 +1,30 @@
+Installation
+=============
+
+Requirements
+-------------
+
+Post-Hit requires a standard Python 3.4 (or latest) installation with the following modules:
+
+- numpy version 1.8.2 or latest
+- pandas version 0.17.0 or latest
+- gepyto version 0.9.2 or latest
+
+Installing
+-----------
+
+Installing Post-Hit using pip :
+
+.. code-block:: sh
+
+    pip install post_hit
+
+
+Updating Post-Hit
+------------------
+
+Using pip : 
+
+.. code-block:: sh
+
+    pip install -U post_hit
