@@ -5,7 +5,7 @@ The Post-Hit REST API is the main gateway for the user to query information on t
 
 There is two endpoints : 
     
-    - GET region/<region> :
+    - ** GET region/<region> : **
 
         .. automodule:: post_hit.run
             :members: get_region
@@ -87,7 +87,7 @@ There is two endpoints :
                 "sucess": 1
             }
 
-    - GET resources/<dataset>/<id> :
+    - ** GET resources/<dataset>/<id> : **
 
         .. automodule:: post_hit.run
             :members: ressource

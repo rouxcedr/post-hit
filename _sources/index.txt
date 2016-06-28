@@ -11,9 +11,12 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
-    dataset
-    adapters
+    installation
+    tutorial
     rest_api
+    dataset
+    adapters    
+
 
 
 Indices and tables
