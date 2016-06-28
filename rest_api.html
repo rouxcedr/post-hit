@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>REST API &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Adapters" href="adapters.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>REST API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/rest_api.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rest-api">
+<h1>REST API<a class="headerlink" href="#rest-api" title="Permalink to this headline">¶</a></h1>
+<p>The Post-Hit REST API is the main gateway for the user to query information on the region.</p>
+<p>There is two endpoints :</p>
+<blockquote>
+<div><ul>
+<li><p class="first">GET region/&lt;region&gt; :</p>
+<blockquote>
+<div><span class="target" id="module-post_hit.run"></span><dl class="function">
+<dt id="post_hit.run.get_region">
+<code class="descclassname">post_hit.run.</code><code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/run.html#get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.run.get_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main endpoint to get the information on the given region</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> &#8211; The genomic region who&#8217;s data is to be extracted. ( chrom:start-end )</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<p>ADDITIONAL PARAMETERS of the endpoint :
+These parameters are to be added to the query url as so : /region/&lt;string:region&gt; <strong>?param=&lt;string&gt;</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataset</strong> &#8211; Name of the dataset in which the region&#8217;s data is to be fetched.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A JSONify dict with the the formated data under the &#8220;response&#8221; key.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>Formated data is as shown below :</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>&#8220;key-list&#8221; :</dt>
+<dd><div class="first last highlight-json"><div class="highlight"><pre><span></span>{key1 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ),
+     key2 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ), ...}
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>&#8220;vector&#8221; :</dt>
+<dd><div class="first last highlight-json"><div class="highlight"><pre><span></span>{key1 : (position, position, position, position, position),
+     key2 : (position, position, position, position, position)}
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Example :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Request : <a class="reference external" href="http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&amp;dataset=gtex.json">http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&amp;dataset=gtex.json</a></li>
+<li>Response :</li>
+</ul>
+</div></blockquote>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&quot;ensembl&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nt">&quot;CKM&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;gene&quot;</span><span class="p">},</span>
+                    <span class="mi">45809672</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;transcript&quot;</span><span class="p">},</span>
+                    <span class="mi">45809672</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;exon&quot;</span><span class="p">},</span>
+                    <span class="mi">45826079</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;UTR&quot;</span><span class="p">},</span>
+                    <span class="mi">45826079</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">]</span>
+            <span class="p">]}</span>
+        <span class="p">]},</span>
+        <span class="p">{</span><span class="nt">&quot;gtex&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nt">&quot;Muscle_Skeletal_Analysis&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344819&quot;</span><span class="p">},</span>
+                    <span class="mi">45823174</span><span class="p">,</span>
+                    <span class="mi">45823174</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344818&quot;</span><span class="p">},</span>
+                    <span class="mi">45823663</span><span class="p">,</span>
+                    <span class="mi">45823663</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs6509208&quot;</span><span class="p">},</span>
+                    <span class="mi">45824218</span><span class="p">,</span>
+                    <span class="mi">45824218</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs10410448&quot;</span><span class="p">},</span>
+                    <span class="mi">45825480</span><span class="p">,</span>
+                    <span class="mi">45825480</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344816&quot;</span><span class="p">},</span>
+                    <span class="mi">45825626</span><span class="p">,</span>
+                    <span class="mi">45825626</span>
+                <span class="p">]</span>
+            <span class="p">]}</span>
+        <span class="p">]}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;sucess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">GET resources/&lt;dataset&gt;/&lt;id&gt; :</p>
+<blockquote>
+<div><span class="target" id="module-post_hit.run"></span><dl class="function">
+<dt id="post_hit.run.ressource">
+<code class="descclassname">post_hit.run.</code><code class="descname">ressource</code><span class="sig-paren">(</span><em>dataset</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/run.html#ressource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.run.ressource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the metadata information described in the JSON.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dataset</strong> &#8211; The dataset name where the information is to be fetched.</li>
+<li><strong>id</strong> &#8211; The id of the queried information (ex : E001 for roadmap_epigenomics).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Type:</th><td class="field-body"><p class="first">str</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>Example :</p>
+<blockquote>
+<div><p>-Request : <a class="reference external" href="http://127.0.0.1:5000/resources/roadmap_epigenomic.json/E017">http://127.0.0.1:5000/resources/roadmap_epigenomic.json/E017</a></p>
+<p>-Response :</p>
+</div></blockquote>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#E41A1C&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;epigenome_name&quot;</span><span class="p">:</span> <span class="s2">&quot;IMR90 fetal lung fibroblasts Cell Line&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ethnicity&quot;</span><span class="p">:</span> <span class="s2">&quot;NA&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;E017&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;IMR90&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="adapters.html" class="btn btn-neutral" title="Adapters" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

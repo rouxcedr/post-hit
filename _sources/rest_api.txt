@@ -1,0 +1,110 @@
+REST API
+=========
+
+The Post-Hit REST API is the main gateway for the user to query information on the region.
+
+There is two endpoints : 
+    
+    - GET region/<region> :
+
+        .. automodule:: post_hit.run
+            :members: get_region
+
+        Formated data is as shown below :
+
+            - "key-list" : 
+                .. code-block:: json    
+
+                           {key1 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ),
+                                key2 : ( ({field1 : data1, field2 : data2}, start, end), ({field1 : data1, field2 : data2}, start, end) ), ...}
+
+            - "vector" : 
+                .. code-block:: json
+
+                           {key1 : (position, position, position, position, position),
+                                key2 : (position, position, position, position, position)} 
+
+
+        Example :
+
+           - Request : http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&dataset=gtex.json
+
+           - Response : 
+        .. code-block:: json
+
+            {
+                "response": [
+                    {"ensembl": [
+                        {"CKM": [
+                            [{"feature": "gene"},
+                                45809672,
+                                45826235
+                            ],
+                            [{"feature": "transcript"},
+                                45809672,
+                                45826235
+                            ],
+                            [{"feature": "exon"},
+                                45826079,
+                                45826235
+                            ],
+                            [{"feature": "UTR"},
+                                45826079,
+                                45826235
+                            ]
+                        ]}
+                    ]},
+                    {"gtex": [
+                        {"Muscle_Skeletal_Analysis": [
+                            [{"gene_name": "MARK4",
+                            "rs_id_dbSNP142_GRCh37p13": "rs344819"},
+                                45823174,
+                                45823174
+                            ],
+                            [{"gene_name": "MARK4",
+                            "rs_id_dbSNP142_GRCh37p13": "rs344818"},
+                                45823663,
+                                45823663
+                            ],
+                            [{"gene_name": "MARK4",
+                            "rs_id_dbSNP142_GRCh37p13": "rs6509208"},
+                                45824218,
+                                45824218
+                            ],
+                            [{"gene_name": "MARK4",
+                              "rs_id_dbSNP142_GRCh37p13": "rs10410448"},
+                                45825480,
+                                45825480
+                            ],
+                            [{"gene_name": "MARK4",
+                            "rs_id_dbSNP142_GRCh37p13": "rs344816"},
+                                45825626,
+                                45825626
+                            ]
+                        ]}
+                    ]}
+                ],
+                "sucess": 1
+            }
+
+    - GET resources/<dataset>/<id> :
+
+        .. automodule:: post_hit.run
+            :members: ressource
+
+        Example :
+
+            -Request : http://127.0.0.1:5000/resources/roadmap_epigenomic.json/E017
+
+            -Response :
+
+        .. code-block:: json
+
+            {
+                "color": "#E41A1C",
+                "epigenome_name": "IMR90 fetal lung fibroblasts Cell Line",
+                "ethnicity": "NA",
+                "gender": "Female",
+                "id": "E017",
+                "type": "IMR90"
+            }

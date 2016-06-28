@@ -1,8 +1,31 @@
 Adapters
-==============================
+==========
 
 The Adapter object provides a way to extract data from different types of files.
 
+The Adapter Class (``Adapter``) 
+--------------------------------
 
-.. automodule:: post_hit.package.Adapters
+.. autoclass:: post_hit.package.Adapters.Adapter()
+    :members:
+
+
+BigBed Adapter 
+---------------
+.. autoclass:: post_hit.package.Adapters.BigBedAdapter()
+    :members:
+
+BigWig Adapter 
+---------------
+.. autoclass:: post_hit.package.Adapters.BigWigAdapter()
+    :members:
+
+GTF Adapter 
+------------
+.. autoclass:: post_hit.package.Adapters.GTFAdapter()
+    :members:
+
+CSV/TSV/etc Adpater 
+--------------------
+.. autoclass:: post_hit.package.Adapters.XsvAdapter()
     :members:
