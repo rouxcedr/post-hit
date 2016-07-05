@@ -190,7 +190,7 @@ Example :
     - Request : http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&dataset=gtex.json
 
     - Response : 
-
+    
         .. code-block:: json
 
             {

@@ -82,7 +82,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Adapters</a><ul>
@@ -143,8 +143,8 @@
 <div class="section" id="the-adapter-class-adapter">
 <h2>The Adapter Class (<code class="docutils literal"><span class="pre">Adapter</span></code>)<a class="headerlink" href="#the-adapter-class-adapter" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="post_hit.package.Adapters.Adapter">
-<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">Adapter</code><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.Adapter">
+<em class="property">class </em><code class="descclassname">post_hit.adapters.</code><code class="descname">Adapter</code><a class="reference internal" href="_modules/post_hit/adapters.html#Adapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.Adapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates an adapter to the file type to be able to extract the data from the files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -155,8 +155,8 @@
 </tbody>
 </table>
 <dl class="method">
-<dt id="post_hit.package.Adapters.Adapter.get_region">
-<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter.get_region" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.Adapter.get_region">
+<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#Adapter.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.Adapter.get_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the data for a given region.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -169,8 +169,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="post_hit.package.Adapters.Adapter.get_values">
-<code class="descname">get_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#Adapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.Adapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.Adapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#Adapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.Adapter.get_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts and formats the data depending how the different adapters extract the region from the file.</p>
 <p>There is 2 formats in wich the data is extracted :</p>
 <blockquote>
@@ -207,12 +207,12 @@
 <div class="section" id="bigbed-adapter">
 <h2>BigBed Adapter<a class="headerlink" href="#bigbed-adapter" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="post_hit.package.Adapters.BigBedAdapter">
-<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">BigBedAdapter</code><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigBedAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigBedAdapter" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.BigBedAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.adapters.</code><code class="descname">BigBedAdapter</code><a class="reference internal" href="_modules/post_hit/adapters.html#BigBedAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.BigBedAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapter for BigBed (.bb) files</p>
 <dl class="method">
-<dt id="post_hit.package.Adapters.BigBedAdapter.get_values">
-<code class="descname">get_values</code><span class="sig-paren">(</span><em>bed</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigBedAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigBedAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.BigBedAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>bed</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#BigBedAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.BigBedAdapter.get_values" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -236,12 +236,12 @@
 <div class="section" id="bigwig-adapter">
 <h2>BigWig Adapter<a class="headerlink" href="#bigwig-adapter" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="post_hit.package.Adapters.BigWigAdapter">
-<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">BigWigAdapter</code><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigWigAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigWigAdapter" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.BigWigAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.adapters.</code><code class="descname">BigWigAdapter</code><a class="reference internal" href="_modules/post_hit/adapters.html#BigWigAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.BigWigAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapter for BigWig (.bw) files</p>
 <dl class="method">
-<dt id="post_hit.package.Adapters.BigWigAdapter.get_values">
-<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#BigWigAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.BigWigAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.BigWigAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#BigWigAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.BigWigAdapter.get_values" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -260,12 +260,12 @@
 <div class="section" id="gtf-adapter">
 <h2>GTF Adapter<a class="headerlink" href="#gtf-adapter" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="post_hit.package.Adapters.GTFAdapter">
-<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">GTFAdapter</code><a class="reference internal" href="_modules/post_hit/package/Adapters.html#GTFAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.GTFAdapter" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.GTFAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.adapters.</code><code class="descname">GTFAdapter</code><a class="reference internal" href="_modules/post_hit/adapters.html#GTFAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.GTFAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapter for GTF compressed (.gtf.gz) files</p>
 <dl class="method">
-<dt id="post_hit.package.Adapters.GTFAdapter.get_values">
-<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#GTFAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.GTFAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.GTFAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#GTFAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.GTFAdapter.get_values" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -284,8 +284,8 @@
 <div class="section" id="csv-tsv-etc-adpater">
 <h2>CSV/TSV/etc Adpater<a class="headerlink" href="#csv-tsv-etc-adpater" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="post_hit.package.Adapters.XsvAdapter">
-<em class="property">class </em><code class="descclassname">post_hit.package.Adapters.</code><code class="descname">XsvAdapter</code><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.XsvAdapter">
+<em class="property">class </em><code class="descclassname">post_hit.adapters.</code><code class="descname">XsvAdapter</code><a class="reference internal" href="_modules/post_hit/adapters.html#XsvAdapter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.XsvAdapter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapter for X Separated Values files where X is a seperator.
 example : Coma Separated Values files (.csv) or Tab Separated Values files (.tsv)</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -299,8 +299,8 @@ example : Coma Separated Values files (.csv) or Tab Separated Values files (.tsv
 </tbody>
 </table>
 <dl class="method">
-<dt id="post_hit.package.Adapters.XsvAdapter.get_values">
-<code class="descname">get_values</code><span class="sig-paren">(</span><em>f</em>, <em>cols</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter.get_values" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.XsvAdapter.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>f</em>, <em>cols</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#XsvAdapter.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.XsvAdapter.get_values" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -326,8 +326,8 @@ example : Coma Separated Values files (.csv) or Tab Separated Values files (.tsv
 </dd></dl>
 
 <dl class="method">
-<dt id="post_hit.package.Adapters.XsvAdapter.index_files">
-<code class="descname">index_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/Adapters.html#XsvAdapter.index_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.Adapters.XsvAdapter.index_files" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.adapters.XsvAdapter.index_files">
+<code class="descname">index_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/adapters.html#XsvAdapter.index_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.adapters.XsvAdapter.index_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indexes the files for faster data queries.</p>
 <p>Uses gepyto.db.index module to index the files and subprocess package to sort the files to be indexed.</p>
 <p>(ONLY COMPATIBLE WITH UNIX BASED SYSTEMS)</p>

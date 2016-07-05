@@ -12,7 +12,7 @@ Contents:
     :maxdepth: 2
 
     installation
-    tutorial
+    getting_started
     rest_api
     dataset
     adapters    

@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Post_Hit 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/>
+        <link rel="next" title="REST API" href="rest_api.html"/>
+        <link rel="prev" title="Installation" href="installation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Post_Hit
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-post-hit-on-a-server">Running Post-Hit on a server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-json-dataset-description">Creating a new JSON dataset description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#query-a-region">Query a region</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Post_Hit</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting_started.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://rouxcedr.github.io/post-hit/installation.html">Installation</a></p>
+</div>
+<div class="section" id="running-post-hit-on-a-server">
+<h2>Running Post-Hit on a server<a class="headerlink" href="#running-post-hit-on-a-server" title="Permalink to this headline">¶</a></h2>
+<p>In order to run Post-Hit locally or on a server you need to run <em>run.py</em> with python :</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>python run.py
+</pre></div>
+</div>
+<p>This should appear in the console :</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>* Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</pre></div>
+</div>
+<p>Where 127.0.0.1:5000 is your server IP (Should be different if not running locally)</p>
+<p>Post-Hit is now running on your server!.</p>
+</div>
+<div class="section" id="creating-a-new-json-dataset-description">
+<h2>Creating a new JSON dataset description<a class="headerlink" href="#creating-a-new-json-dataset-description" title="Permalink to this headline">¶</a></h2>
+<p>There is two way do create a new JSON dataset description :</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Write it yourself with this template</p>
+<blockquote>
+<div><div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;dataset&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;resources&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;filename&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;download_link&quot;</span><span class="p">:</span> <span class="s2">&quot;download link&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;data_path&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;files_type&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data_representation&quot;</span><span class="p">:</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+    <span class="nt">&quot;project_link&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">[</span>
+
+    <span class="p">],</span>
+    <span class="nt">&quot;protocole&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Where the required parameters are:</dt>
+<dd><ul class="first last">
+<li><p class="first"><strong>&#8220;resources&#8221;</strong> is as list of dict containing the ID, filename, download_link and description of every file in the dataset. One dict is for one file.</p>
+</li>
+<li><p class="first"><strong>&#8220;data_path&#8221;</strong> is the path where the files are to be stored or to be downloaded</p>
+</li>
+<li><p class="first"><strong>&#8220;file_type&#8221;</strong> is the type of file in the dataset</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>BigBed</strong> : &#8220;bb&#8221;</li>
+<li><strong>BigWig</strong> : &#8220;bw&#8221;</li>
+<li><strong>GTF</strong> : &#8220;gtf&#8221; (must be compressed)</li>
+<li><strong>CSV</strong> : &#8220;csv&#8221;</li>
+<li><strong>TSV</strong> : &#8220;tsv&#8221;</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>&#8220;protocole&#8221;</strong> is the download protocole (&#8220;ftp&#8221; or &#8220;http&#8221;)</p>
+</li>
+<li><p class="first"><strong>&#8220;data_representation&#8221;</strong> is how you want the data to be represented after a query through the REST API :</p>
+<blockquote>
+<div><ul>
+<li><p class="first">For a <a class="reference external" href="http://rouxcedr.github.io/post-hit/rest_api.html">key-list representation</a> (see formated data) the dict is as folowed :</p>
+<blockquote>
+<div><div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;representation&quot;</span><span class="p">:</span> <span class="s2">&quot;key-list&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">],</span>
+    <span class="nt">&quot;chrom&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL (REQUIRED FOR CSV/TSV)&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL (REQUIRED FOR CSV/TSV)&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;OPTIONAL (REQUIRED FOR CSV/TSV)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With :</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>&#8220;representation&#8221;</strong> always being &#8220;key-list&#8221;</li>
+<li><strong>&#8220;key&#8221;</strong> location of the key (example : a column in the files &#8220;key&#8221; : &#8220;name&#8221; or a the ID in the JSON file &#8220;key&#8221; : &#8220;resource/id&#8221;)</li>
+<li><strong>&#8220;fields&#8221;</strong> being a list of column names where to get the information</li>
+<li><strong>&#8220;chrom&#8221;, &#8220;start&#8221;, &#8220;end&#8221;</strong> being the names of the column in the files where the chromosome number, starting position and ending position are, respectively</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+<dt>And the optional parameters but recommended are :</dt>
+<dd><ul class="first last simple">
+<li><strong>&#8220;project&#8221;</strong> is the project&#8217;s name</li>
+<li><strong>&#8220;description&#8221;</strong> is the project&#8217;s description</li>
+<li><strong>&#8220;version&#8221;</strong> is the dataset&#8217;s version</li>
+<li><strong>&#8220;project_link&#8221;</strong> is the link to the project homepage</li>
+<li><strong>&#8220;metadata&#8221;</strong> : a list of dict containing the metadata for every ids/files in &#8220;resources&#8221;</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">Load a <a class="reference external" href="http://rouxcedr.github.io/post-hit/rest_api.html">DataSet Class</a> :</p>
+<blockquote>
+<div><p>Copy this script in a new python file :</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#Fill out all the information needed to create the dataset (fields that are in caps)</span>
+<span class="c1">#To name the dataset use &quot;find and replace&quot; if your editor has it (ctrl-h) and replace DATASET_NAME with the name</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1">#If needed put the post_hit package in you PYTHON_PATH like so :</span>
+<span class="c1">#sys.path.append(&quot;PATH_TO_POST_HIT_PACKAGE&quot;)</span>
+
+<span class="kn">from</span> <span class="nn">post_hit.dataset</span> <span class="kn">import</span> <span class="n">DataSet</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">DATASET_NAME</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;docstring for GTEx&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">data_path</span><span class="p">):</span>
+
+        <span class="n">data_representation</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;representation&quot;</span> <span class="p">:</span> <span class="s2">&quot;KEY-LIST OR VECTOR (REQUIRED)&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;KEY LOCATION (REQUIRED ONLY FOR KEY-LIST)&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;FIELDS (REQUIRED)&quot;</span><span class="p">],</span>
+                                <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;START POSITION COLUMN NAME (REQUIRED ONLY FOR CSV/TSV)&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;START POSITION COLUMN NAME (REQUIRED ONLY FOR CSV/TSV)&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;chrom&quot;</span><span class="p">:</span> <span class="s2">&quot;START POSITION COLUMN NAME (REQUIRED ONLY FOR CSV/TSV)&quot;</span><span class="p">,</span>
+                                <span class="p">}</span>
+
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LIST OF IDS (Using a list comprehension is recommended)&quot;</span><span class="p">]</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LIST OF FILENAMES (Using a list comprehension is recommended)&quot;</span><span class="p">]</span>
+        <span class="n">download_links</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LIST OF FILENAMES (Using a list comprehension is recommended)&quot;</span><span class="p">]</span>
+
+
+        <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LIST OF DICT CONTAINING THE METADATA FOR THE EVERY IDS/FILES (Using a list comprehension is recommended)&quot;</span><span class="p">]</span>
+
+        <span class="n">kwarg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;project&quot;</span><span class="p">:</span>  <span class="s2">&quot;PROJECT&#39;S NAME(RECOMMENDED)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;PROJECT&#39;S DESCRIPTION (RECOMMENDED)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;project_link&quot;</span><span class="p">:</span> <span class="s2">&quot;PROJECT&#39;S HOMEPAGE LINK (RECOMMENDED)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">#(RECOMMENDED)</span>
+            <span class="s2">&quot;data_path&quot;</span><span class="p">:</span> <span class="n">data_path</span><span class="p">,</span>
+            <span class="s2">&quot;protocole&quot;</span><span class="p">:</span> <span class="s2">&quot;DOWNLOAD PROTOCOL (REQUIRED)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;file_type&quot;</span><span class="p">:</span> <span class="s2">&quot;FILE TYPE (REQUIRED)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="n">metadata</span><span class="p">,</span>
+            <span class="s2">&quot;download_links&quot;</span><span class="p">:</span> <span class="n">download_links</span><span class="p">,</span>
+            <span class="s2">&quot;filenames&quot;</span><span class="p">:</span><span class="n">filenames</span><span class="p">,</span>
+            <span class="s2">&quot;ids&quot;</span><span class="p">:</span><span class="n">ids</span><span class="p">,</span>
+            <span class="s2">&quot;data_representation&quot;</span><span class="p">:</span><span class="n">data_representation</span>
+            <span class="p">}</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">DATASET_NAME</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwarg</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/../DATASET_NAME.json&quot;</span>
+    <span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/../../DATASET_NAME/&quot;</span>
+
+
+    <span class="n">DATASET_NAME</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">,</span> <span class="n">data_path</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Fill out the required fields as well as the recommended one if possible. Then run the script like so :</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>python filename.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="query-a-region">
+<h2>Query a region<a class="headerlink" href="#query-a-region" title="Permalink to this headline">¶</a></h2>
+<p>In order to query the information of a region you need to use the <a class="reference external" href="http://rouxcedr.github.io/post-hit/rest_api.html">REST API</a>.</p>
+<p>The endpoint to be used is <em>/region/&lt;region&gt;</em> where &lt;region&gt; is the region you want under the format <strong>Chrom:Start-End</strong>.</p>
+<p>You then need to add the dataset you want to use for the query as so :</p>
+<blockquote>
+<div>url/region/&lt;region&gt; <strong>?dataset=dataset1&amp;dataset=dataset2&amp;....</strong></div></blockquote>
+<p>Example :</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Request : <a class="reference external" href="http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&amp;dataset=gtex.json">http://127.0.0.1:5000/region/19:45826171-45826235?dataset=ensembl.json&amp;dataset=gtex.json</a></p>
+</li>
+<li><p class="first">Response :</p>
+<blockquote>
+<div><div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&quot;ensembl&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nt">&quot;CKM&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;gene&quot;</span><span class="p">},</span>
+                    <span class="mi">45809672</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;transcript&quot;</span><span class="p">},</span>
+                    <span class="mi">45809672</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;exon&quot;</span><span class="p">},</span>
+                    <span class="mi">45826079</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;feature&quot;</span><span class="p">:</span> <span class="s2">&quot;UTR&quot;</span><span class="p">},</span>
+                    <span class="mi">45826079</span><span class="p">,</span>
+                    <span class="mi">45826235</span>
+                <span class="p">]</span>
+            <span class="p">]}</span>
+        <span class="p">]},</span>
+        <span class="p">{</span><span class="nt">&quot;gtex&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nt">&quot;Muscle_Skeletal_Analysis&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344819&quot;</span><span class="p">},</span>
+                    <span class="mi">45823174</span><span class="p">,</span>
+                    <span class="mi">45823174</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344818&quot;</span><span class="p">},</span>
+                    <span class="mi">45823663</span><span class="p">,</span>
+                    <span class="mi">45823663</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs6509208&quot;</span><span class="p">},</span>
+                    <span class="mi">45824218</span><span class="p">,</span>
+                    <span class="mi">45824218</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs10410448&quot;</span><span class="p">},</span>
+                    <span class="mi">45825480</span><span class="p">,</span>
+                    <span class="mi">45825480</span>
+                <span class="p">],</span>
+                <span class="p">[{</span><span class="nt">&quot;gene_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MARK4&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;rs_id_dbSNP142_GRCh37p13&quot;</span><span class="p">:</span> <span class="s2">&quot;rs344816&quot;</span><span class="p">},</span>
+                    <span class="mi">45825626</span><span class="p">,</span>
+                    <span class="mi">45825626</span>
+                <span class="p">]</span>
+            <span class="p">]}</span>
+        <span class="p">]}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;sucess&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rest_api.html" class="btn btn-neutral float-right" title="REST API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Cedric Roux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
