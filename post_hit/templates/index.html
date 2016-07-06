@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Post-Hit</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body>
+    Datasets name (seperated by a ";"):<br>
+    <input type="text" id="dataset" value="phyloP100way.json" ><br>
+    Region (chr:start-end):<br>
+    <input type="text" id="region" value="19:45819671-45826235">
+    <button onclick="getRegion()">Get Region!</button>
+
+    <p id="message"></p>
+
+    <script type="text/javascript">
+        function getRegion(){
+
+            var datasets = document.getElementById("dataset").value.split(";");
+            var region = document.getElementById("region").value;
+
+
+            var url = "http://127.0.0.1:5000/region/" + region + "?";
+            for (i = 0; i < datasets.length; i++) {
+                if (i == 0){
+                    url += "dataset="+datasets[i]
+                } else{
+                    url += "&dataset="+datasets[i]
+                }
+            }
+
+            var json = d3.json(url, function(error, data) {
+                if (error) console.log(error);
+                for (var dataset_key in data.response){
+                    var data_obj = data.response[dataset_key];
+                    if (data_type(data_obj) == "vector") vector(data_obj, region);
+                    if (data_type(data_obj) == "key-list") key_list(data_obj, region);
+                }
+            });
+
+        }
+
+        function data_type(data){
+            
+                // skip loop if the property is from prototype
+                
+
+                for (var key in data) break;
+                //console.log(data[key])
+
+                if (typeof data[key][0] == 'number'){
+                    return "vector";
+                }
+                return "key-list";
+        }
+
+        function vector(data, region){
+            console.log(data)
+            for (var key in data){data = data[key];break;}
+            var outerWidth = 500;
+            var outerHeight = 250;
+            var margin = { left: 30, top: 30, right: 30, bottom: 30 };
+            var xAxis_legend = "PhyloP";
+            var yAxis_legend = region;
+
+            var start = region.split(":")[1]
+                              .split("-")[0];
+
+            var end = region.split("-")[1];
+            var idx = 0;
+
+            var svg = d3.select("body").append("svg")
+                .attr("width",  outerWidth)
+                .attr("height", outerHeight);
+
+            var g = svg.append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            var path = g.append("path");
+
+            var innerWidth  = outerWidth  - margin.left - margin.right;
+            var innerHeight = outerHeight - margin.top  - margin.bottom;
+
+            var xScale = d3.scaleLinear()
+                            .range([0, innerWidth])
+                            .domain([start, end]);
+            var yScale = d3.scaleLinear()
+                            .range([innerHeight, 0])
+                            .domain( d3.extent(data, function (d){ return d; }));
+
+            var line = d3.line()
+                .x(function(d) { return xScale(); })
+                .y(function(d) { return yScale(); });
+
+            console.log(line(data));
+            path.attr("d", line(data));
+
+        }
+
+        function key_list(data, region){
+
+        }
+
+    </script>
+
+
+  </body>
+</html>
