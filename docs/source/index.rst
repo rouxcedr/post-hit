@@ -9,11 +9,13 @@ Welcome to Post_Hit's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   adapters.rst
-   
-   dataset.rst
+    installation
+    getting_started
+    rest_api
+    dataset
+    adapters    
 
 
 

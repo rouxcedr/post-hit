@@ -1,15 +1,19 @@
+#!/usr/bin/env python
 import json
 import requests
 import urllib.request
-from . import Adapters
+try:
+    from . import adapters
+except SystemError:
+    import adapters
+    
 import sys
 import os.path
 import tarfile
 from gepyto.db import index
 import subprocess
 
-POST_HIT_PATH = "/shares/home/users/rouxcedr/post_hit/post_hit/"
-POST_HIT_PATH = "/home/cedric/WASABI02/post_hit/post_hit/"
+POST_HIT_PATH = os.path.dirname(__file__) + "/"
 
 class DataSet(object):
 
@@ -54,7 +58,7 @@ class DataSet(object):
                           (Must be in the same order than the ids and download links)
         :type filenames: tuple
 
-        :param data_representation: A dictionnary in wich the data representation wanted is described (JSON/JSON-LD).
+        :param data_representation: A dictionnary in wich the data representation is described (JSON/JSON-LD).
         :type data_representation: dict
         
         """
@@ -92,36 +96,16 @@ class DataSet(object):
 
         if argument_passed:
             self.create()
+            try:
+                self.load()
+            except Exception as e:
+                pass
+            
         else:
             self.load()
 
 
         super(DataSet, self).__init__()
-
-
-    def get_json_skeletton( self ):
-
-        """
-            Create a skelleton for the JSON dataset description file
-
-        """
-
-        skeletton_dataset = DataSet(dataset_path = self.dataset_path,
-                                    project= "",
-                                    description= "",
-                                    project_link= "",
-                                    version= 0,
-                                    data_path= "",
-                                    filename_template= "",
-                                    protocole= "",
-                                    file_type= "",
-                                    ids=["id"],
-                                    download_links=["download link"],
-                                    filenames=["filename"],
-                                    metadata= [])
-
-
-        skeletton_dataset.create()
 
     def create(self):
 
@@ -179,20 +163,27 @@ class DataSet(object):
 
                 - And finaly calls the proper adapter depending on the file type described in the JSON file.
         """
+        
+        if os.path.splitext(self.dataset_path)[1] == "":
+            self.dataset_path = "".join([self.dataset_path, ".json"])
 
+        if os.path.splitext(self.dataset_path)[1] != ".json":
+            raise ValueError("File must be a JSON file")
         if os.path.exists(self.dataset_path):
-
-            dataset_name = os.path.basename(self.dataset_path)
-            with open(self.dataset_path) as user_json:
-                dataset = json.load(user_json)
-            self.dataset_path = "".join([POST_HIT_PATH, dataset_name])
-            with open(self.dataset_path, "w") as json_file:
-                json_file.write(json.dumps(dataset))
+            if os.path.basename(self.dataset_path) != "":
+                dataset_name = os.path.basename(self.dataset_path)
+                with open(self.dataset_path) as user_json:
+                    dataset = json.load(user_json)
+                self.dataset_path = "".join([POST_HIT_PATH,"/data/datasets/",  dataset_name])
+                with open(self.dataset_path, "w") as json_file:
+                    json_file.write(json.dumps(dataset))
+            else:
+                raise ValueError("The dataset path has no filename")
 
         #If only the JSON filename is given we check if this filename exist in our database
 
-        elif os.path.exists("".join([POST_HIT_PATH, "data/datasets/", self.dataset_path])):
-            self.dataset_path = "".join([POST_HIT_PATH, "data/datasets/", self.dataset_path])
+        elif os.path.exists("".join([POST_HIT_PATH, "/data/datasets/", self.dataset_path])):
+            self.dataset_path = "".join([POST_HIT_PATH, "/data/datasets/", self.dataset_path])
         else:
             raise ValueError("The dataset path or name given is not valid")
 
@@ -207,18 +198,18 @@ class DataSet(object):
                     self.download()
 
             if dataset["dataset"]["files_type"] == "bb":
-                self.adapter = Adapters.BigBedAdapter(self.dataset_path)
+                self.adapter = adapters.BigBedAdapter(self.dataset_path)
 
             if dataset["dataset"]["files_type"] == "bw":
-                self.adapter = Adapters.BigWigAdapter(self.dataset_path)
+                self.adapter = adapters.BigWigAdapter(self.dataset_path)
 
             if dataset["dataset"]["files_type"] == "gtf":
-                self.adapter = Adapters.GTFAdapter(self.dataset_path)
+                self.adapter = adapters.GTFAdapter(self.dataset_path)
 
             if dataset["dataset"]["files_type"] == "csv":
-                self.adapter = Adapters.XsvAdapter(self.dataset_path, ",")
+                self.adapter = adapters.XsvAdapter(self.dataset_path, ",")
             if dataset["dataset"]["files_type"] == "tsv":
-                self.adapter = Adapters.XsvAdapter(self.dataset_path, "\t")
+                self.adapter = adapters.XsvAdapter(self.dataset_path, "\t")
 
 
         
@@ -227,10 +218,7 @@ class DataSet(object):
     def download(self):
 
         """
-
-
-        Download the files from the dataset and, if needed, extract them from a .tar compressed archive.
-
+            Download the files from the dataset and, if needed, extract them from a .tar compressed archive.
         """
 
         with open(self.dataset_path) as dataset_file:
@@ -273,9 +261,7 @@ class DataSet(object):
             :type region: gepyto.structures.region.Region
         """
 
-        return self.adapter.get_region(region)
-
-       
+        return self.adapter.get_region(region)    
 
 
 

@@ -168,7 +168,7 @@ class Ensembl(DataSet):
 
 class GTEx(DataSet):
     """docstring for GTEx"""
-    def __init__(self, dataset_path, data_patoh):
+    def __init__(self, dataset_path, data_path):
 
         data_representation = {"representation" : "key-list",
                                 "fields":["rs_id_dbSNP142_GRCh37p13"],
@@ -202,14 +202,10 @@ class GTEx(DataSet):
 
 def main():
     
-    print("ImputedChromatinState")
-    ImputedChromatinState("data/datasets/roadmap_epigenomic.json", "data/roadmap_epigenomic/").create()
-    print("PhyloP")
-    PhyloP("data/datasets/phyloP100way.json", "data/phyloP100way/").create()
-    print("Ensembl")
-    Ensembl("data/datasets/ensembl.json", "data/ensembl/").create()
-    print("GTEx")
-    GTEx("data/datasets/gtex.json", "data/gtex/").create()
+    # ImputedChromatinState("data/datasets/roadmap_epigenomic.json", "data/roadmap_epigenomic/")
+    # PhyloP("data/datasets/phyloP100way.json", "data/phyloP100way/")
+    # Ensembl("data/datasets/ensembl.json", "data/ensembl/")
+    # GTEx("data/datasets/gtex.json", "data/gtex/")
 
 if __name__ == '__main__':
     main()

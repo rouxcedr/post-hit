@@ -1,5 +1,10 @@
+#!/usr/bin/env python
 import json
-from . import tools
+try:
+    from . import tools
+except SystemError:
+    import tools
+    
 from gepyto.formats.wig import WiggleFile
 from gepyto.db import ensembl 
 import os
@@ -12,8 +17,8 @@ import numpy as np
 from gepyto.db import index
 import subprocess
 
-#POST_HIT_PATH = "/shares/home/users/rouxcedr/post_hit/post_hit/"
-POST_HIT_PATH = "/home/cedric/WASABI02/post_hit/post_hit/"
+POST_HIT_PATH = os.path.dirname(__file__) + "/"
+# print(POST_HIT_PATH)
 
 class Adapter(object):
     """
@@ -75,7 +80,7 @@ class BigBedAdapter(Adapter):
 
         big_bed_to_bed = tools.BigBedToBed()
         
-        data = []
+        data = defaultdict(list)
         data_path = "".join([POST_HIT_PATH,self.dataset["dataset"]["data_path"]])
 
         for resource in self.dataset["dataset"]["resources"]:
@@ -88,9 +93,12 @@ class BigBedAdapter(Adapter):
             )
             key = self.dataset["dataset"]["data_representation"]["key"]
             if key.split("/")[0] == "resource":
-                data.append(self.get_values(bed, resource[key.split("/")[1]]))
+                result = self.get_values(bed, resource[key.split("/")[1]])
             else:
-                data.append(self.get_values(bed, key))
+                result = self.get_values(bed, key)
+
+            for key in result:
+                data[key] = result[key]
 
         return data
 
@@ -129,7 +137,7 @@ class BigWigAdapter(Adapter):
 
         self.region = region
 
-        data = []
+        data = defaultdict(list)
         data_path = "".join([POST_HIT_PATH,self.dataset["dataset"]["data_path"]])
         for resource in self.dataset["dataset"]["resources"]:
             filename = resource["filename"]
@@ -146,7 +154,9 @@ class BigWigAdapter(Adapter):
             with WiggleFile(wig) as f:
                 df = f.as_dataframe()
 
-            data.append(self.get_values(df))
+            result = self.get_values(df)
+            for key in result:
+                data[key] = result[key]
 
         return data
 
@@ -200,7 +210,7 @@ class GTFAdapter(Adapter):
     def get_region(self, region):
         self.region = region
 
-        data = []
+        data = defaultdict(list)
         gtf_col_names = ['seqname', 'source', 'feature', 'start', 
                         'end', 'score', 'strand', 'frame', 'attribute']
 
@@ -221,7 +231,9 @@ class GTFAdapter(Adapter):
             
             result_df = df[good_chrom & (start_inside | end_inside | gene_inside)]
 
-            data.append(self.get_values(result_df))
+            result = self.get_values(result_df)
+            for key in result:
+                data[key] = result[key]
         return data
 
     def get_values(self, df):
@@ -307,7 +319,7 @@ class XsvAdapter(Adapter):
 
         self.region = region
         data_path = self.dataset["dataset"]["data_path"]
-        data = []
+        data = defaultdict(list)
         for resource in self.dataset["dataset"]["resources"]:
 
             index_var = index.get_index("".join([POST_HIT_PATH, data_path, resource["filename"]]))
@@ -319,11 +331,13 @@ class XsvAdapter(Adapter):
                 if key.split("/")[0] == "resource":      
                     result = self.get_values(f, cols, resource[key.split("/")[1]])
                     if bool(result) :
-                        data.append(result)
+                        for key in result:
+                            data[key] = result[key]
                 else :
                     result = self.get_values(f, cols, key)
                     if bool(result) :
-                        data.append(result)
+                        for key in result:
+                            data[key] = result[key]
         return data
 
     def get_values(self, f, cols, key):
@@ -346,6 +360,8 @@ class XsvAdapter(Adapter):
         result = defaultdict(list)
         for line in f :
             line = dict(zip(cols, line.rstrip().split()))
+            if int(line[start]) <= self.region.start:
+                continue
             if int(line[chrom]) != int(self.region.chrom) :
                 break
             if int(line[start]) >= self.region.end and int(line[end]) >= self.region.end:

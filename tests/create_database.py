@@ -1,4 +1,4 @@
-from post_hit.package import dataset
+from ..dataset import DataSet
 from gepyto.structures.region import Region
 from pprint import pprint
 

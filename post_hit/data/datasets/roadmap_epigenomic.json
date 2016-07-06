@@ -357,12 +357,6 @@
         "description": ""
       },
       {
-        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E060_25_imputed12marks_dense.bb",
-        "id": "E060",
-        "filename": "E060_25_imputed12marks_dense.bb",
-        "description": ""
-      },
-      {
         "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E061_25_imputed12marks_dense.bb",
         "id": "E061",
         "filename": "E061_25_imputed12marks_dense.bb",
@@ -378,12 +372,6 @@
         "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E063_25_imputed12marks_dense.bb",
         "id": "E063",
         "filename": "E063_25_imputed12marks_dense.bb",
-        "description": ""
-      },
-      {
-        "download_link": "http://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/E064_25_imputed12marks_dense.bb",
-        "id": "E064",
-        "filename": "E064_25_imputed12marks_dense.bb",
         "description": ""
       },
       {

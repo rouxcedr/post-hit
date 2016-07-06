@@ -30,7 +30,9 @@
   
 
   
-    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="Post_Hit 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Adapters" href="adapters.html"/>
+        <link rel="prev" title="REST API" href="rest_api.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,7 +81,12 @@
           
             
             
-                <ul class="simple">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api.html">REST API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
 </ul>
 
             
@@ -127,9 +134,9 @@
   <div class="section" id="dataset-object-dataset">
 <h1>Dataset object (<code class="docutils literal"><span class="pre">DataSet</span></code>)<a class="headerlink" href="#dataset-object-dataset" title="Permalink to this headline">¶</a></h1>
 <p>The Dataset object provides an easy way to create and load datasets into Post-Hit.</p>
-<span class="target" id="module-post_hit.package.dataset"></span><dl class="class">
-<dt id="post_hit.package.dataset.DataSet">
-<em class="property">class </em><code class="descclassname">post_hit.package.dataset.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>dataset_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-post_hit.dataset"></span><dl class="class">
+<dt id="post_hit.dataset.DataSet">
+<em class="property">class </em><code class="descclassname">post_hit.dataset.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>dataset_path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/dataset.html#DataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.dataset.DataSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manages the JSON datasets provided by the user.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -159,33 +166,27 @@ if the dataset is already locally stored.</td>
 (Must be in the same order than the ids and filenames)</li>
 <li><strong>filenames</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#tuple" title="(in Python v2.7)"><em>tuple</em></a>) &#8211; List of the filenames.
 (Must be in the same order than the ids and download links)</li>
-<li><strong>data_representation</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A dictionnary in wich the data representation wanted is described (JSON/JSON-LD).</li>
+<li><strong>data_representation</strong> (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A dictionnary in wich the data representation is described (JSON/JSON-LD).</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
-<dt id="post_hit.package.dataset.DataSet.create">
-<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.create" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.dataset.DataSet.create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/dataset.html#DataSet.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.dataset.DataSet.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a JSON dataset file with the information available. The class optionnal parameters needs to be passed as arguments when creating the dataset class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="post_hit.package.dataset.DataSet.download">
-<code class="descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.download" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.dataset.DataSet.download">
+<code class="descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/dataset.html#DataSet.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.dataset.DataSet.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download the files from the dataset and, if needed, extract them from a .tar compressed archive.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="post_hit.package.dataset.DataSet.get_json_skeletton">
-<code class="descname">get_json_skeletton</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.get_json_skeletton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.get_json_skeletton" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a skelleton for the JSON dataset description file</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="post_hit.package.dataset.DataSet.get_region">
-<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.get_region" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.dataset.DataSet.get_region">
+<code class="descname">get_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/dataset.html#DataSet.get_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.dataset.DataSet.get_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls the get_region function of the adapter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -198,8 +199,8 @@ if the dataset is already locally stored.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="post_hit.package.dataset.DataSet.load">
-<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/package/dataset.html#DataSet.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.package.dataset.DataSet.load" title="Permalink to this definition">¶</a></dt>
+<dt id="post_hit.dataset.DataSet.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/post_hit/dataset.html#DataSet.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#post_hit.dataset.DataSet.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the dataset :</p>
 <blockquote>
 <div><ul class="simple">
@@ -218,6 +219,15 @@ if the dataset is already locally stored.</td>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adapters.html" class="btn btn-neutral float-right" title="Adapters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rest_api.html" class="btn btn-neutral" title="REST API" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
