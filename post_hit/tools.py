@@ -19,7 +19,7 @@ class ResultsIterator(object):
         return self
 
     def __next__(self):
-        line = self.stream.readline()
+        line = self.stream.readline().decode("utf-8")
         if not line:
             self.stream.close()
             raise StopIteration()

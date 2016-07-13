@@ -3,24 +3,51 @@
   <head>
     <title>Post-Hit</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vector.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='key-list.js') }}"> </script>
+    <style type="text/css">
+        div.tooltip {   
+            position: absolute;         
+            text-align: center;         
+            width: 60px;                    
+            height: 28px;                   
+            padding: 2px;               
+            font: 12px sans-serif;      
+            background: lightsteelblue; 
+            border: 0px;        
+            border-radius: 8px;         
+            pointer-events: none;           
+        }
+
+    </style>
   </head>
   <body>
     Datasets name (seperated by a ";"):<br>
-    <input type="text" id="dataset" value="phyloP100way.json" ><br>
+    <input type="text" id="dataset" ><br>
+    <label><input type="checkbox" name="checkbox" value="phyloP100way.json">PhyloP</label>
+    <label><input type="checkbox" name="checkbox" value="roadmap_epigenomic.json">Roadmap Epigenomic</label>
+    <label><input type="checkbox" name="checkbox" value="ensembl.json">Ensembl</label>
+    <label><input type="checkbox" name="checkbox" value="gtex.json">GTEX</label><br>
     Region (chr:start-end):<br>
-    <input type="text" id="region" value="19:45819671-45826235">
-    <button onclick="getRegion()">Get Region!</button>
-
-    <p id="message"></p>
+    <input type="text" id="region" value="16:4003388-4166186">
+    <button onclick="getRegion()">Get Region!</button><br>
 
     <script type="text/javascript">
         function getRegion(){
 
-            var datasets = document.getElementById("dataset").value.split(";");
+
+            var datasets = [];
+            // var datasets = document.getElementById("dataset").value.split(";");
+            var checkboxs = document.getElementsByName('checkbox');
+            for(var i = 0; i < checkboxs.length; ++i){
+                if(checkboxs[i].checked) datasets.push(checkboxs[i].value);
+            }
+
             var region = document.getElementById("region").value;
 
 
             var url = "http://127.0.0.1:5000/region/" + region + "?";
+            
             for (i = 0; i < datasets.length; i++) {
                 if (i == 0){
                     url += "dataset="+datasets[i]
@@ -28,13 +55,14 @@
                     url += "&dataset="+datasets[i]
                 }
             }
-
-            var json = d3.json(url, function(error, data) {
+            console.log(url)
+            d3.json(url, function(error, data) {
                 if (error) console.log(error);
                 for (var dataset_key in data.response){
                     var data_obj = data.response[dataset_key];
-                    if (data_type(data_obj) == "vector") vector(data_obj, region);
-                    if (data_type(data_obj) == "key-list") key_list(data_obj, region);
+                    if (data_type(data_obj) == "vector") vector(data_obj, region, 100);
+                    if (data_type(data_obj) == "key-list") key_list(data_obj, region, dataset_key);
+
                 }
             });
 
@@ -54,49 +82,281 @@
                 return "key-list";
         }
 
-        function vector(data, region){
-            console.log(data)
-            for (var key in data){data = data[key];break;}
-            var outerWidth = 500;
-            var outerHeight = 250;
-            var margin = { left: 30, top: 30, right: 30, bottom: 30 };
+        function vector(data, region, smooth = 0){
+
+            for (var key in data){data = data[key]}
+            var outerWidth = 1000;
+            var outerHeight = 500;
+            var margin = { left: 30, top: 30, right: 30, bottom: 65 };
             var xAxis_legend = "PhyloP";
             var yAxis_legend = region;
 
-            var start = region.split(":")[1]
+            var start = +region.split(":")[1]
                               .split("-")[0];
 
-            var end = region.split("-")[1];
+            var end = +region.split("-")[1];
             var idx = 0;
+
+            var data_format = Array(end-start +1)
+            for (i = 0; i < data_format.length; i++){
+                data_format[i] = {"y": data[i], "x": start+i}
+            }
+            data = data_format
+
+            function smoothing(data, smooth_val){
+                idx = smooth_val;
+                smooth_data = [];
+                function sub_mean(data, left, right){
+                    sum_x = 0;
+                    sum_y = 0;
+                    div = right-left
+                    while (left < right){
+                        sum_x += data[left].x;
+                        sum_y += data[left].y;
+                        left += 1;
+                    }
+                    return {"x" : sum_x / div, "y" : sum_y / div}
+                }
+                while (idx + smooth_val < data.length){
+                    smooth_data.push(sub_mean(data, idx - smooth_val, idx + smooth_val))
+                    idx += 1
+                }
+                return smooth_data
+            }
+
+            if (smooth > 0){
+               data = smoothing(data, smooth)
+               console.log("Fini smoothing")
+            }
 
             var svg = d3.select("body").append("svg")
                 .attr("width",  outerWidth)
                 .attr("height", outerHeight);
 
             var g = svg.append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            var path = g.append("path");
+                .attr("transform", "translate(" + (margin.left + 25)  + "," + margin.top + ")");
+
+            var g_labels = svg.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var path = g.append("path")
+                        .attr('stroke-width', '1px')
+                        .attr('stroke', 'black')
+                        .attr('fill', 'none');
+            
+            var innerWidth  = outerWidth  - margin.left - margin.right;
+            var innerHeight = outerHeight - margin.top  - margin.bottom;
+
+            var xAxisG = g.append("g")
+                .attr("transform", "translate(0," + innerHeight + ")");
+            var yAxisG = g.append("g");
+
+            var xScale = d3.scaleLinear()
+                            .range([0, innerWidth]);
+            var yScale = d3.scaleLinear()
+                            .range([innerHeight, 0]);
+
+            var xAxis = d3.axisBottom(xScale)
+                            .ticks(5, d3.format("e"));
+            var yAxis = d3.axisLeft(yScale);
+
+            var line = d3.line()
+                .x(function(d) { return xScale(d.x); })
+                .y(function(d) { return yScale(d.y); });
+
+
+
+            function render(data){
+                xScale.domain(d3.extent(data, function(d){return d.x;}));
+                yScale.domain(d3.extent(data, function(d){return d.y;}));
+
+                xAxisG.call(xAxis);
+                yAxisG.call(yAxis);
+
+                path.attr("d", line(data));
+            }
+
+            render(data)
+            // var input = document.createElement("input");
+            // input.type = "range";
+            // input.name = "smoothing";
+            // input.min = 0;
+            // input.max = data.length / 2 - 1
+            // svg.append(input);
+
+        }
+
+        function key_list(data, region, dataset_name,metadata = null){
+            console.log("Ok");
+
+            var outerWidth = 1000;
+            var outerHeight = get_height(data);
+            var margin = { left: 30, top: 30, right: 30, bottom: 65 };
+            var start = +region.split(":")[1]
+                              .split("-")[0];
+
+            var end = +region.split("-")[1];
+
+            var svg = d3.select("body").append("svg")
+                .attr("width",  outerWidth)
+                .attr("height", outerHeight);
 
             var innerWidth  = outerWidth  - margin.left - margin.right;
             var innerHeight = outerHeight - margin.top  - margin.bottom;
 
+
+            var g = svg.append("g")
+            .attr("transform", "translate(" + (margin.left + 25)  + "," + margin.top + ")");
+
+            var g_labels = svg.append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var xAxisG = g.append("g")
+                .attr("transform", "translate(0," + (innerHeight +5) + ")");
+            var yAxisG = g.append("g");
+
             var xScale = d3.scaleLinear()
-                            .range([0, innerWidth])
-                            .domain([start, end]);
+                            .range([0, innerWidth]);
             var yScale = d3.scaleLinear()
-                            .range([innerHeight, 0])
-                            .domain( d3.extent(data, function (d){ return d; }));
+                            .range([innerHeight, 0]);
 
-            var line = d3.line()
-                .x(function(d) { return xScale(); })
-                .y(function(d) { return yScale(); });
+            var xAxis = d3.axisBottom(xScale)
+                            .ticks(5, d3.format("e"));
+            var yAxis = d3.axisLeft(yScale);
 
-            console.log(line(data));
-            path.attr("d", line(data));
+            var div = d3.select("body").append("div")   
+                    .attr("class", "tooltip")               
+                    .style("opacity", 0);
 
-        }
 
-        function key_list(data, region){
+            var restructured_data = Array();
+            idx = 0;
+            y_idx = 0;
+            colors = {};
+            labels_data = []
+            var points = true;
+            for (var key in data){
+                labels_data.push({"label":key, "x": start, "y":y_idx, "color": get_color(dataset_name, key)});
+                raw_data = data[key];
+                restructured_data.length += raw_data.length;
+
+                for(i = 0; i < raw_data.length; i++){
+                    for (var key in raw_data[i][0]) var id = raw_data[i][0][key];
+                     points = points && (raw_data[i][1] == raw_data[i][2]) 
+                    restructured_data[i + idx] = {"x1":raw_data[i][1], "x2":raw_data[i][2], "y1" : y_idx, "y2" : y_idx, "color" : get_color(dataset_name, id), "list":raw_data[i][0]}
+                }
+                y_idx += 1;
+                idx = restructured_data.length;
+            }
+
+            render(restructured_data, labels_data, points)
+
+            function render(data, labels_data, points){
+                yScale.domain(d3.extent(data, function(d){return d.y1;}));
+                xScale.domain([start, end]);
+
+                xAxisG.call(xAxis);
+                // yAxisG.call(yAxis);
+
+                if(points){
+                    console.log(data)
+                    var points = g.selectAll("circle")
+                                    .data(data)
+                                    .enter()
+                                    .append("circle");
+
+                    var point = g.append("circle");
+
+                    var pointsAttributes = points
+                                        .attr("r", 2)
+                                        .attr("cx", function (d) { return xScale(d.x1); })
+                                        .attr("cy", function (d) { return yScale(d.y1); })
+                                        .style("fill", function (d) { return d.color; })
+                                        .on("mouseover", function(d){div.transition()        
+                                                                        .duration(200)      
+                                                                        .style("opacity", .9);      
+                                                                    div.html(function(){
+                                                                        string = "";
+                                                                        for(key in d.list) string += d.list[key] + " ";
+                                                                        return string
+                                                                    })  
+                                                                        .style("left", (d3.event.pageX) + "px")     
+                                                                        .style("top", (d3.event.pageY - 28) + "px");
+
+                                                                    point.transition()
+                                                                            .attr("cx", xScale(d.x1))
+                                                                            .attr("cy", yScale(d.y1))
+                                                                            .attr("r", 5)
+                                                                            .style("fill", "red");
+                                                                    })
+                                        .on("mouseout", function(d){ div.transition()        
+                                                                        .duration(500)      
+                                                                        .style("opacity", 0);
+                                                                    point.transition()
+                                                                            .attr("cx", xScale(d.x1))
+                                                                            .attr("cy", yScale(d.y1))
+                                                                            .attr("r", 0)
+                                                                            .style("fill", d.color);
+                                                                    });
+
+
+                }else{
+
+                    var lines = g.selectAll("line")
+                                        .data(data)
+                                        .enter()
+                                        .append("line");
+
+                    var lineAttributes = lines
+                                            .attr("x1", function (d) { return xScale(d.x1); })
+                                            .attr("x2", function (d) { return xScale(d.x2); })
+                                            .attr("y1", function (d) { return yScale(d.y1); })
+                                            .attr("y2", function (d) { return yScale(d.y2); })
+                                            .attr("stroke-width", 5)
+                                            .attr("stroke", function(d) { return d.color; });
+                }
+
+                var text = g_labels.selectAll("text")
+                        .data(labels_data)
+                        .enter()
+                        .append("text");
+
+                var textLabels = text
+                    .attr("x", function(d) { return xScale(d.x); })
+                    .attr("y", function(d) { return yScale(d.y); })
+                    .text( function (d) { return d.label; })
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", 5)
+                    .attr("fill", function(d) { return d.color});
+
+            }
+
+            function get_color(dataset_name, id){
+                if (id in colors)
+                    return colors[id];
+                url = "/resources/"+ dataset_name + "?id=" + id;
+                var Httpreq = new XMLHttpRequest(); // a new request
+                Httpreq.open("GET", url ,false);
+                Httpreq.send(null);
+                if (JSON.parse(Httpreq.responseText).color != undefined){
+                    colors[id] = JSON.parse(Httpreq.responseText).color;
+                    return JSON.parse(Httpreq.responseText).color;
+                }else{
+                    colors[id] = "#000000";
+                    return  "#000000"
+                };
+            }
+
+            function get_height(data){
+                count_key = 0;
+                for (key in data){
+                    count_key++;
+                }   
+                console.log(count_key * 50)
+                return Math.min(count_key * 100, 500)
+            }
+
+            console.log("DONE")
 
         }
 
@@ -105,3 +365,26 @@
 
   </body>
 </html>
+
+ <!-- function render(data, dataset_name, y_idx){
+                dataToRender = data
+                try{
+                    for (key in data[1]) var id = key;
+                    url = "/resources/"+ dataset_name + "/" + key;
+                    var color;
+                    d3.json(url, function(error, metadata){
+                            //if (error) console.log(error); 
+                            color = metadata.color;
+                            svg.append("line")
+                               .attr({ x1: xScale(dataToRender.start), y1: yScale(y_idx), //start of the line
+                                       x2: xScale(dataToRender.end), y2: yScale(y_idx)  //end of the line
+                                     });
+
+                            })
+
+                }catch(e){
+                    var color = "#000000"
+                }
+
+
+            } -->

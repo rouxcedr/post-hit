@@ -119,7 +119,7 @@ class BigBedAdapter(Adapter):
 
             line = dict(zip(cols, line.rstrip().split()))
 
-            value = {field:line[field].decode("utf-8") for field in self.dataset["dataset"]["data_representation"]["fields"]}   
+            value = {field:line[field] for field in self.dataset["dataset"]["data_representation"]["fields"]}   
             key = line[key] if key == self.dataset["dataset"]["data_representation"]["key"] else key
 
             result[key].append(tuple([value, int(line["chromStart"]) + 1,

@@ -64,8 +64,8 @@ def get_region(region):
 
     return jsonify({"response":return_data, "sucess": 1})
 
-@app.route("/resources/<string:dataset>/<string:id>")
-def ressource(dataset, id):
+@app.route("/resources/<string:dataset>/")
+def ressource(dataset):
     """
         Gets the metadata information described in the JSON.
 
@@ -77,16 +77,26 @@ def ressource(dataset, id):
     
     """
 
+    query_string = request.query_string.decode("utf-8")
+    ids = [query.split("=")[1] for query in query_string.split("&")]
+    ids = [id.replace("%27", "'") if "%27" in id else id for id in ids ]
+    print(ids)
     dataset = DataSet(dataset)
 
     with open(dataset.dataset_path) as json_file:
         dataset_json = json.load(json_file)
 
+    result = []
+
     metadata = dataset_json["dataset"]["metadata"]
-    print(metadata)
     for data in metadata:
-        if data["id"] == id:
-            return jsonify(data)
+        if data["id"] in ids:
+            result.append(data)
+    if len(result) == 1:
+        print(result)
+        return jsonify(result[0])
+    else:
+        return jsonify({"response":result, "sucess": 1})
 
 
 

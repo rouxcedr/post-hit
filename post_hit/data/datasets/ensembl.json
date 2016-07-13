@@ -22,7 +22,26 @@
     "data_path": "data/ensembl/",
     "files_type": "gtf",
     "metadata": [
-      
+      {
+        "color": "#FF0000",
+        "id": "exon"
+      },
+      {
+        "color": "#808080",
+        "id": "transcript"
+      },
+      {
+        "color": "#FFFFFF",
+        "id": "stop_codon"
+      },
+      {
+        "color": "#FFFFFF",
+        "id": "start_codon"
+      },
+      {
+        "color": "#0000FF",
+        "id": "CDS"
+      }
     ],
     "protocole": "ftp"
   }
