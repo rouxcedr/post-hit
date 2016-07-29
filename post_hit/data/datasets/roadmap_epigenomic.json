@@ -779,1197 +779,1324 @@
     "files_type": "bb",
     "metadata": [
       {
-        "ethnicity": "NA",
-        "epigenome_name": "IMR90 fetal lung fibroblasts Cell Line",
-        "gender": "Female",
-        "color": "#E41A1C",
-        "type": "IMR90",
-        "id": "E017"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "ES-WA7 Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E002"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H9 Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E008"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "ES-I3 Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E001"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "HUES6 Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E015"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "HUES48 Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E014"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "HUES64 Cells",
-        "gender": "Male",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E016"
-      },
-      {
-        "ethnicity": "Male",
-        "epigenome_name": "H1 Cells",
-        "gender": "UCSF-UBC",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E003"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "ES-UCSF4  Cells",
-        "gender": "Female",
-        "color": "#924965",
-        "type": "ESC",
-        "id": "E024"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "iPS-20b Cells",
-        "gender": "Male",
-        "color": "#69608A",
-        "type": "iPSC",
-        "id": "E020"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "iPS-18 Cells",
-        "gender": "Female",
-        "color": "#69608A",
-        "type": "iPSC",
-        "id": "E019"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "iPS-15b Cells",
-        "gender": "Female",
-        "color": "#69608A",
-        "type": "iPSC",
-        "id": "E018"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "iPS DF 6.9 Cells",
-        "gender": "Male",
-        "color": "#69608A",
-        "type": "iPSC",
-        "id": "E021"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "iPS DF 19.11 Cells",
-        "gender": "Male",
-        "color": "#69608A",
-        "type": "iPSC",
-        "id": "E022"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H1 Derived Neuronal Progenitor Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E007"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H9 Derived Neuronal Progenitor Cultured Cells",
-        "gender": "Female",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E009"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H9 Derived Neuron Cultured Cells",
-        "gender": "Female",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E010"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "hESC Derived CD56+ Mesoderm Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E013"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "hESC Derived CD56+ Ectoderm Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E012"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "hESC Derived CD184+ Endoderm Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E011"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H1 BMP4 Derived Mesendoderm Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E004"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H1 BMP4 Derived Trophoblast Cultured Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E005"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "H1 Derived Mesenchymal Stem Cells",
-        "gender": "Male",
-        "color": "#4178AE",
-        "type": "ES-deriv",
-        "id": "E006"
-      },
-      {
-        "ethnicity": "Caucasian, Indian/Arabian",
-        "epigenome_name": "Primary mononuclear cells from\u00a0peripheral\u00a0blood",
-        "gender": "Male",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E062"
-      },
-      {
-        "ethnicity": "Caucasian, Hispanic",
-        "epigenome_name": "Primary T cells from\u00a0peripheral\u00a0blood",
-        "gender": "Male",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E034"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T cells effector/memory enriched from peripheral blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E045"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T cells from cord blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E033"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T regulatory cells from\u00a0peripheral\u00a0blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E044"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper cells from\u00a0peripheral\u00a0blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E043"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper naive cells from\u00a0peripheral\u00a0blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E039"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper cells PMA-I stimulated",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E041"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper 17 cells PMA-I stimulated",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E042"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper memory cells from peripheral blood 1",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E040"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T helper memory cells from peripheral blood 2",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E037"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary T CD8+ memory cells from peripheral blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E048"
-      },
-      {
-        "ethnicity": "LIQUID",
-        "epigenome_name": "Primary T helper naive cells from peripheral blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E038"
-      },
-      {
-        "ethnicity": "LIQUID",
-        "epigenome_name": "Primary T CD8+ naive cells from peripheral blood",
-        "gender": "Unknown",
-        "color": "#55A354",
-        "type": "Blood & T-cell",
-        "id": "E047"
-      },
-      {
-        "ethnicity": "Hispanic, Unknown",
-        "epigenome_name": "Primary monocytes from\u00a0peripheral\u00a0blood",
-        "gender": "Male",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E029"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary B cells from cord blood",
-        "gender": "Mixed",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E031"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary hematopoietic stem cells",
-        "gender": "Unknown",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E035"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Primary hematopoietic stem cells G-CSF-mobilized Male",
-        "gender": "Male",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E051"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary hematopoietic stem cells G-CSF-mobilized Female",
-        "gender": "Mixed",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E050"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary hematopoietic stem cells short term culture",
-        "gender": "Unknown",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E036"
-      },
-      {
-        "ethnicity": "Caucasian, Hispanic",
-        "epigenome_name": "Primary B cells from peripheral blood",
-        "gender": "Male",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E032"
-      },
-      {
-        "ethnicity": "Caucasian, Hispanic",
-        "epigenome_name": "Primary Natural Killer cells from\u00a0peripheral\u00a0blood",
-        "gender": "Male",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E046"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Primary neutrophils from\u00a0peripheral\u00a0blood",
-        "gender": "Male",
-        "color": "#678C69",
-        "type": "HSC & B-cell",
-        "id": "E030"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Bone Marrow Derived Cultured Mesenchymal Stem Cells",
-        "gender": "Unknown",
-        "color": "#B65C73",
-        "type": "Mesench",
-        "id": "E026"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Mesenchymal Stem Cell Derived Chondrocyte Cultured Cells",
-        "gender": "Unknown",
-        "color": "#B65C73",
-        "type": "Mesench",
-        "id": "E049"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Adipose Derived Mesenchymal Stem Cell Cultured Cells",
-        "gender": "Female",
-        "color": "#B65C73",
-        "type": "Mesench",
-        "id": "E025"
-      },
-      {
-        "ethnicity": "NA",
-        "epigenome_name": "Mesenchymal Stem Cell Derived Adipocyte Cultured Cells",
-        "gender": "Female",
-        "color": "#B65C73",
-        "type": "Mesench",
-        "id": "E023"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Muscle Satellite Cultured Cells",
-        "gender": "Unknown",
-        "color": "#E67326",
-        "type": "Myosat",
-        "id": "E052"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Fibroblast Primary Cells skin01",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E055"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Fibroblast Primary Cells skin02",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E056"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Melanocyte Primary Cells skin01",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E059"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Melanocyte Primary Cells skin03",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E061"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Keratinocyte Primary Cells skin02",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E057"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Foreskin Keratinocyte Primary Cells skin03",
-        "gender": "Male",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E058"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Breast variant Human Mammary Epithelial Cells vHMEC",
-        "gender": "Female",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E028"
-      },
-      {
-        "ethnicity": "African-American, African-American",
-        "epigenome_name": "Breast Myoepithelial Primary Cells",
-        "gender": "Female",
-        "color": "#FF9D0C",
-        "type": "Epithelial",
-        "id": "E027"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Ganglion Eminence derived primary cultured neurospheres",
-        "gender": "Female",
-        "color": "#FFD924",
-        "type": "Neurosph",
-        "id": "E054"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Cortex derived primary cultured neurospheres",
-        "gender": "Female",
-        "color": "#FFD924",
-        "type": "Neurosph",
-        "id": "E053"
-      },
-      {
-        "ethnicity": "Caucasian/African American",
-        "epigenome_name": "Thymus",
-        "gender": "Male",
-        "color": "#DAB92E",
-        "type": "Thymus",
-        "id": "E112"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Thymus",
-        "gender": "Female",
-        "color": "#DAB92E",
-        "type": "Thymus",
-        "id": "E093"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Hippocampus Middle",
-        "gender": "Male",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E071"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Substantia Nigra",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E074"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Anterior Caudate",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E068"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Cingulate Gyrus",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E069"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Inferior Temporal Lobe",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E072"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Angular Gyrus",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E067"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain_Dorsolateral_Prefrontal_Cortex",
-        "gender": "Mixed",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E073"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Brain Germinal Matrix",
-        "gender": "Male",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E070"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Brain Female",
-        "gender": "Female",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E082"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Brain Male",
-        "gender": "Male/Unknown",
-        "color": "#C5912B",
-        "type": "Brain",
-        "id": "E081"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Adipose Nuclei",
-        "gender": "Female",
-        "color": "#AF5B39",
-        "type": "Adipose",
-        "id": "E063"
-      },
-      {
-        "ethnicity": "Caucasian/African American, Caucasian",
-        "epigenome_name": "Psoas Muscle",
-        "gender": "Male",
-        "color": "#C2655D",
-        "type": "Muscle",
-        "id": "E100"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Skeletal Muscle Female",
-        "gender": "Female",
-        "color": "#C2655D",
-        "type": "Muscle",
-        "id": "E108"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Skeletal Muscle Male",
-        "gender": "Male",
-        "color": "#C2655D",
-        "type": "Muscle",
-        "id": "E107"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Muscle Trunk",
-        "gender": "Female",
-        "color": "#C2655D",
-        "type": "Muscle",
-        "id": "E089"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Muscle Leg",
-        "gender": "Female",
-        "color": "#C2655D",
-        "type": "Muscle",
-        "id": "E090"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Heart",
-        "gender": "Mixed",
-        "color": "#D56F80",
-        "type": "Heart",
-        "id": "E083"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Right Atrium",
-        "gender": "Male",
-        "color": "#D56F80",
-        "type": "Heart",
-        "id": "E104"
-      },
-      {
-        "ethnicity": "Caucasian/African American, Caucasian",
-        "epigenome_name": "Left Ventricle",
-        "gender": "Male",
-        "color": "#D56F80",
-        "type": "Heart",
-        "id": "E095"
-      },
-      {
-        "ethnicity": "Caucasian/African American, Caucasian",
-        "epigenome_name": "Right Ventricle",
-        "gender": "Male",
-        "color": "#D56F80",
-        "type": "Heart",
-        "id": "E105"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Aorta",
-        "gender": "Male",
-        "color": "#D56F80",
-        "type": "Heart",
-        "id": "E065"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Duodenum Smooth Muscle",
-        "gender": "Male",
-        "color": "#F182BC",
-        "type": "Sm. Muscle",
-        "id": "E078"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Colon Smooth Muscle",
-        "gender": "Female",
-        "color": "#F182BC",
-        "type": "Sm. Muscle",
-        "id": "E076"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Rectal Smooth Muscle",
-        "gender": "Female",
-        "color": "#F182BC",
-        "type": "Sm. Muscle",
-        "id": "E103"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Stomach Smooth Muscle",
-        "gender": "Female",
-        "color": "#F182BC",
-        "type": "Sm. Muscle",
-        "id": "E111"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "Fetal Stomach",
-        "gender": "Female",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E092"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Intestine Small",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E085"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Intestine Large",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E084"
-      },
-      {
-        "ethnicity": "Caucasian/African American, Caucasian",
-        "epigenome_name": "Small Intestine",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E109"
-      },
-      {
-        "ethnicity": "Caucasian/African American, Caucasian",
-        "epigenome_name": "Sigmoid Colon",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E106"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Colonic Mucosa",
-        "gender": "Female",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E075"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Rectal Mucosa Donor 29",
-        "gender": "Female",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E101"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Rectal Mucosa Donor 31",
-        "gender": "Female",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E102"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Stomach Mucosa",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E110"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Duodenum Mucosa",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E077"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Esophagus",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E079"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Gastric",
-        "gender": "Male",
-        "color": "#C58DAA",
-        "type": "Digestive",
-        "id": "E094"
-      },
-      {
-        "ethnicity": "African American",
-        "epigenome_name": "Placenta Amnion",
-        "gender": "Male",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E099"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Kidney",
-        "gender": "Unknown",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E086"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "Fetal Lung",
-        "gender": "Female/Unknown",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E088"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Ovary",
-        "gender": "Female",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E097"
-      },
-      {
-        "ethnicity": "SOLID",
-        "epigenome_name": "Pancreatic Islets",
-        "gender": "Unknown, Unknown, 45Y",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E087"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Fetal Adrenal Gland",
-        "gender": "Male",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E080"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Placenta",
-        "gender": "Female",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E091"
-      },
-      {
-        "ethnicity": "Unknown",
-        "epigenome_name": "Liver",
-        "gender": "Mixed",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E066"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Pancreas",
-        "gender": "Male",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E098"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Lung",
-        "gender": "Female",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E096"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "Spleen",
-        "gender": "Male",
-        "color": "#999999",
-        "type": "Other",
-        "id": "E113"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "A549 EtOH 0.02pct Lung Carcinoma Cell Line",
-        "gender": "Male",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E114"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "Dnd41 TCell Leukemia Cell Line",
-        "gender": "Male",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E115"
-      },
-      {
-        "ethnicity": "Caucasian",
-        "epigenome_name": "GM12878 Lymphoblastoid Cells",
-        "gender": "Female",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E116"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HeLa-S3 Cervical Carcinoma Cell Line",
-        "gender": "Female",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E117"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HepG2 Hepatocellular Carcinoma Cell Line",
-        "gender": "Male",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E118"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HMEC Mammary Epithelial Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E119"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HSMM Skeletal Muscle Myoblasts Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E120"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HSMM cell derived Skeletal Muscle Myotubes Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E121"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "HUVEC Umbilical Vein Endothelial Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E122"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "K562 Leukemia Cells",
-        "gender": "Female",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E123"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "Monocytes-CD14+ RO01746 Primary Cells",
-        "gender": "Female",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E124"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "NH-A Astrocytes Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E125"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "NHDF-Ad Adult Dermal Fibroblast Primary Cells",
-        "gender": "Female",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E126"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "NHEK-Epidermal Keratinocyte Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E127"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "NHLF Lung Fibroblast Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E128"
-      },
-      {
-        "ethnicity": "",
-        "epigenome_name": "Osteoblast Primary Cells",
-        "gender": "Unknown",
-        "color": "#000000",
-        "type": "ENCODE2012",
-        "id": "E129"
-      },
+  "x_ref_id": "I8182",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#E41A1C",
+  "name": "IMR90_fetal_lung_fibroblasts_Cell_Line",
+  "type": "IMR90",
+  "id": "E017"
+},
 {
-    "id": "25_Quies",
-    "description": "Quiescent/Low",
-    "mnemonic": "Quies",
-    "state_number": 25,
-    "color": "#FFFFFF"
-  },
-  {
-    "id": "3_PromD1",
-    "description": "Promoter Downstream TSS 1",
-    "mnemonic": "PromD1",
-    "state_number": 3,
-    "color": "#FF4500"
-  },
-  {
-    "id": "5_Tx5'",
-    "description": "Transcribed - 5' preferential",
-    "mnemonic": "Tx5",
-    "state_number": 5,
-    "color": "#008000"
-  },
-  {
-    "id": "14_EnhA2",
-    "description": "Active Enhancer 2",
-    "mnemonic": "EnhA2",
-    "state_number": 14,
-    "color": "#FFC34D"
-  },
-  {
-    "id": "17_EnhW2",
-    "description": "Weak Enhancer 2",
-    "mnemonic": "EnhW2",
-    "state_number": 17,
-    "color": "#FFFF00"
-  },
-  {
-    "id": "10_TxEnh5'",
-    "description": "Transcribed 5' preferential and Enh",
-    "mnemonic": "TxEnh5",
-    "state_number": 10,
-    "color": "#C2E150"
-  },
-  {
-    "id": "20_ZNF/Rpts",
-    "description": "ZNF genes & repeats",
-    "mnemonic": "ZNF/Rpts",
-    "state_number": 20,
-    "color": "#66CDAA"
-  },
-  {
-    "id": "11_TxEnh3'",
-    "description": "Transcribed 3' preferential and Enh",
-    "mnemonic": "TxEnh3",
-    "state_number": 11,
-    "color": "#C2E150"
-  },
-  {
-    "id": "13_EnhA1",
-    "description": "Active Enhancer 1",
-    "mnemonic": "EnhA1",
-    "state_number": 13,
-    "color": "#FFC34D"
-  },
-  {
-    "id": "22_PromP",
-    "description": "Poised Promoter",
-    "mnemonic": "PromP",
-    "state_number": 22,
-    "color": "#E6B8B7"
-  },
-  {
-    "id": "6_Tx",
-    "description": "Strong transcription",
-    "mnemonic": "Tx",
-    "state_number": 6,
-    "color": "#008000"
-  },
-  {
-    "id": "12_TxEnhW",
-    "description": "Transcribed and Weak Enhancer Electric",
-    "mnemonic": "TxEnhW",
-    "state_number": 12,
-    "color": "#C2E150"
-  },
-  {
-    "id": "18_EnhAc",
-    "description": "Primary H3K27ac possible Enhancer",
-    "mnemonic": "EnhAc",
-    "state_number": 18,
-    "color": "#FFFF00"
-  },
-  {
-    "id": "2_PromU",
-    "description": "Promoter Upstream TSS",
-    "mnemonic": "PromU",
-    "state_number": 2,
-    "color": "#FF4500"
-  },
-  {
-    "id": "4_PromD2",
-    "description": "Promoter Downstream TSS 2",
-    "mnemonic": "PromD2",
-    "state_number": 4,
-    "color": "#FF4500"
-  },
-  {
-    "id": "19_DNase",
-    "description": "Primary DNase",
-    "mnemonic": "DNase",
-    "state_number": 19,
-    "color": "#FFFF66"
-  },
-  {
-    "id": "8_TxWk",
-    "description": "Weak transcription",
-    "mnemonic": "TxWk",
-    "state_number": 8,
-    "color": "#009600"
-  },
-  {
-    "id": "9_TxReg",
-    "description": "Transcribed & regulatory (Prom/Enh)",
-    "mnemonic": "TxReg",
-    "state_number": 9,
-    "color": "#C2E150"
-  },
-  {
-    "id": "21_Het",
-    "description": "Heterochromatin",
-    "mnemonic": "Het",
-    "state_number": 21,
-    "color": "#8A91D0"
-  },
-  {
-    "id": "23_PromBiv",
-    "description": "Bivalent Promoter",
-    "mnemonic": "PromBiv",
-    "state_number": 23,
-    "color": "#7030A0"
-  },
-  {
-    "id": "16_EnhW1",
-    "description": "Weak Enhancer 1",
-    "mnemonic": "EnhW1",
-    "state_number": 16,
-    "color": "#FFFF00"
-  },
-  {
-    "id": "1_TssA",
-    "description": "Active TSS",
-    "mnemonic": "TssA",
-    "state_number": 1,
-    "color": "#FF0000"
-  },
-  {
-    "id": "24_ReprPC",
-    "description": "Repressed Polycomb",
-    "mnemonic": "ReprPC",
-    "state_number": 24,
-    "color": "#808080"
-  },
-  {
-    "id": "15_EnhAF",
-    "description": "Active Enhancer Flank",
-    "mnemonic": "EnhAF",
-    "state_number": 15,
-    "color": "#FFC34D"
-  },
-  {
-    "id": "7_Tx3'",
-    "description": "Transcribed - 3' preferential",
-    "mnemonic": "Tx3",
-    "state_number": 7,
-    "color": "#008000"
-  }
-      
+  "x_ref_id": "E1266",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "ES-WA7_Cells",
+  "type": "ESC",
+  "id": "E002"
+},
+{
+  "x_ref_id": "E0681",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "H9_Cells",
+  "type": "ESC",
+  "id": "E008"
+},
+{
+  "x_ref_id": "E9754",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "ES-I3_Cells",
+  "type": "ESC",
+  "id": "E001"
+},
+{
+  "x_ref_id": "E6793",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "HUES6_Cells",
+  "type": "ESC",
+  "id": "E015"
+},
+{
+  "x_ref_id": "E6811",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "HUES48_Cells",
+  "type": "ESC",
+  "id": "E014"
+},
+{
+  "x_ref_id": "E5894",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "HUES64_Cells",
+  "type": "ESC",
+  "id": "E016"
+},
+{
+  "x_ref_id": "E8224",
+  "gender": "UCSF-UBC",
+  "ethnicity": "Male",
+  "color": "#924965",
+  "name": "H1_Cells",
+  "type": "ESC",
+  "id": "E003"
+},
+{
+  "x_ref_id": "E0348",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#924965",
+  "name": "ES-UCSF4__Cells",
+  "type": "ESC",
+  "id": "E024"
+},
+{
+  "x_ref_id": "i6790",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#69608A",
+  "name": "iPS-20b_Cells",
+  "type": "iPSC",
+  "id": "E020"
+},
+{
+  "x_ref_id": "i4191",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#69608A",
+  "name": "iPS-18_Cells",
+  "type": "iPSC",
+  "id": "E019"
+},
+{
+  "x_ref_id": "i2670",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#69608A",
+  "name": "iPS-15b_Cells",
+  "type": "iPSC",
+  "id": "E018"
+},
+{
+  "x_ref_id": "i7530",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#69608A",
+  "name": "iPS_DF_6.9_Cells",
+  "type": "iPSC",
+  "id": "E021"
+},
+{
+  "x_ref_id": "i4605",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#69608A",
+  "name": "iPS_DF_19.11_Cells",
+  "type": "iPSC",
+  "id": "E022"
+},
+{
+  "x_ref_id": "E6456",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H1_Derived_Neuronal_Progenitor_Cultured_Cells",
+  "type": "ES-deriv",
+  "id": "E007"
+},
+{
+  "x_ref_id": "E7017",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H9_Derived_Neuronal_Progenitor_Cultured_Cells",
+  "type": "ES-deriv",
+  "id": "E009"
+},
+{
+  "x_ref_id": "E5302",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H9_Derived_Neuron_Cultured_Cells",
+  "type": "ES-deriv",
+  "id": "E010"
+},
+{
+  "x_ref_id": "E1876",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H1_BMP4_Derived_Mesendoderm_Cultured_Cells",
+  "type": "ES-deriv",
+  "id": "E004"
+},
+{
+  "x_ref_id": "E3548",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H1_BMP4_Derived_Trophoblast_Cultured_Cells",
+  "type": "ES-deriv",
+  "id": "E005"
+},
+{
+  "x_ref_id": "E0683",
+  "gender": "Male",
+  "ethnicity": "NA",
+  "color": "#4178AE",
+  "name": "H1_Derived_Mesenchymal_Stem_Cells",
+  "type": "ES-deriv",
+  "id": "E006"
+},
+{
+  "x_ref_id": "B5833",
+  "gender": "Male",
+  "ethnicity": "Caucasian,_Indian/Arabian",
+  "color": "#55A354",
+  "name": "Primary_mononuclear_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E062"
+},
+{
+  "x_ref_id": "B2079",
+  "gender": "Male",
+  "ethnicity": "Caucasian,_Hispanic",
+  "color": "#55A354",
+  "name": "Primary_T_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E034"
+},
+{
+  "x_ref_id": "B9790",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_cells_effector/memory_enriched_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E045"
+},
+{
+  "x_ref_id": "B9296",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_cells_from_cord_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E033"
+},
+{
+  "x_ref_id": "B9755",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_regulatory_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E044"
+},
+{
+  "x_ref_id": "B5524",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_helper_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E043"
+},
+{
+  "x_ref_id": "B9605",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_helper_naive_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E039"
+},
+{
+  "x_ref_id": "B8789",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_helper_cells_PMA-I_stimulated",
+  "type": "Blood_&_T-cell",
+  "id": "E041"
+},
+{
+  "x_ref_id": "B6369",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_helper_17_cells_PMA-I_stimulated",
+  "type": "Blood_&_T-cell",
+  "id": "E042"
+},
+{
+  "x_ref_id": "B5111",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#55A354",
+  "name": "Primary_T_CD8+_memory_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E048"
+},
+{
+  "x_ref_id": "B9605",
+  "gender": "Unknown",
+  "ethnicity": "LIQUID",
+  "color": "#55A354",
+  "name": "Primary_T_helper_naive_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E038"
+},
+{
+  "x_ref_id": "B4797",
+  "gender": "Unknown",
+  "ethnicity": "LIQUID",
+  "color": "#55A354",
+  "name": "Primary_T_CD8+_naive_cells_from_peripheral_blood",
+  "type": "Blood_&_T-cell",
+  "id": "E047"
+},
+{
+  "x_ref_id": "H6128",
+  "gender": "Male",
+  "ethnicity": "Hispanic,_Unknown",
+  "color": "#678C69",
+  "name": "Primary_monocytes_from_peripheral_blood",
+  "type": "HSC_&_B-cell",
+  "id": "E029"
+},
+{
+  "x_ref_id": "H5031",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#678C69",
+  "name": "Primary_B_cells_from_cord_blood",
+  "type": "HSC_&_B-cell",
+  "id": "E031"
+},
+{
+  "x_ref_id": "H7386",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#678C69",
+  "name": "Primary_hematopoietic_stem_cells",
+  "type": "HSC_&_B-cell",
+  "id": "E035"
+},
+{
+  "x_ref_id": "H7929",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#678C69",
+  "name": "Primary_hematopoietic_stem_cells_G-CSF-mobilized_Male",
+  "type": "HSC_&_B-cell",
+  "id": "E051"
+},
+{
+  "x_ref_id": "H5769",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#678C69",
+  "name": "Primary_hematopoietic_stem_cells_G-CSF-mobilized_Female",
+  "type": "HSC_&_B-cell",
+  "id": "E050"
+},
+{
+  "x_ref_id": "H9943",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#678C69",
+  "name": "Primary_hematopoietic_stem_cells_short_term_culture",
+  "type": "HSC_&_B-cell",
+  "id": "E036"
+},
+{
+  "x_ref_id": "H1606",
+  "gender": "Male",
+  "ethnicity": "Caucasian,_Hispanic",
+  "color": "#678C69",
+  "name": "Primary_B_cells_from_peripheral_blood",
+  "type": "HSC_&_B-cell",
+  "id": "E032"
+},
+{
+  "x_ref_id": "H7196",
+  "gender": "Male",
+  "ethnicity": "Caucasian,_Hispanic",
+  "color": "#678C69",
+  "name": "Primary_Natural_Killer_cells_from_peripheral_blood",
+  "type": "HSC_&_B-cell",
+  "id": "E046"
+},
+{
+  "x_ref_id": "H2809",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#678C69",
+  "name": "Primary_neutrophils_from_peripheral_blood",
+  "type": "HSC_&_B-cell",
+  "id": "E030"
+},
+{
+  "x_ref_id": "M3734",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#B65C73",
+  "name": "Bone_Marrow_Derived_Cultured_Mesenchymal_Stem_Cells",
+  "type": "Mesench",
+  "id": "E026"
+},
+{
+  "x_ref_id": "M6471",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#B65C73",
+  "name": "Mesenchymal_Stem_Cell_Derived_Chondrocyte_Cultured_Cells",
+  "type": "Mesench",
+  "id": "E049"
+},
+{
+  "x_ref_id": "M5410",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#B65C73",
+  "name": "Adipose_Derived_Mesenchymal_Stem_Cell_Cultured_Cells",
+  "type": "Mesench",
+  "id": "E025"
+},
+{
+  "x_ref_id": "M0541",
+  "gender": "Female",
+  "ethnicity": "NA",
+  "color": "#B65C73",
+  "name": "Mesenchymal_Stem_Cell_Derived_Adipocyte_Cultured_Cells",
+  "type": "Mesench",
+  "id": "E023"
+},
+{
+  "x_ref_id": "M8629",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#E67326",
+  "name": "Muscle_Satellite_Cultured_Cells",
+  "type": "Myosat",
+  "id": "E052"
+},
+{
+  "x_ref_id": "E4816",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#FF9D0C",
+  "name": "Breast_variant_Human_Mammary_Epithelial_Cells_vHMEC",
+  "type": "Epithelial",
+  "id": "E028"
+},
+{
+  "x_ref_id": "E3399",
+  "gender": "Female",
+  "ethnicity": "African-American,_African-American",
+  "color": "#FF9D0C",
+  "name": "Breast_Myoepithelial_Primary_Cells",
+  "type": "Epithelial",
+  "id": "E027"
+},
+{
+  "x_ref_id": "N2533",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#FFD924",
+  "name": "Ganglion_Eminence_derived_primary_cultured_neurospheres",
+  "type": "Neurosph",
+  "id": "E054"
+},
+{
+  "x_ref_id": "N2118",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#FFD924",
+  "name": "Cortex_derived_primary_cultured_neurospheres",
+  "type": "Neurosph",
+  "id": "E053"
+},
+{
+  "x_ref_id": "T0748",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American",
+  "color": "#DAB92E",
+  "name": "Thymus",
+  "type": "Thymus",
+  "id": "E112"
+},
+{
+  "x_ref_id": "T6041",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#DAB92E",
+  "name": "Fetal_Thymus",
+  "type": "Thymus",
+  "id": "E093"
+},
+{
+  "x_ref_id": "B1916",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Hippocampus_Middle",
+  "type": "Brain",
+  "id": "E071"
+},
+{
+  "x_ref_id": "B0032",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Substantia_Nigra",
+  "type": "Brain",
+  "id": "E074"
+},
+{
+  "x_ref_id": "B7890",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Anterior_Caudate",
+  "type": "Brain",
+  "id": "E068"
+},
+{
+  "x_ref_id": "B5875",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Cingulate_Gyrus",
+  "type": "Brain",
+  "id": "E069"
+},
+{
+  "x_ref_id": "B7504",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Inferior_Temporal_Lobe",
+  "type": "Brain",
+  "id": "E072"
+},
+{
+  "x_ref_id": "B8647",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Angular_Gyrus",
+  "type": "Brain",
+  "id": "E067"
+},
+{
+  "x_ref_id": "B1338",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Dorsolateral_Prefrontal_Cortex",
+  "type": "Brain",
+  "id": "E073"
+},
+{
+  "x_ref_id": "B7968",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Brain_Germinal_Matrix",
+  "type": "Brain",
+  "id": "E070"
+},
+{
+  "x_ref_id": "B9780",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Fetal_Brain_Female",
+  "type": "Brain",
+  "id": "E082"
+},
+{
+  "x_ref_id": "B3627",
+  "gender": "Male/Unknown",
+  "ethnicity": "Unknown",
+  "color": "#C5912B",
+  "name": "Fetal_Brain_Male",
+  "type": "Brain",
+  "id": "E081"
+},
+{
+  "x_ref_id": "A9757",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#AF5B39",
+  "name": "Adipose_Nuclei",
+  "type": "Adipose",
+  "id": "E063"
+},
+{
+  "x_ref_id": "M1952",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American,_Caucasian",
+  "color": "#C2655D",
+  "name": "Psoas_Muscle",
+  "type": "Muscle",
+  "id": "E100"
+},
+{
+  "x_ref_id": "M5290",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#C2655D",
+  "name": "Skeletal_Muscle_Female",
+  "type": "Muscle",
+  "id": "E108"
+},
+{
+  "x_ref_id": "M3530",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#C2655D",
+  "name": "Skeletal_Muscle_Male",
+  "type": "Muscle",
+  "id": "E107"
+},
+{
+  "x_ref_id": "M6665",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#C2655D",
+  "name": "Fetal_Muscle_Trunk",
+  "type": "Muscle",
+  "id": "E089"
+},
+{
+  "x_ref_id": "M2161",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#C2655D",
+  "name": "Fetal_Muscle_Leg",
+  "type": "Muscle",
+  "id": "E090"
+},
+{
+  "x_ref_id": "H8857",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#D56F80",
+  "name": "Fetal_Heart",
+  "type": "Heart",
+  "id": "E083"
+},
+{
+  "x_ref_id": "H5339",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#D56F80",
+  "name": "Right_Atrium",
+  "type": "Heart",
+  "id": "E104"
+},
+{
+  "x_ref_id": "H1751",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American,_Caucasian",
+  "color": "#D56F80",
+  "name": "Left_Ventricle",
+  "type": "Heart",
+  "id": "E095"
+},
+{
+  "x_ref_id": "H9775",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American,_Caucasian",
+  "color": "#D56F80",
+  "name": "Right_Ventricle",
+  "type": "Heart",
+  "id": "E105"
+},
+{
+  "x_ref_id": "H4385",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#D56F80",
+  "name": "Aorta",
+  "type": "Heart",
+  "id": "E065"
+},
+{
+  "x_ref_id": "M3139",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#F182BC",
+  "name": "Duodenum_Smooth_Muscle",
+  "type": "Sm._Muscle",
+  "id": "E078"
+},
+{
+  "x_ref_id": "M5176",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#F182BC",
+  "name": "Colon_Smooth_Muscle",
+  "type": "Sm._Muscle",
+  "id": "E076"
+},
+{
+  "x_ref_id": "M9829",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#F182BC",
+  "name": "Rectal_Smooth_Muscle",
+  "type": "Sm._Muscle",
+  "id": "E103"
+},
+{
+  "x_ref_id": "M3900",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#F182BC",
+  "name": "Stomach_Smooth_Muscle",
+  "type": "Sm._Muscle",
+  "id": "E111"
+},
+{
+  "x_ref_id": "D3508",
+  "gender": "Female",
+  "ethnicity": "",
+  "color": "#C58DAA",
+  "name": "Fetal_Stomach",
+  "type": "Digestive",
+  "id": "E092"
+},
+{
+  "x_ref_id": "D2609",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#C58DAA",
+  "name": "Fetal_Intestine_Small",
+  "type": "Digestive",
+  "id": "E085"
+},
+{
+  "x_ref_id": "D8694",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#C58DAA",
+  "name": "Fetal_Intestine_Large",
+  "type": "Digestive",
+  "id": "E084"
+},
+{
+  "x_ref_id": "D1024",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American,_Caucasian",
+  "color": "#C58DAA",
+  "name": "Small_Intestine",
+  "type": "Digestive",
+  "id": "E109"
+},
+{
+  "x_ref_id": "D8638",
+  "gender": "Male",
+  "ethnicity": "Caucasian/African_American,_Caucasian",
+  "color": "#C58DAA",
+  "name": "Sigmoid_Colon",
+  "type": "Digestive",
+  "id": "E106"
+},
+{
+  "x_ref_id": "D6263",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Colonic_Mucosa",
+  "type": "Digestive",
+  "id": "E075"
+},
+{
+  "x_ref_id": "D7577",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Rectal_Mucosa_Donor_29",
+  "type": "Digestive",
+  "id": "E101"
+},
+{
+  "x_ref_id": "D9711",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Rectal_Mucosa_Donor_31",
+  "type": "Digestive",
+  "id": "E102"
+},
+{
+  "x_ref_id": "D0519",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Stomach_Mucosa",
+  "type": "Digestive",
+  "id": "E110"
+},
+{
+  "x_ref_id": "D7045",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Duodenum_Mucosa",
+  "type": "Digestive",
+  "id": "E077"
+},
+{
+  "x_ref_id": "D0117",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Esophagus",
+  "type": "Digestive",
+  "id": "E079"
+},
+{
+  "x_ref_id": "D4117",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#C58DAA",
+  "name": "Gastric",
+  "type": "Digestive",
+  "id": "E094"
+},
+{
+  "x_ref_id": "P1137",
+  "gender": "Male",
+  "ethnicity": "African_American",
+  "color": "#999999",
+  "name": "Placenta_Amnion",
+  "type": "Other",
+  "id": "E099"
+},
+{
+  "x_ref_id": "K4016",
+  "gender": "Unknown",
+  "ethnicity": "Unknown",
+  "color": "#999999",
+  "name": "Fetal_Kidney",
+  "type": "Other",
+  "id": "E086"
+},
+{
+  "x_ref_id": "L7922",
+  "gender": "Female/Unknown",
+  "ethnicity": "",
+  "color": "#999999",
+  "name": "Fetal_Lung",
+  "type": "Other",
+  "id": "E088"
+},
+{
+  "x_ref_id": "O8511",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#999999",
+  "name": "Ovary",
+  "type": "Other",
+  "id": "E097"
+},
+{
+  "x_ref_id": "P6253",
+  "gender": "Unknown,_Unknown,_45Y",
+  "ethnicity": "SOLID",
+  "color": "#999999",
+  "name": "Pancreatic_Islets",
+  "type": "Other",
+  "id": "E087"
+},
+{
+  "x_ref_id": "A3002",
+  "gender": "Male",
+  "ethnicity": "Unknown",
+  "color": "#999999",
+  "name": "Fetal_Adrenal_Gland",
+  "type": "Other",
+  "id": "E080"
+},
+{
+  "x_ref_id": "O5609",
+  "gender": "Female",
+  "ethnicity": "Unknown",
+  "color": "#999999",
+  "name": "Placenta",
+  "type": "Other",
+  "id": "E091"
+},
+{
+  "x_ref_id": "O5839",
+  "gender": "Mixed",
+  "ethnicity": "Unknown",
+  "color": "#999999",
+  "name": "Liver",
+  "type": "Other",
+  "id": "E066"
+},
+{
+  "x_ref_id": "O6528",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#999999",
+  "name": "Pancreas",
+  "type": "Other",
+  "id": "E098"
+},
+{
+  "x_ref_id": "O1306",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#999999",
+  "name": "Lung",
+  "type": "Other",
+  "id": "E096"
+},
+{
+  "x_ref_id": "O0146",
+  "gender": "Male",
+  "ethnicity": "Caucasian",
+  "color": "#999999",
+  "name": "Spleen",
+  "type": "Other",
+  "id": "E113"
+},
+{
+  "x_ref_id": "L4335",
+  "gender": "Male",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "A549_EtOH_0.02pct_Lung_Carcinoma_Cell_Line",
+  "type": "ENCODE2012",
+  "id": "E114"
+},
+{
+  "x_ref_id": "B4190",
+  "gender": "Male",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "Dnd41_TCell_Leukemia_Cell_Line",
+  "type": "ENCODE2012",
+  "id": "E115"
+},
+{
+  "x_ref_id": "B6714",
+  "gender": "Female",
+  "ethnicity": "Caucasian",
+  "color": "#000000",
+  "name": "GM12878_Lymphoblastoid_Cells",
+  "type": "ENCODE2012",
+  "id": "E116"
+},
+{
+  "x_ref_id": "C5132",
+  "gender": "Female",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HeLa-S3_Cervical_Carcinoma_Cell_Line",
+  "type": "ENCODE2012",
+  "id": "E117"
+},
+{
+  "x_ref_id": "L0070",
+  "gender": "Male",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HepG2_Hepatocellular_Carcinoma_Cell_Line",
+  "type": "ENCODE2012",
+  "id": "E118"
+},
+{
+  "x_ref_id": "B0466",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HMEC_Mammary_Epithelial_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E119"
+},
+{
+  "x_ref_id": "M7434",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HSMM_Skeletal_Muscle_Myoblasts_Cells",
+  "type": "ENCODE2012",
+  "id": "E120"
+},
+{
+  "x_ref_id": "M3535",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HSMM_cell_derived_Skeletal_Muscle_Myotubes_Cells",
+  "type": "ENCODE2012",
+  "id": "E121"
+},
+{
+  "x_ref_id": "V2437",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "HUVEC_Umbilical_Vein_Endothelial_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E122"
+},
+{
+  "x_ref_id": "B8569",
+  "gender": "Female",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "K562_Leukemia_Cells",
+  "type": "ENCODE2012",
+  "id": "E123"
+},
+{
+  "x_ref_id": "B8240",
+  "gender": "Female",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "Monocytes-CD14+_RO01746_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E124"
+},
+{
+  "x_ref_id": "B7274",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "NH-A_Astrocytes_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E125"
+},
+{
+  "x_ref_id": "E7877",
+  "gender": "Female",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "NHDF-Ad_Adult_Dermal_Fibroblast_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E126"
+},
+{
+  "x_ref_id": "E9800",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "NHEK-Epidermal_Keratinocyte_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E127"
+},
+{
+  "x_ref_id": "L1724",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "NHLF_Lung_Fibroblast_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E128"
+},
+{
+  "x_ref_id": "B2716",
+  "gender": "Unknown",
+  "ethnicity": "",
+  "color": "#000000",
+  "name": "Osteoblast_Primary_Cells",
+  "type": "ENCODE2012",
+  "id": "E129"
+},
+{
+  "x_ref_id": "E5959",
+  "ethnicity": "NA",
+  "name": "hESC_Derived_CD56+_Mesoderm_Cultured_Cells",
+  "gender": "Male",
+  "color": "#4178AE",
+  "type": "ES-deriv",
+  "id": "E013"
+},
+{
+  "x_ref_id": "E8327",
+  "ethnicity": "NA",
+  "name": "hESC_Derived_CD56+_Ectoderm_Cultured_Cells",
+  "gender": "Male",
+  "color": "#4178AE",
+  "type": "ES-deriv",
+  "id": "E012"
+},
+{
+  "x_ref_id": "E9324",
+  "ethnicity": "NA",
+  "name": "hESC_Derived_CD184+_Endoderm_Cultured_Cells",
+  "gender": "Male",
+  "color": "#4178AE",
+  "type": "ES-deriv",
+  "id": "E011"
+},
+{
+  "x_ref_id": "B9987",
+  "ethnicity": "Unknown",
+  "name": "Primary_T_helper_memory_cells_from_peripheral_blood_1",
+  "gender": "Unknown",
+  "color": "#55A354",
+  "type": "Blood_&_T-cell",
+  "id": "E040"
+},
+{
+  "x_ref_id": "B9987",
+  "ethnicity": "Unknown",
+  "name": "Primary_T_helper_memory_cells_from_peripheral_blood_2",
+  "gender": "Unknown",
+  "color": "#55A354",
+  "type": "Blood_&_T-cell",
+  "id": "E037"
+},
+{
+  "x_ref_id": "E4252",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Fibroblast_Primary_Cells_skin01",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E055"
+},
+{
+  "x_ref_id": "E4252",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Fibroblast_Primary_Cells_skin02",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E056"
+},
+{
+  "x_ref_id": "E0988",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Melanocyte_Primary_Cells_skin01",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E059"
+},
+{
+  "x_ref_id": "E0988",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Melanocyte_Primary_Cells_skin03",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E061"
+},
+{
+  "x_ref_id": "E6661",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Keratinocyte_Primary_Cells_skin02",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E057"
+},
+{
+  "x_ref_id": "E6661",
+  "ethnicity": "Unknown",
+  "name": "Foreskin_Keratinocyte_Primary_Cells_skin03",
+  "gender": "Male",
+  "color": "#FF9D0C",
+  "type": "Epithelial",
+  "id": "E058"
+},
+
+      {
+        "id": "25_Quies",
+        "description": "Quiescent/Low",
+        "mnemonic": "Quies",
+        "state_number": 25,
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "3_PromD1",
+        "description": "Promoter Downstream TSS 1",
+        "mnemonic": "PromD1",
+        "state_number": 3,
+        "color": "#FF4500"
+      },
+      {
+        "id": "5_Tx5'",
+        "description": "Transcribed - 5' preferential",
+        "mnemonic": "Tx5",
+        "state_number": 5,
+        "color": "#008000"
+      },
+      {
+        "id": "14_EnhA2",
+        "description": "Active Enhancer 2",
+        "mnemonic": "EnhA2",
+        "state_number": 14,
+        "color": "#FFC34D"
+      },
+      {
+        "id": "17_EnhW2",
+        "description": "Weak Enhancer 2",
+        "mnemonic": "EnhW2",
+        "state_number": 17,
+        "color": "#FFFF00"
+      },
+      {
+        "id": "10_TxEnh5'",
+        "description": "Transcribed 5' preferential and Enh",
+        "mnemonic": "TxEnh5",
+        "state_number": 10,
+        "color": "#C2E150"
+      },
+      {
+        "id": "20_ZNF/Rpts",
+        "description": "ZNF genes & repeats",
+        "mnemonic": "ZNF/Rpts",
+        "state_number": 20,
+        "color": "#66CDAA"
+      },
+      {
+        "id": "11_TxEnh3'",
+        "description": "Transcribed 3' preferential and Enh",
+        "mnemonic": "TxEnh3",
+        "state_number": 11,
+        "color": "#C2E150"
+      },
+      {
+        "id": "13_EnhA1",
+        "description": "Active Enhancer 1",
+        "mnemonic": "EnhA1",
+        "state_number": 13,
+        "color": "#FFC34D"
+      },
+      {
+        "id": "22_PromP",
+        "description": "Poised Promoter",
+        "mnemonic": "PromP",
+        "state_number": 22,
+        "color": "#E6B8B7"
+      },
+      {
+        "id": "6_Tx",
+        "description": "Strong transcription",
+        "mnemonic": "Tx",
+        "state_number": 6,
+        "color": "#008000"
+      },
+      {
+        "id": "12_TxEnhW",
+        "description": "Transcribed and Weak Enhancer Electric",
+        "mnemonic": "TxEnhW",
+        "state_number": 12,
+        "color": "#C2E150"
+      },
+      {
+        "id": "18_EnhAc",
+        "description": "Primary H3K27ac possible Enhancer",
+        "mnemonic": "EnhAc",
+        "state_number": 18,
+        "color": "#FFFF00"
+      },
+      {
+        "id": "2_PromU",
+        "description": "Promoter Upstream TSS",
+        "mnemonic": "PromU",
+        "state_number": 2,
+        "color": "#FF4500"
+      },
+      {
+        "id": "4_PromD2",
+        "description": "Promoter Downstream TSS 2",
+        "mnemonic": "PromD2",
+        "state_number": 4,
+        "color": "#FF4500"
+      },
+      {
+        "id": "19_DNase",
+        "description": "Primary DNase",
+        "mnemonic": "DNase",
+        "state_number": 19,
+        "color": "#FFFF66"
+      },
+      {
+        "id": "8_TxWk",
+        "description": "Weak transcription",
+        "mnemonic": "TxWk",
+        "state_number": 8,
+        "color": "#009600"
+      },
+      {
+        "id": "9_TxReg",
+        "description": "Transcribed & regulatory (Prom/Enh)",
+        "mnemonic": "TxReg",
+        "state_number": 9,
+        "color": "#C2E150"
+      },
+      {
+        "id": "21_Het",
+        "description": "Heterochromatin",
+        "mnemonic": "Het",
+        "state_number": 21,
+        "color": "#8A91D0"
+      },
+      {
+        "id": "23_PromBiv",
+        "description": "Bivalent Promoter",
+        "mnemonic": "PromBiv",
+        "state_number": 23,
+        "color": "#7030A0"
+      },
+      {
+        "id": "16_EnhW1",
+        "description": "Weak Enhancer 1",
+        "mnemonic": "EnhW1",
+        "state_number": 16,
+        "color": "#FFFF00"
+      },
+      {
+        "id": "1_TssA",
+        "description": "Active TSS",
+        "mnemonic": "TssA",
+        "state_number": 1,
+        "color": "#FF0000"
+      },
+      {
+        "id": "24_ReprPC",
+        "description": "Repressed Polycomb",
+        "mnemonic": "ReprPC",
+        "state_number": 24,
+        "color": "#808080"
+      },
+      {
+        "id": "15_EnhAF",
+        "description": "Active Enhancer Flank",
+        "mnemonic": "EnhAF",
+        "state_number": 15,
+        "color": "#FFC34D"
+      },
+      {
+        "id": "7_Tx3'",
+        "description": "Transcribed - 3' preferential",
+        "mnemonic": "Tx3",
+        "state_number": 7,
+        "color": "#008000"
+      }
     ],
     "protocole": "http"
   }

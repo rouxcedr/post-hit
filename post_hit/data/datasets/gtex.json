@@ -329,7 +329,182 @@
       }
     ],
     "metadata": [
-      
-    ]
+  {
+    "x_ref_id": "A3415",
+    "id": "Adipose_Subcutaneous_Analysis"
+  },
+  {
+    "x_ref_id": "A1083",
+    "id": "Adipose_Visceral_Omentum_Analysis"
+  },
+  {
+    "x_ref_id": "A0500",
+    "id": "Adrenal_Gland_Analysis"
+  },
+  {
+    "x_ref_id": "A2753",
+    "id": "Artery_Aorta_Analysis"
+  },
+  {
+    "x_ref_id": "A5612",
+    "id": "Artery_Coronary_Analysis"
+  },
+  {
+    "x_ref_id": "A8516",
+    "id": "Artery_Tibial_Analysis"
+  },
+  {
+    "x_ref_id": "B3926",
+    "id": "Brain_Anterior_cingulate_cortex_BA24_Analysis"
+  },
+  {
+    "x_ref_id": "B1373",
+    "id": "Brain_Caudate_basal_ganglia_Analysis"
+  },
+  {
+    "x_ref_id": "B9654",
+    "id": "Brain_Cerebellar_Hemisphere_Analysis"
+  },
+  {
+    "x_ref_id": "B5021",
+    "id": "Brain_Cerebellum_Analysis"
+  },
+  {
+    "x_ref_id": "B2504",
+    "id": "Brain_Cortex_Analysis"
+  },
+  {
+    "x_ref_id": "B2319",
+    "id": "Brain_Frontal_Cortex_BA9_Analysis"
+  },
+  {
+    "x_ref_id": "B1099",
+    "id": "Brain_Hippocampus_Analysis"
+  },
+  {
+    "x_ref_id": "B7996",
+    "id": "Brain_Hypothalamus_Analysis"
+  },
+  {
+    "x_ref_id": "B5760",
+    "id": "Brain_Nucleus_accumbens_basal_ganglia_Analysis"
+  },
+  {
+    "x_ref_id": "B8465",
+    "id": "Brain_Putamen_basal_ganglia_Analysis"
+  },
+  {
+    "x_ref_id": "B3915",
+    "id": "Breast_Mammary_Tissue_Analysis"
+  },
+  {
+    "x_ref_id": "C1007",
+    "id": "Cells_EBV-transformed_lymphocytes_Analysis"
+  },
+  {
+    "x_ref_id": "C5806",
+    "id": "Cells_Transformed_fibroblasts_Analysis"
+  },
+  {
+    "x_ref_id": "C1122",
+    "id": "Colon_Sigmox_ref_id_Analysis"
+  },
+  {
+    "x_ref_id": "C2727",
+    "id": "Colon_Transverse_Analysis"
+  },
+  {
+    "x_ref_id": "E8526",
+    "id": "Esophagus_Gastroesophageal_Junction_Analysis"
+  },
+  {
+    "x_ref_id": "E1670",
+    "id": "Esophagus_Mucosa_Analysis"
+  },
+  {
+    "x_ref_id": "E6618",
+    "id": "Esophagus_Muscularis_Analysis"
+  },
+  {
+    "x_ref_id": "H0877",
+    "id": "Heart_Atrial_Appendage_Analysis"
+  },
+  {
+    "x_ref_id": "H7941",
+    "id": "Heart_Left_Ventricle_Analysis"
+  },
+  {
+    "x_ref_id": "O5839",
+    "id": "Liver_Analysis"
+  },
+  {
+    "x_ref_id": "O1306",
+    "id": "Lung_Analysis"
+  },
+  {
+    "x_ref_id": "M2527",
+    "id": "Muscle_Skeletal_Analysis"
+  },
+  {
+    "x_ref_id": "N4652",
+    "id": "Nerve_Tibial_Analysis"
+  },
+  {
+    "x_ref_id": "O8511",
+    "id": "Ovary_Analysis"
+  },
+  {
+    "x_ref_id": "O6528",
+    "id": "Pancreas_Analysis"
+  },
+  {
+    "x_ref_id": "O6149",
+    "id": "Pituitary_Analysis"
+  },
+  {
+    "x_ref_id": "O9821",
+    "id": "Prostate_Analysis"
+  },
+  {
+    "x_ref_id": "E0180",
+    "id": "Skin_Not_Sun_Exposed_Suprapubic_Analysis"
+  },
+  {
+    "x_ref_id": "E4411",
+    "id": "Skin_Sun_Exposed_Lower_leg_Analysis"
+  },
+  {
+    "x_ref_id": "D5954",
+    "id": "Small_Intestine_Terminal_Ileum_Analysis"
+  },
+  {
+    "x_ref_id": "O0146",
+    "id": "Spleen_Analysis"
+  },
+  {
+    "x_ref_id": "O6577",
+    "id": "Stomach_Analysis"
+  },
+  {
+    "x_ref_id": "O6988",
+    "id": "Testis_Analysis"
+  },
+  {
+    "x_ref_id": "O2988",
+    "id": "Thyrox_ref_id_Analysis"
+  },
+  {
+    "x_ref_id": "O2390",
+    "id": "Uterus_Analysis"
+  },
+  {
+    "x_ref_id": "O4524",
+    "id": "Vagina_Analysis"
+  },
+  {
+    "x_ref_id": "B0880",
+    "id": "Whole_Blood_Analysis"
+  }
+]
   }
 }

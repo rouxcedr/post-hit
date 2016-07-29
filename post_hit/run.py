@@ -98,6 +98,41 @@ def ressource(dataset):
     else:
         return jsonify({"response":result, "sucess": 1})
 
+@app.route("/xref/<string:dataset>/")
+def xref(dataset):
+    """
+        Gets the metadata information described in the JSON.
+
+        :param dataset: The dataset name where the information is to be fetched.
+        :type: str
+
+        :param x_ref_id: The id of the queried information (ex : E001 for roadmap_epigenomics).
+        :type: str
+    
+    """
+
+    query_string = request.query_string.decode("utf-8")
+    print(query_string)
+    ids = [query.split("=")[1] for query in query_string.split("&")]
+    ids = [id.replace("%27", "'") if "%27" in id else id for id in ids ]
+    dataset = DataSet(dataset)
+
+    with open(dataset.dataset_path) as json_file:
+        dataset_json = json.load(json_file)
+
+    result = []
+
+    metadata = dataset_json["dataset"]["metadata"]
+    for data in metadata:
+        if data["id"] in ids:
+            result.append({"name": data["id"], "id":data["x_ref_id"]})
+    
+    if len(result) == 1:
+        print(result)
+        return jsonify([result[0]])
+    else:
+        return jsonify([result])
+
 
 
 

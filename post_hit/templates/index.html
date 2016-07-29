@@ -5,6 +5,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='vector.js') }}"> </script>
     <script type="text/javascript" src="{{ url_for('static', filename='key-list.js') }}"> </script>
+    
     <style type="text/css">
         div.tooltip {   
             position: absolute;         
@@ -30,22 +31,29 @@
     <label><input type="checkbox" name="checkbox" value="gtex.json">GTEX</label><br>
     Region (chr:start-end):<br>
     <input type="text" id="region" value="16:4003388-4166186">
+    <input type="text" id="locus" value="4065583">
     <button onclick="getRegion()">Get Region!</button><br>
 
     <script type="text/javascript">
         function getRegion(){
 
-
+            //Grabbing user input (Datasets and region)
             var datasets = [];
-            // var datasets = document.getElementById("dataset").value.split(";");
+
+            var input = document.getElementById("dataset").value.split(";");
+            if  (/\S/.test(input)){
+                datasets.push(input);
+            }
             var checkboxs = document.getElementsByName('checkbox');
             for(var i = 0; i < checkboxs.length; ++i){
                 if(checkboxs[i].checked) datasets.push(checkboxs[i].value);
             }
 
             var region = document.getElementById("region").value;
+            var locus = parseInt(document.getElementById("locus").value);
 
 
+            //Creating the query URL
             var url = "http://127.0.0.1:5000/region/" + region + "?";
             
             for (i = 0; i < datasets.length; i++) {
@@ -55,41 +63,38 @@
                     url += "&dataset="+datasets[i]
                 }
             }
-            console.log(url)
+
+            //REST Query with D3 and calling proper function (vector or key_list)
             d3.json(url, function(error, data) {
                 if (error) console.log(error);
                 for (var dataset_key in data.response){
                     var data_obj = data.response[dataset_key];
-                    if (data_type(data_obj) == "vector") vector(data_obj, region, 100);
-                    if (data_type(data_obj) == "key-list") key_list(data_obj, region, dataset_key);
+                    if (data_type(data_obj) == "vector") vector(data_obj, region, 100, dataset_key, locus);
+                    if (data_type(data_obj) == "key-list") key_list(data_obj, region, dataset_key, locus);
 
                 }
             });
 
         }
 
+        //Function that checks if the data's format (key-list or vector)
         function data_type(data){
-            
-                // skip loop if the property is from prototype
-                
-
-                for (var key in data) break;
-                //console.log(data[key])
-
-                if (typeof data[key][0] == 'number'){
-                    return "vector";
-                }
-                return "key-list";
+            for (var key in data) break;
+                if (data[key] != "undefined")
+                    {if (typeof data[key][0] == 'number'){
+                            return "vector";
+                        }
+                        return "key-list";}
         }
 
-        function vector(data, region, smooth = 0){
+        function vector(data, region, smooth = 0, dataset_name, locus){
 
+            //All the variable needed to create the graph
             for (var key in data){data = data[key]}
             var outerWidth = 1000;
             var outerHeight = 500;
             var margin = { left: 30, top: 30, right: 30, bottom: 65 };
-            var xAxis_legend = "PhyloP";
-            var yAxis_legend = region;
+            var region = region;
 
             var start = +region.split(":")[1]
                               .split("-")[0];
@@ -103,6 +108,7 @@
             }
             data = data_format
 
+            //Smoothing function
             function smoothing(data, smooth_val){
                 idx = smooth_val;
                 smooth_data = [];
@@ -126,9 +132,9 @@
 
             if (smooth > 0){
                data = smoothing(data, smooth)
-               console.log("Fini smoothing")
             }
 
+            //D3 Graph variable
             var svg = d3.select("body").append("svg")
                 .attr("width",  outerWidth)
                 .attr("height", outerHeight);
@@ -165,30 +171,55 @@
                 .y(function(d) { return yScale(d.y); });
 
 
-
-            function render(data){
+            //Rendering function for the graph
+            function render(data, locus, dataset_name){
+                yDomain = d3.extent(data, function(d){return d.y;});
                 xScale.domain(d3.extent(data, function(d){return d.x;}));
-                yScale.domain(d3.extent(data, function(d){return d.y;}));
+                yScale.domain(yDomain);
 
                 xAxisG.call(xAxis);
                 yAxisG.call(yAxis);
 
+                var locusLine = g.append("line");
+
+                var locusLineAttributes = locusLine
+                                            .attr("x1", function (d) { return xScale(locus); })
+                                            .attr("x2", function (d) { return xScale(locus); })
+                                            .attr("y1", function (d) { return yScale(yDomain[0]); })
+                                            .attr("y2", function (d) { return yScale(yDomain[1]); })
+                                            .attr("stroke-width", 2)
+                                            .attr("stroke", "black")
+                                            .attr("stroke-dasharray","10,10");
+
                 path.attr("d", line(data));
-            }
 
-            render(data)
-            // var input = document.createElement("input");
-            // input.type = "range";
-            // input.name = "smoothing";
-            // input.min = 0;
-            // input.max = data.length / 2 - 1
-            // svg.append(input);
+                svg.append("text")
+                    .attr("x", (outerWidth / 2))             
+                    .attr("y", 20)
+                    .attr("text-anchor", "middle")  
+                    .style("font-size", "16px") 
+                    .style("text-decoration", "underline")
+                    .style("color", "black")  
+                    .text(dataset_name);
 
+                svg.append("text")
+                    .attr("text-anchor", "middle") 
+                    .attr("transform", "translate("+ (outerWidth/2) +","+(outerHeight-(margin.bottom/3))+")")  
+                    .text(region);
+                    
+                }
+
+            render(data, locus, dataset_name)
+
+            
         }
 
-        function key_list(data, region, dataset_name,metadata = null){
-            console.log("Ok");
+        //Graphs key-list format data
+        function key_list(data, region, dataset_name, locus, metadata = null){
 
+            //Base variable needed for the graph
+            var locus = locus;
+            var region = region;
             var outerWidth = 1000;
             var outerHeight = get_height(data);
             var margin = { left: 30, top: 30, right: 30, bottom: 65 };
@@ -196,20 +227,26 @@
                               .split("-")[0];
 
             var end = +region.split("-")[1];
+            var legend_width = 150;
 
+
+            //Graph variable
             var svg = d3.select("body").append("svg")
                 .attr("width",  outerWidth)
                 .attr("height", outerHeight);
 
-            var innerWidth  = outerWidth  - margin.left - margin.right;
-            var innerHeight = outerHeight - margin.top  - margin.bottom;
-
+            var innerWidth  = outerWidth  - margin.left - margin.right - legend_width;
+            var innerHeight = outerHeight - margin.top  - margin.bottom ;
 
             var g = svg.append("g")
             .attr("transform", "translate(" + (margin.left + 25)  + "," + margin.top + ")");
 
             var g_labels = svg.append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            var g_legend = svg.append("g")
+                .attr("transform", "translate(" + (innerWidth + margin.right + margin.left) + "," + margin.top + ")");
+
 
             var xAxisG = g.append("g")
                 .attr("transform", "translate(0," + (innerHeight +5) + ")");
@@ -228,7 +265,7 @@
                     .attr("class", "tooltip")               
                     .style("opacity", 0);
 
-
+            //Formating data to easily use it in the graph
             var restructured_data = Array();
             idx = 0;
             y_idx = 0;
@@ -236,30 +273,49 @@
             labels_data = []
             var points = true;
             for (var key in data){
-                labels_data.push({"label":key, "x": start, "y":y_idx, "color": get_color(dataset_name, key)});
+                labels_data.push({"label":key, "x": start, "y":y_idx, "color": get_color(dataset_name, key, true)});
                 raw_data = data[key];
                 restructured_data.length += raw_data.length;
 
                 for(i = 0; i < raw_data.length; i++){
                     for (var key in raw_data[i][0]) var id = raw_data[i][0][key];
                      points = points && (raw_data[i][1] == raw_data[i][2]) 
-                    restructured_data[i + idx] = {"x1":raw_data[i][1], "x2":raw_data[i][2], "y1" : y_idx, "y2" : y_idx, "color" : get_color(dataset_name, id), "list":raw_data[i][0]}
+                    restructured_data[i + idx] = {"x1":raw_data[i][1], "x2":raw_data[i][2], "y1" : y_idx, "y2" : y_idx, "color" : get_color(dataset_name, id), "list":raw_data[i][0], 
+                                                    "name":id}
                 }
                 y_idx += 1;
                 idx = restructured_data.length;
             }
 
-            render(restructured_data, labels_data, points)
+            legend_data = []
+            y = 0;
+            spacer = Math.floor(innerHeight/ Object.keys(colors).length)
+            for (var key in colors){
+                legend_data.push({"name":key, "color": colors[key], "x":0, "y":y+=spacer})
+            }
+            
+            legend_data.sort(function(a,b) {
+                if(a.color < b.color){return -1;}
+                if(a.color > b.color){return 1;}
+                return 0;
+            });
 
-            function render(data, labels_data, points){
-                yScale.domain(d3.extent(data, function(d){return d.y1;}));
+            console.log("legend_data")
+            console.log(legend_data)
+
+            //Rendering the graph
+            render(restructured_data, labels_data, legend_data, points, locus)
+
+
+            function render(data, labels_data, legend_data, points, locus){
+                yDomain = d3.extent(data, function(d){return d.y1;});
+                yScale.domain(yDomain);
                 xScale.domain([start, end]);
 
                 xAxisG.call(xAxis);
-                // yAxisG.call(yAxis);
-
+                
+                //If the values are points (eQTL)
                 if(points){
-                    console.log(data)
                     var points = g.selectAll("circle")
                                     .data(data)
                                     .enter()
@@ -312,16 +368,44 @@
                                             .attr("x2", function (d) { return xScale(d.x2); })
                                             .attr("y1", function (d) { return yScale(d.y1); })
                                             .attr("y2", function (d) { return yScale(d.y2); })
+                                            .attr("data-legend",function(d) {return d.name})
                                             .attr("stroke-width", 5)
                                             .attr("stroke", function(d) { return d.color; });
+                    var legendBox = g_legend.selectAll("rect")
+                                      .data(legend_data)
+                                      .enter()
+                                      .append("rect")
+
+                    var legendBoxAttribute = legendBox
+                                                .attr("x", function(d) { return d.x; })
+                                                .attr("y", function(d) { return (d.y - 10); })
+                                                .attr("width", 10)
+                                                .attr("height", 10)
+                                                .style("fill", function(d) { return d.color})
+                                                .style("stroke", "black")
+                                                .style("stroke-width", 1);
+
+
+
+                    var legendText = g_legend.selectAll("text")
+                                          .data(legend_data)
+                                          .enter()
+                                          .append("text")
+
+                    var legendTextAttributes = legendText
+                                            .attr("x", function(d) { return (d.x + 15); })
+                                            .attr("y", function(d) { return d.y; })
+                                            .text( function (d) { return d.name; })
+                                            .attr("font-family", "sans-serif")
+                                            .attr("font-size", 10);
                 }
 
-                var text = g_labels.selectAll("text")
+                var labels = g_labels.selectAll("text")
                         .data(labels_data)
                         .enter()
                         .append("text");
 
-                var textLabels = text
+                var labelsAttributes = labels
                     .attr("x", function(d) { return xScale(d.x); })
                     .attr("y", function(d) { return yScale(d.y); })
                     .text( function (d) { return d.label; })
@@ -329,20 +413,47 @@
                     .attr("font-size", 5)
                     .attr("fill", function(d) { return d.color});
 
+                var locusLine = g.append("line");
+
+                var locusLineAttributes = locusLine
+                                            .attr("x1", function (d) { return xScale(locus);})
+                                            .attr("x2", function (d) { return xScale(locus);})
+                                            .attr("y1", function (d) { return yScale(yDomain[0]); })
+                                            .attr("y2", function (d) { return yScale(yDomain[1]+1); })
+                                            .attr("stroke-width", 1)
+                                            .attr("stroke", "black")
+                                            .attr("stroke-dasharray","10,10");
+
+                svg.append("text")
+                    .attr("x", (outerWidth / 2))             
+                    .attr("y", 20)
+                    .attr("text-anchor", "middle")  
+                    .style("font-size", "16px") 
+                    .style("text-decoration", "underline")
+                    .style("color", "black")  
+                    .text(dataset_name);
+
+                svg.append("text")
+                    .attr("text-anchor", "middle") 
+                    .attr("transform", "translate("+ (outerWidth/2) +","+(outerHeight-(margin.bottom/3))+")")  
+                    .text(region);
+
+
+
             }
 
-            function get_color(dataset_name, id){
+            function get_color(dataset_name, id, label = false){
                 if (id in colors)
-                    return colors[id];
+                    {return colors[id];}
                 url = "/resources/"+ dataset_name + "?id=" + id;
                 var Httpreq = new XMLHttpRequest(); // a new request
                 Httpreq.open("GET", url ,false);
                 Httpreq.send(null);
                 if (JSON.parse(Httpreq.responseText).color != undefined){
-                    colors[id] = JSON.parse(Httpreq.responseText).color;
+                    if (!label) colors[id] = JSON.parse(Httpreq.responseText).color;
                     return JSON.parse(Httpreq.responseText).color;
                 }else{
-                    colors[id] = "#000000";
+                    if (!label) colors[id] = "#000000";                 
                     return  "#000000"
                 };
             }
@@ -352,11 +463,8 @@
                 for (key in data){
                     count_key++;
                 }   
-                console.log(count_key * 50)
                 return Math.min(count_key * 100, 500)
             }
-
-            console.log("DONE")
 
         }
 
@@ -365,26 +473,3 @@
 
   </body>
 </html>
-
- <!-- function render(data, dataset_name, y_idx){
-                dataToRender = data
-                try{
-                    for (key in data[1]) var id = key;
-                    url = "/resources/"+ dataset_name + "/" + key;
-                    var color;
-                    d3.json(url, function(error, metadata){
-                            //if (error) console.log(error); 
-                            color = metadata.color;
-                            svg.append("line")
-                               .attr({ x1: xScale(dataToRender.start), y1: yScale(y_idx), //start of the line
-                                       x2: xScale(dataToRender.end), y2: yScale(y_idx)  //end of the line
-                                     });
-
-                            })
-
-                }catch(e){
-                    var color = "#000000"
-                }
-
-
-            } -->
