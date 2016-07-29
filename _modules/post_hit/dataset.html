@@ -135,11 +135,15 @@
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">adapters</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">adapters</span>
+<span class="k">except</span> <span class="ne">SystemError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">adapters</span>
+    
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os.path</span>
 <span class="kn">import</span> <span class="nn">tarfile</span>
-<span class="kn">from</span> <span class="nn">gepyto.db</span> <span class="kn">import</span> <span class="n">index</span>
+<span class="kn">from</span> <span class="nn">gepyto.db</span> <span class="k">import</span> <span class="n">index</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
 <span class="n">POST_HIT_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
@@ -212,16 +216,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dataset_path</span> <span class="o">=</span> <span class="n">dataset_path</span>
 
         <span class="c1"># Store the passed parameters.</span>
-        <span class="n">argument_passed</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">argument_passed</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">for</span> <span class="n">arg</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">arg</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unknown parameter {}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unknown parameter </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">[</span><span class="n">arg</span><span class="p">](</span><span class="n">val</span><span class="p">))</span>
             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid type for argument {}. Expected &quot;</span>
-                    <span class="s2">&quot;a {}.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">[</span><span class="n">arg</span><span class="p">]))</span>
-            <span class="n">argument_passed</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Invalid type for argument </span><span class="si">{}</span><span class="s2">. Expected &quot;</span>
+                    <span class="s2">&quot;a </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">_OPTIONAL_PARAMETERS</span><span class="p">[</span><span class="n">arg</span><span class="p">]))</span>
+            <span class="n">argument_passed</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="k">if</span> <span class="n">argument_passed</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -245,8 +249,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filenames</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_links</span><span class="p">):</span>
-            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Must have the same amount off file names than download links&quot;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">None</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Must have the same amount off file names than download links&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
 
         <span class="n">resources</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -367,7 +371,7 @@
                 <span class="c1">#Check if the the download link has not been used before (One download link for all)</span>
                 <span class="k">if</span> <span class="n">resource</span><span class="p">[</span><span class="s2">&quot;download_link&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">download_links</span><span class="p">:</span>
                     
-                    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;DOWNLOADING : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DOWNLOADING : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;filename&quot;</span><span class="p">]))</span>
                     <span class="n">f</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">resource</span><span class="p">[</span><span class="s2">&quot;download_link&quot;</span><span class="p">])</span>
                     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
                     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">donwload_file</span><span class="p">:</span>

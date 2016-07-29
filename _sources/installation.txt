@@ -9,22 +9,23 @@ Post-Hit requires a standard Python 3.4 (or latest) installation with the follow
 - numpy version 1.8.2 or latest
 - pandas version 0.17.0 or latest
 - gepyto version 0.9.2 or latest
+- flask version 0.11 or latest
 
 Installing
 -----------
 
-Installing Post-Hit using pip :
+Installing Post-Hit using git :
 
 .. code-block:: sh
 
-    pip install post_hit
+    git clone git://git.kernel.org/pub/scm/.../linux.git my-linux	
 
 
 Updating Post-Hit
 ------------------
 
-Using pip : 
+Using git : 
 
 .. code-block:: sh
 
-    pip install -U post_hit
+    git remote update

@@ -100,8 +100,22 @@ There is two way do create a new JSON dataset description :
             - **"version"** is the dataset's version
             - **"project_link"** is the link to the project homepage
             - **"metadata"** : a list of dict containing the metadata for every ids/files in "resources"
+
+        Metadata example :
+             .. code-block:: json
+
+                        {
+                          "x_ref_id": "D7045",
+                          "gender": "Male",
+                          "ethnicity": "Caucasian",
+                          "color": "#C58DAA",
+                          "name": "Duodenum_Mucosa",
+                          "type": "Digestive",
+                          "id": "E077"
+                        }
+        Where the color is being used for visualization as well as the ID. The x_ref_id is used for the cross cheking of tissue in different dataset.
     
-    2. Load a `DataSet Class <http://rouxcedr.github.io/post-hit/rest_api.html>`_ :
+    2. Load a `DataSet Class <http://rouxcedr.github.io/post-hit/dataset.html>`_ :
 
         Copy this script in a new python file :
         
